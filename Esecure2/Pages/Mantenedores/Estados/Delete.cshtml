@@ -1,0 +1,28 @@
+﻿@page
+@model EsecureWebApp.Pages.Mantenedores.Estados.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Eliminar registro</h2>
+
+<h3>¿Está seguro que quiere eliminar el registro?</h3>
+<div>
+    <h4>Estado</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado.DescripcionEstado)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Estado.DescripcionEstado)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Estado.EstadoID" />
+        <input type="submit" value="Eliminar" class="btn btn-default" /> |
+        <a asp-page="./Index">Volver</a>
+    </form>
+</div>

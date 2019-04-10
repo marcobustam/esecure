@@ -1,0 +1,63 @@
+﻿@page
+@model EsecureWebApp.Pages.Planes.Prevencion.Planificaciones.IndexModel
+
+@{
+    ViewData["Title"] = "Planes Prevención";
+}
+<h2>Planes de Prevención - 
+    @if (!(Model.MyEmpresa == null))
+    {
+        @Model.MyEmpresa.NombreFantasia
+    }
+</h2>
+
+<p>
+    <a asp-page="./Create" asp-route-emid="@Model.MyEmpresa.EmpresaID" class="btn btn-primary btn-sm" role="button">Agregar Plan <span class="glyphicon glyphicon-plus-sign"></span>   </a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PlanList[0].PlanID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PlanList[0].NombrePlan)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PlanList[0].PersonaID)
+            </th>
+            <!--th>
+                @Html.DisplayNameFor(model => model.PlanList[0].EmpresaID)
+            </!--th -->
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.PlanList) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlanID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombrePlan)
+            </td>
+            <td>
+                
+                @Html.DisplayFor(modelItem => item.PersonaID);
+                @{
+                    var pe = Model.ListaResponsables.FirstOrDefault(p => p.PersonaID == item.PersonaID);
+                }
+                @pe.PrimerNombre;
+            </td>
+            <td>
+                <a asp-page="./Details" asp-route-emid="@Model.MyEmpresa.EmpresaID"  asp-route-plid="@item.PlanID" class="btn btn-primary btn-sm" role="button">Actividades</a>
+                
+            </td>
+            <td>
+                <a asp-page="/Planes/Mitigacion/IssueLists/Index" asp-route-emid="@Model.MyEmpresa.EmpresaID" asp-route-plid="@item.PlanID">Plan de Acción</a>
+                <a asp-page="/Actividades/Verificaciones/Index" asp-route-emid="@Model.MyEmpresa.EmpresaID" asp-route-plid="@item.PlanID">Ver CheckList Disponibles</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

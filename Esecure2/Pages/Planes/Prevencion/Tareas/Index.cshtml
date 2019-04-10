@@ -1,0 +1,85 @@
+﻿@page
+@model EsecureWebApp.Pages.Planes.Prevencion.Tareas.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Listado</h2>
+
+<p>
+    <!--a asp-page="Create" asp-route-emid="@Model.MyPlan.EmpresaID" asp-route-plid=" Model.MyPlan.PlanID">Crear con EMID</a> -->
+    <a class="btn btn-success btn-sm" asp-page="Create" asp-route-plid="@Model.MyPlan.PlanID">Crear Tarea</a> 
+</p>
+<table class="table table-bordered table-striped table-hover text-dark table-responsive-md" style="width:100%" id="datata">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ListaTarea[0].PlanID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListaTarea[0].NombreTarea)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListaTarea[0].FechaPlanificada)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListaTarea[0].FechaEjecucionReal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListaTarea[0].EstadoID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.ListaTarea)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PlanID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreTarea)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaPlanificada)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaEjecucionReal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EstadoID)
+                </td>
+                <td>
+                    <div class="btn-group">
+                        <a asp-page="./Edit" asp-route-taid="@item.TareaID" class="btn btn-success btn-sm btn-warning"><i class="fa fa-edit"></i></a>
+                        <a asp-page="./Details" asp-route-taid="@item.TareaID" class="btn btn-success btn-sm"><i class="fa fa-arrow-right"></i></a>
+                        <a asp-page="./Delete" asp-route-taid="@item.TareaID" class="btn btn-success btn-sm btn-danger"><i class="fas fa-times"></i></a>
+                        <form method="post">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-group" hidden="hidden">
+                                <label asp-for="@Model.NuevoHistoricoTarea.TareaID" class="control-label"></label>
+                                <input asp-for="@Model.NuevoHistoricoTarea.TareaID" value="@item.TareaID" class="form-control" />
+                                <span asp-validation-for="@Model.NuevoHistoricoTarea.TareaID" class="text-danger"></span>
+                            </div>
+                            <div class="form-group" hidden="hidden">
+                                <label asp-for="@Model.NuevoHistoricoTarea.EstadoAnterior" class="control-label"></label>
+                                <input asp-for="@Model.NuevoHistoricoTarea.EstadoAnterior" value="@item.EstadoID" class="form-control" />
+                                <span asp-validation-for="@Model.NuevoHistoricoTarea.EstadoAnterior" class="text-danger"></span>
+                            </div>
+                            <div class="form-group" hidden="hidden">
+                                <label asp-for="@Model.NuevoHistoricoTarea.NuevoEstado" class="control-label"></label>
+                                <input asp-for="@Model.NuevoHistoricoTarea.NuevoEstado" value="1" class="form-control" />
+                                <span asp-validation-for="@Model.NuevoHistoricoTarea.NuevoEstado" class="text-danger"></span>
+                            </div>
+                            <button type="submit" class="btn btn-info">
+                                Planificar <i class="fa fa-forward"></i>
+                            </button>
+                        </form>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

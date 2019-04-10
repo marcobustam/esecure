@@ -1,0 +1,39 @@
+﻿@page
+@model ErrorModel
+@{
+    ViewData["Title"] = "Error";
+}
+
+
+
+<div id="content-wrapper">
+    <div class="container-fluid">
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="index.html">Dashboard</a>
+            </li>
+            <li class="breadcrumb-item active">404 Error</li>
+        </ol>
+        <!-- Page Content -->
+        <h1 class="display-1 text-danger">Error.</h1>
+        <p class="lead">
+            <h1 class="text-danger"></h1>
+            <h2 class="text-danger">Un error ha ocurrido al procesar tu solicitud.</h2>
+            <h4> Se ha suministrado el siguiente mensaje:</h4>
+            <code>@Model.ErrorMsg</code>
+            </p>
+            @if (Model.ShowRequestId)
+            {
+            <p>
+                <strong>Request ID:</strong> <code>@Model.RequestId</code>
+            </p>
+            }
+            <a asp-page="./Index" class="btn btn-info btn-sm" >Inicio</a>.
+         
+        </div>
+    <!-- /.container-fluid -->
+
+
+</div>
+<!-- /.content-wrapper -->

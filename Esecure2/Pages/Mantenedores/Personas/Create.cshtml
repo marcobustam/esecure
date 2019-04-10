@@ -1,0 +1,66 @@
+﻿@page
+@using Microsoft.AspNetCore.Identity
+@using EsecureModel.Usuario
+
+@model EsecureWebApp.Pages.Mantenedores.Personas.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Agregar Personas</h2>
+<h4>Empresa: @Model.MyEmpresa.NombreFantasia </h4>
+
+<hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Persona.Documento" class="control-label"></label>
+                    <input asp-for="Persona.Documento" class="form-control" />
+                    <span asp-validation-for="Persona.Documento" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Persona.Alias" class="control-label"></label>
+                    <input asp-for="Persona.Alias" class="form-control" />
+                    <span asp-validation-for="Persona.Alias" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Persona.PrimerNombre" class="control-label"></label>
+                    <input asp-for="Persona.PrimerNombre" class="form-control" />
+                    <span asp-validation-for="Persona.PrimerNombre" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Persona.SegundoNombre" class="control-label"></label>
+                    <input asp-for="Persona.SegundoNombre" class="form-control" />
+                    <span asp-validation-for="Persona.SegundoNombre" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Persona.ApellidoPaterno" class="control-label"></label>
+                    <input asp-for="Persona.ApellidoPaterno" class="form-control" />
+                    <span asp-validation-for="Persona.ApellidoPaterno" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Persona.ApellidoMaterno" class="control-label"></label>
+                    <input asp-for="Persona.ApellidoMaterno" class="form-control" />
+                    <span asp-validation-for="Persona.ApellidoMaterno" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Persona.FechaNacimiento" class="control-label"></label>
+                    <input asp-for="Persona.FechaNacimiento" class="form-control" />
+                    <span asp-validation-for="Persona.FechaNacimiento" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Crear" class="btn btn-default" />
+                </div>
+            </form>
+        </div>
+    </div>
+<div>
+    <a asp-page="Index">Volver al listado de Personas</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

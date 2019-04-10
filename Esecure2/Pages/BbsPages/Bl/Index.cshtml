@@ -1,0 +1,124 @@
+﻿@page
+@model Bbs.Pages.Bl.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="card">
+    <div class="col-md-12">
+        <br />
+        <h4 class="card card-body bg-primary text-light">
+            Inspecciones realizadas:
+        </h4>
+        <hr />
+        @* *************************************************************************** *@
+        @* --------------------------------------------------------------------------- *@
+        <div class="container-fluid card bg-light text-dark">
+            <table class="table table-bordered table-striped table-hover text-dark table-responsive table-responsive-sm  table-responsive-md table-responsive-lg table-responsive-xl" id="datata">
+                <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Inspection[0].InspectionDate)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Inspection[0].MyProperty)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Inspection[0].PersonID1)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Inspection[0].PersonID2)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Inspection[0].PersonID3)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Inspection[0].DivisionID)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Inspection[0].SiteID)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Inspection[0].WorkSiteID)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Inspection[0].ObsCategoryID)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Inspection[0].ObsItemID)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Inspection[0].IsSafeAction)
+                    </th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Inspection)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.InspectionDate)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.MyProperty)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PersonID1)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PersonID2)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PersonID3)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DivisionID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SiteID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.WorkSiteID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ObsCategoryID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ObsItemID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.IsSafeAction)
+                            </td>
+                            <td>
+                                <a asp-page="./Edit" asp-route-id="@item.InspectionID">Edit</a> |
+                                <a asp-page="./Details" asp-route-id="@item.InspectionID">Details</a> |
+                                <a asp-page="./Delete" asp-route-id="@item.InspectionID">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<hr />
+<a class="btn btn-info" asp-page="/Index">Volver</a>
+
+@* ******************************************************************************** *@
+@section Scripts {
+    <script type="text/javascript">
+        $(function () {
+            // alert("ready");
+            $('#datata').DataTable({
+                "paging": true,
+                "ordering": true,
+                "info": true,
+                "language": {
+                    //"url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+                    "url": "/lib/datatables/json/Spanish.json"
+                }
+            });
+        });
+    </script>
+}

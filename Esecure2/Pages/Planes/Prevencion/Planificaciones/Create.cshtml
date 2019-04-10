@@ -1,0 +1,84 @@
+﻿@page
+@model EsecureWebApp.Pages.Planes.Prevencion.Planificaciones.CreateModel
+
+<ol class="breadcrumb">
+    @* *************************************************************************** *@
+    <li class="breadcrumb-item">
+        <a asp-page="/Mantenedores/Empresas/Index">Empresa</a>
+        @*<a href="#">Empresa</a>*@
+    </li>
+    <li class="breadcrumb-item">
+        <a href="#">Planificaciones</a>
+    </li>
+    <li class="breadcrumb-item active">
+        Agregar Plan de prevención
+    </li>
+    @* *************************************************************************** *@
+</ol>
+<div id="content-wrapper">
+    <div class="container-fluid">
+        <!-- Breadcrumbs-->
+
+        <div class="card card-body bg-primary text-light">
+            @* *************************************************************************** *@
+            <h3>Agregar Plan de prevención</h3>
+            <h4>Empresa: @Model.MyEmpresa.NombreFantasia </h4>
+            @* *************************************************************************** *@
+        </div>
+        <hr />
+
+        <div class="card">
+            <div class="col-md-12">
+                <br />
+                @* *************************************************************************** *@
+                <h4 class="card card-body bg-primary text-light">
+                    Nuevo plan:
+                </h4>
+                <hr />
+                @* --------------------------------------------------------------------------- *@
+                <div class="container-fluid card bg-light text-dark">
+                    <br />
+                    <form method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="NewPlan.NombrePlan" class="control-label"></label>
+                            <input asp-for="NewPlan.NombrePlan" class="form-control" />
+                            <span asp-validation-for="NewPlan.NombrePlan" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="NewPlan.Descripcion" class="control-label"></label>
+                            <input asp-for="NewPlan.Descripcion" class="form-control" />
+                            <span asp-validation-for="NewPlan.Descripcion" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="NewPlan.PersonaID" class="control-label"></label>
+                            <select asp-for="NewPlan.PersonaID" class="form-control" asp-items="@Model.PersonasNameSL">
+                                <option value="">-- Escoja un nombre --</option>
+                            </select>
+                            <span asp-validation-for="@Model.NewPlan.PersonaID" class="text-danger"></span>
+
+                        </div>
+                        <div class="form-group">
+                            <input hidden="hidden" asp-for="NewPlan.EmpresaID" class="form-control" value="@Model.MyEmpresa.EmpresaID" />
+                            <span asp-validation-for="@Model.NewPlan.EmpresaID" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Crear" class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top" title="" data-original-title="Enviar"/>
+                            <a asp-page="/Planes/Prevencion/Planificaciones/Index" asp-route-emid="@Model.MyEmpresa.EmpresaID" role="button" class="btn btn-info btn-sm"  data-toggle="tooltip" data-placement="top" title="" data-original-title="Planificaciones">Volver</a>
+                        </div>
+                    </form>
+                </div>
+                <p>
+                    <div>
+                        <a asp-page="./Create" asp-route-emid="@Model.MyEmpresa.EmpresaID" class="btn btn-primary btn-sm" role="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Nuevo Plan">Agregar Plan <span class="glyphicon glyphicon-plus-sign"></span>   </a>
+                        <br />
+                    </div>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

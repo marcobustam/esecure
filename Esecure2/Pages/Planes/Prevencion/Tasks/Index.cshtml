@@ -1,0 +1,178 @@
+﻿@page
+@model EsecureWebApp.Pages.Planes.Prevencion.Tasks.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div id="content-wrapper">
+    <div class="container-fluid">
+        <!-- Breadcrumbs-->
+
+        <div class="card card-body bg-primary text-light">
+            @* *************************************************************************** *@
+            <h2>XXXXXXXXXXX</h2>
+            <h4>Empresa: @Model.MyEmpresa.NombreFantasia </h4>
+            @* *************************************************************************** *@
+        </div>
+        <hr />
+
+        <div class="card">
+            <div class="col-md-12">
+                <br />
+                @* *************************************************************************** *@
+                <h4 class="card card-body bg-primary text-light">
+                    XXXXXXXXXXX:
+                </h4>
+                <div class="container-fluid card bg-light text-dark">
+                    <br />
+                    @* *************************************************************************** *@
+                    <form method="post">
+                        div class="form-group">
+                        <input type="submit" value="Agregar" class="btn btn-success btn-sm" />
+                </div>
+                </form>
+                @* *************************************************************************** *@
+            </div>
+
+            <hr />
+            @* *************************************************************************** *@
+            <h4 class="card card-body bg-primary text-light">
+                Listado de 
+
+                @* --------------------------------------------------------------------------- *@
+                <div class="container-fluid card bg-light text-dark">
+                    <br />
+
+                    <table class="table table-bordered table-striped table-hover text-dark table-responsive-md" style="width:100%" id="datata">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Tarea[0].PlanID)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Tarea[0].EmpresaID)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Tarea[0].NombreTarea)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Tarea[0].FaenaID)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Tarea[0].FechaPlanificada)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Tarea[0].FechaFinPlanificada)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Tarea[0].FechaEjecucionReal)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Tarea[0].FechaUltimaModificacion)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Tarea[0].FechaFinEjecucionReal)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Tarea[0].EstadoID)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Tarea[0].TestID)
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Tarea)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PlanID)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.EmpresaID)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.NombreTarea)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.FaenaID)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.FechaPlanificada)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.FechaFinPlanificada)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.FechaEjecucionReal)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.FechaUltimaModificacion)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.FechaFinEjecucionReal)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.EstadoID)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.TestID)
+                                    </td>
+                                    <td>
+                                        <a asp-page="./Edit" asp-route-id="@item.TareaID">Editar</a> |
+                                        <a asp-page="./Details" asp-route-id="@item.TareaID">Detalles</a> |
+                                        <a asp-page="./Delete" asp-route-id="@item.TareaID">Eliminar</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                        <tfoot>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                        </tfoot>
+                    </table>
+                </div>
+                <hr />
+                <p>
+                    <div>
+                        <a asp-page="/Mantenedores/Empresas/Index" asp-route-emid="@Model.MyEmpresa.EmpresaID" role="button" class="btn btn-info btn-sm">Volver a Empresa</a>
+                        <br />
+                    </div>
+                </p>
+
+                @* --------------------------------------------------------------------------- *@
+                <p>
+                    <div>
+                        @*<a asp-page="./Create" asp-route-emid="@Model.MyEmpresa.EmpresaID" class="btn btn-primary btn-sm" role="button">Agregar Plan <span class="glyphicon glyphicon-plus-sign"></span>   </a>*@
+                        @*<a asp-page="/Mantenedores/Faenas/Create" asp-route-emid="@Model.MyEmpresa.EmpresaID" class="btn btn-info btn-sm float-md-right" role="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Nueva faena">Crear Faena</a>*@
+                        <br />
+                    </div>
+                </p>
+                @* *************************************************************************** *@
+        </div>
+    </div>
+</div>
+</div>
+@* *************************************************************************** *@
+<hr />
+
+
+@* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ *@
+
+<hr />
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

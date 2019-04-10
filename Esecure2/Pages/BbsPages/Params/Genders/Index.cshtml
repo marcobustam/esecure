@@ -1,0 +1,77 @@
+﻿@page
+@model Bbs.Pages.Params.Genders.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div id="content-wrapper">
+    <div class="container-fluid">
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+            @* *************************************************************************** *@
+            <li class="breadcrumb-item">
+                <a asp-page="/Admin">Mantenedores</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="#">Géneros</a>
+            </li>
+            <li class="breadcrumb-item active">
+                Listado Géneros
+            </li>
+            @* *************************************************************************** *@
+        </ol>
+        <div class="card card-footer">
+            @* *************************************************************************** *@
+            <h2>Mantenedor de Géneros</h2>
+            @*<h4>Empresa: @Model.MyEmpresa.NombreFantasia </h4>*@
+            @* *************************************************************************** *@
+        </div>
+        <hr />
+        <div class="card">
+
+            <div class="col-md-12">
+                <br />
+                @* *************************************************************************** *@
+                @* --------------------------------------------------------------------------- *@
+                <div class="container-fluid card bg-light text-dark">
+                    <br />
+                    <h3>Listado de Géneros:</h3>
+                    <table class="table table-bordered table-striped table-hover table-responsive-md" id="datata">
+
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Gender[0].GenderName)
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Gender)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.GenderName)
+                                    </td>
+                                    <td>
+                                        <a asp-page="./Edit" asp-route-geid="@item.GenderId">Edit</a> |
+                                        <a asp-page="./Details" asp-route-geid="@item.GenderId">Details</a> |
+                                        <a asp-page="./Delete" asp-route-geid="@item.GenderId">Delete</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                    <br />
+                </div>
+                <br />
+            </div>
+        </div>
+    </div>
+</div>

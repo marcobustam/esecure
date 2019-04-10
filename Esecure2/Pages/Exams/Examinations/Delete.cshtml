@@ -1,0 +1,70 @@
+﻿@page
+@model EsecureWebApp.Pages.Exams.Examinations.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Eliminar registro</h2>
+
+<h3>¿Está seguro que quiere eliminar el registro?</h3>
+<div>
+    <h4>Examination</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Examination.TimeStamp)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Examination.TimeStamp)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Examination.PersonaID1)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Examination.PersonaID1)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Examination.PersonaID2)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Examination.PersonaID2)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Examination.Prueba)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Examination.Prueba.TestID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Examination.EmpresaID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Examination.EmpresaID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Examination.FaenaID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Examination.FaenaID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Examination.TotalRespuestas)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Examination.TotalRespuestas)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Examination.RespuestasCompletadas)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Examination.RespuestasCompletadas)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Examination.ExaminationID" />
+        <input type="submit" value="Eliminar" class="btn btn-default" /> |
+        <a asp-page="./Index">Volver</a>
+    </form>
+</div>

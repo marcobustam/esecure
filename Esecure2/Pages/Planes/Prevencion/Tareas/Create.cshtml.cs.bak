@@ -1,0 +1,89 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Esecure2.Data;
+using EsecureModel.Planificacion;
+using EsecureModel.Faena;
+using Microsoft.EntityFrameworkCore;
+using EsecureModel.Personal;
+using EsecureWebApp.Pages.Mantenedores.Var;
+
+namespace EsecureWebApp.Pages.Planes.Prevencion.Tareas
+{
+    public class CreateModel : SelectListsPageModel
+    {
+        private readonly Esecure2.Data.ApplicationDbContext _context;
+
+        public CreateModel(Esecure2.Data.ApplicationDbContext context)
+        {
+            _context = context;
+        }
+
+        public async Task<IActionResult> OnGet(int? emid, int? plid)
+        {
+            if(plid==null)
+            {
+                return Page();
+            }
+
+            PopulatePersonasDropDownList(_context);
+            PopulateEmpresasDropDownList(_context);
+            PopulateActividadVerificacionDropDownList(_context);
+            // MyPlan = await _context.Plan.FirstOrDefaultAsync(pl => pl.EmpresaID == emid && pl.PlanID == plid);
+            /*
+            if (!(emid==null))
+            {
+                MyPlan = await _context.Plan.FirstOrDefaultAsync(pl => pl.EmpresaID == emid && pl.PlanID == plid);
+                MyEmpresa = await _context.Empresa.FirstOrDefaultAsync(m => m.EmpresaID == emid);
+
+            }
+            else
+            {
+            */
+            MyPlan = await _context.Plan.FirstOrDefaultAsync(pl => pl.PlanID == plid);
+            MyEmpresa = await _context.Empresa.FirstOrDefaultAsync(m => m.EmpresaID == MyPlan.EmpresaID);
+            /* } */
+            // TODO: hacer las verificaciones de navegación y levantar los logs y mensajes correspondientes
+            MyEncargado = await _context.Persona.FirstOrDefaultAsync(pe => pe.PersonaID == MyPlan.PersonaID);
+            EstaTarea = new Tarea
+            {
+                EstadoID = 0,
+                NombreTarea = "",
+                PlanID = MyPlan.PlanID
+            };
+
+            // EstaTarea.
+            return Page();
+        }
+
+        [BindProperty]
+        public Tarea EstaTarea { get; set; }
+        [BindProperty]
+        public Empresa MyEmpresa { get; set; }
+        [BindProperty]
+        public Plan MyPlan { get; set; }
+        [BindProperty]
+        public Persona MyEncargado { get; set; }
+
+        public async Task<IActionResult> OnPostAsync()
+        {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
+            // Enlazar con el plan
+            MyPlan.ListaTareas.AddTarea(EstaTarea);
+            // enviamos nueva tarea al histórico
+            var historicoTarea = new HistoricoTarea(EstaTarea);
+            _context.HistoricoTarea.Add(historicoTarea);
+            _context.Tarea.Add(EstaTarea);
+            await _context.SaveChangesAsync();
+
+            return RedirectToPage("./Index", new { emid = MyEmpresa.EmpresaID, plid = MyPlan.PlanID });
+        }
+    }
+}

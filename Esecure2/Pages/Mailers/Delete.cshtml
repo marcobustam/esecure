@@ -1,0 +1,46 @@
+﻿@page
+@model EsecureWebApp.Pages.Mailers.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Eliminar registro</h2>
+
+<h3>¿Está seguro que quiere eliminar el registro?</h3>
+<div>
+    <h4>MailSender</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.MailSender.MailSenderFrom)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MailSender.MailSenderFrom)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MailSender.MailSenderTo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MailSender.MailSenderTo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MailSender.MailSenderSubject)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MailSender.MailSenderSubject)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.MailSender.MailSenderMessage)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.MailSender.MailSenderMessage)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="MailSender.MailSenderID" />
+        <input type="submit" value="Eliminar" class="btn btn-default" /> |
+        <a asp-page="./Index">Volver</a>
+    </form>
+</div>

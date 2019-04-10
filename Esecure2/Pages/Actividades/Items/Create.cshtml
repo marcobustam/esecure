@@ -1,0 +1,93 @@
+﻿@page
+@model EsecureWebApp.Pages.Actividades.Items.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+@* ***************************************************** *@
+
+<ol class="breadcrumb">
+    @* *************************************************************************** *@
+    <li class="breadcrumb-item">
+        <a asp-page="/Mantenedores/Empresas/Index">Empresa</a>
+        @*<a href="#">Empresa</a>*@
+    </li>
+    <li class="breadcrumb-item">
+        <a href="#">Planificaciones</a>
+    </li>
+    <li class="breadcrumb-item active">
+        Planes de Prevención
+    </li>
+    @* *************************************************************************** *@
+</ol>
+<div id="content-wrapper">
+    <div class="container-fluid">
+        <!-- Breadcrumbs-->
+
+        <div class="card card-body bg-primary text-light">
+            @* *************************************************************************** *@
+            <h3>Items</h3>
+            <h4>Empresa:  </h4>
+            @* *************************************************************************** *@
+        </div>
+        <hr />
+
+        <div class="card">
+            <div class="col-md-12">
+                <br />
+                @* *************************************************************************** *@
+                <h4 class="card card-body bg-primary text-light">
+                    Items - crear:
+                </h4>
+                <hr />
+                @* --------------------------------------------------------------------------- *@
+                <div class="container-fluid card bg-light text-dark">
+                    <br />
+
+                    <form method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="ItemVerificacion.Glosa" class="control-label"></label>
+                            <input asp-for="ItemVerificacion.Glosa" class="form-control" />
+                            <span asp-validation-for="ItemVerificacion.Glosa" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Crear" class="btn btn-success btn-sm"  data-toggle="tooltip" data-placement="top" title="" data-original-title="Crear" />
+                        </div>
+                    </form>
+                </div>
+                <p>
+                    <div>
+                        <a asp-page="./Index" asp-route-emid="@Model.MyEmpresa.EmpresaID" class="btn btn-primary btn-sm" role="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Listado">Cer Listado <span class="glyphicon glyphicon-plus-sign"></span>   </a>
+                        <br />
+                    </div>
+                </p>
+                @*FORM OR DETAILS OR CONFIRM DELETION*@
+                @* --------------------------------------------------------------------------- *@
+                @* *************************************************************************** *@
+
+            </div>
+        </div>
+    </div>
+</div>
+@* *************************************************************************** *@
+<hr />
+
+@* ***************************************************** *@
+<h2>Crear nuevo</h2>
+
+<h4>ItemVerificacion</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Volver</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

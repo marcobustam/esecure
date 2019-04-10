@@ -1,0 +1,128 @@
+﻿@page
+@model EsecureWebApp.Pages.Mantenedores.Faenas.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<ol class="breadcrumb">
+    @* *************************************************************************** *@
+    <li class="breadcrumb-item">
+        @*<a href="#">Empresa</a>*@
+        <a asp-page="/Mantenedores/Empresas/Index" asp-route-emid="@Model.MyEmpresa.EmpresaID">Empresa</a>
+    </li>
+    <li class="breadcrumb-item">
+        <a href="#">Mantenedores</a>
+    </li>
+    <li class="breadcrumb-item active">
+        Faenas
+    </li>
+    @* *************************************************************************** *@
+</ol>
+<div id="content-wrapper">
+    <div class="container-fluid">
+        <!-- Breadcrumbs-->
+
+        <div class="card card-body bg-primary text-light">
+            @* *************************************************************************** *@
+            <h2>Listado de Faenas</h2>
+            <h4>Empresa: @Model.MyEmpresa.NombreFantasia </h4>
+            @* *************************************************************************** *@
+        </div>
+        <hr />
+
+        <div class="card">
+            <div class="col-md-12">
+                <br />
+                @* *************************************************************************** *@
+                <h4 class="card card-body bg-primary text-light">
+                    Listado de faenas:
+                </h4>
+                <hr />
+                @* --------------------------------------------------------------------------- *@
+                <div class="container-fluid card bg-light text-dark">
+                    <br />
+
+                    <table class="table table-bordered table-striped table-hover text-dark table-responsive-md" style="width:100%" id="datata">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ListaFaena[0].EmpresaID)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ListaFaena[0].NombreFaena)
+                                </th>
+                                <th>
+                                    Acciones
+                                </th>
+                                <th>
+                                    Estatus
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.ListaFaena)
+                            {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.EmpresaID)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NombreFaena)
+                                </td>
+                                <td>
+                                    <a asp-page="./Edit" asp-route-emid="@item.EmpresaID" asp-route-faid="@item.FaenaID" class="btn btn-sm btn-warning"><i class="fa fa-edit"></i></a>
+                                    <a asp-page="./Details" asp-route-emid="@item.EmpresaID" asp-route-faid="@item.FaenaID" class="btn btn-sm btn-info"><i class="fa fa-eye"></i></a>
+                                    <a asp-page="./Delete" asp-route-emid="@item.EmpresaID" asp-route-faid="@item.FaenaID" class="btn btn-sm btn-danger"><i class="fa fa-times"></i></a>
+                                </td>
+                                <td>
+                                    <i class="fas fa-check fa-2x" style="color:forestgreen"></i>
+                                    @*<i class="fas fa-exclamation-triangle fa-2x" style="color:yellow"></i>
+            <i class="fas fa-exclamation-circle fa-2x" style="color:darkred"></i>*@
+                                </td>
+                            </tr>
+                            }
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>
+                                </th>
+                                <th>
+                                </th>
+                                <th>
+                                </th>
+                                <th>
+                                </th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+
+                @*DATATABLES*@
+
+                @* --------------------------------------------------------------------------- *@
+
+                @* --------------------------------------------------------------------------- *@
+
+
+
+                @* --------------------------------------------------------------------------- *@
+                <p>
+                    <div>
+                        @*<a asp-page="./Create" asp-route-emid="@Model.MyEmpresa.EmpresaID" class="btn btn-primary btn-sm" role="button">Agregar Plan <span class="glyphicon glyphicon-plus-sign"></span>   </a>*@
+                        <a asp-page="/Mantenedores/Faenas/Create" asp-route-emid="@Model.MyEmpresa.EmpresaID" class="btn btn-info btn-sm float-md-right" role="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Nueva faena">Crear Faena</a>
+                        <br />
+                    </div>
+                </p>
+                @*FORM OR DETAILS OR CONFIRM DELETION*@
+                @* --------------------------------------------------------------------------- *@
+                @* *************************************************************************** *@
+
+            </div>
+        </div>
+    </div>
+</div>
+@* *************************************************************************** *@
+<hr />
+
+

@@ -1,0 +1,40 @@
+﻿@page
+@model EsecureWebApp.Pages.Planes.Mitigacion.Issues.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Editar</h2>
+
+<h4>IssueItem</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IssueItem.IssueItemID" />
+            <div class="form-group">
+                <label asp-for="IssueItem.Descripcion" class="control-label"></label>
+                <input asp-for="IssueItem.Descripcion" class="form-control" />
+                <span asp-validation-for="IssueItem.Descripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IssueItem.IssueListId" class="control-label"></label>
+                <select asp-for="IssueItem.IssueListId" class="form-control" asp-items="ViewBag.IssueListId"></select>
+                <span asp-validation-for="IssueItem.IssueListId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Volver</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

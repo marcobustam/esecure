@@ -1,0 +1,66 @@
+﻿@page
+@model EsecureWebApp.Pages.Mantenedores.Personas.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Listado de Trabajadores</h2>
+<h4>Empresa: @Model.MyEmpresa.NombreFantasia </h4>
+<hr />
+
+<h3>¿Está seguro que quiere eliminar el registro?</h3>
+<div>
+    <h4>Persona</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Persona.Documento)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Persona.Documento)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Persona.Alias)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Persona.Alias)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Persona.PrimerNombre)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Persona.PrimerNombre)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Persona.SegundoNombre)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Persona.SegundoNombre)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Persona.ApellidoPaterno)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Persona.ApellidoPaterno)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Persona.ApellidoMaterno)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Persona.ApellidoMaterno)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Persona.FechaNacimiento)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Persona.FechaNacimiento)
+        </dd>
+    </dl>
+
+    <form method="post">
+        <input type="hidden" asp-for="Persona.PersonaID" />
+        <input type="submit" value="Eliminar" class="btn btn-default" /> |
+        <a asp-page="./Index">Volver</a>
+    </form>
+</div>

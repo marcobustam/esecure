@@ -1,0 +1,133 @@
+﻿@page
+@model EsecureWebApp.Pages.Mantenedores.Empresas.IndexModel
+
+@{
+    ViewData["Title"] = "Empresas";
+}
+<ol class="breadcrumb">
+    @* *************************************************************************** *@
+    <li class="breadcrumb-item">
+        <a href="#">Empresa</a>
+    </li>
+    <li class="breadcrumb-item">
+        <a href="#">Mantenedores</a>
+    </li>
+    <li class="breadcrumb-item active">
+        Listado Empresas
+    </li>
+    @* *************************************************************************** *@
+</ol>
+<div id="content-wrapper">
+    <div class="container-fluid">
+        <!-- Breadcrumbs-->
+
+        <div class="card card-body bg-primary text-light">
+            @* *************************************************************************** *@
+            <h2>Empresas Registradas</h2>
+            @*<h4>Empresa: @Model.MyEmpresa.NombreFantasia </h4>*@
+            @* *************************************************************************** *@
+        </div>
+        <hr />
+
+        <div class="card">
+            <div class="col-md-12">
+                <br />
+                @* *************************************************************************** *@
+                <h4 class="card card-body bg-primary text-light">
+                    Listado de empresas:
+                </h4>
+                @* --------------------------------------------------------------------------- *@
+                <div class="container-fluid card bg-light text-dark">
+                    <br />
+
+                    <table class="table table-bordered table-striped table-hover text-dark table-responsive-md" style="width:100%" id="datata">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Empresa[0].NombreFantasia)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Empresa[0].RazonSocial)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Empresa[0].RutChile)
+                                </th>
+                                <th>
+                                    Acciones
+                                </th>
+                                <th>
+                                    Planes
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Empresa)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.NombreFantasia)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.RazonSocial)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.RutChile)
+                                    </td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <a asp-page="./Edit" asp-route-emid="@item.EmpresaID" class="btn btn-success btn-sm btn-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Editar"><i class="fa fa-edit"></i></a>
+                                            <a asp-page="./Details" asp-route-emid="@item.EmpresaID" class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top" title="" data-original-title="Ver detalles"><i class="fa fa-arrow-right"></i></a>
+
+                                            <a asp-page="./Delete" asp-route-emid="@item.EmpresaID" class="btn btn-success btn-sm btn-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Eliminar"><i class="fas fa-times"></i></a>
+
+
+                                            <a asp-page="/Mantenedores/Personas/Create" class="btn btn-sm btn-info" asp-route-emid="@item.EmpresaID" data-toggle="tooltip" data-placement="top" title="" data-original-title="Agregar Empleados"><i class="fa fa-plus"></i> Empleados</a>
+                                            <a asp-page="/Mantenedores/Faenas/Create" class="btn btn-sm btn-info" asp-route-emid="@item.EmpresaID" data-toggle="tooltip" data-placement="top" title="" data-original-title="Agregar Faenas"><i class="fa fa-plus"></i> Faenas</a>
+                                        </div>
+                                    </td>
+
+                                    <td>
+                                        <a asp-page="/Planes/Prevencion/Planificaciones/Index" class="btn btn-sm btn-info" asp-route-emid="@item.EmpresaID" data-toggle="tooltip" data-placement="top" title="" data-original-title="Planificar"><i class="glyphicon glyphicon-asterisk"></i> Planes Prevención</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>
+
+                                </th>
+                                <th>
+
+                                </th>
+                                <th>
+
+                                </th>
+                                <th>
+
+                                </th>
+                                <th>
+
+                                </th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                @* *************************************************************************** *@
+            </div>
+            <br />
+            <p>
+                <div>
+                    <a asp-page="/Mantenedores/Empresas/Create" class="btn btn-info btn-sm float-md-right" role="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Agregar Empresa">Agregar Empresa</a>
+                    <br />
+                </div>
+            </p>
+        </div>
+        <br />
+    </div>
+</div>
+@* *************************************************************************** *@
+<hr />
+@* *************************************************************************** *@
+@section Scripts {
+}

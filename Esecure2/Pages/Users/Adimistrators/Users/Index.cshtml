@@ -1,0 +1,85 @@
+﻿@page
+@model EsecureWebApp.Pages.Users.Adimistrators.Users.IndexModel
+@{
+    ViewData["Title"] = "Index";
+}
+<ol class="breadcrumb">
+    @* *************************************************************************** *@
+    <li class="breadcrumb-item">
+        @*<a href="#">Empresa</a>*@
+        <a asp-page="/Mantenedores/Empresas/Index" asp-route-emid="@Model.MyEmpresa.EmpresaID">Empresa</a>
+    </li>
+    <li class="breadcrumb-item">
+        <a href="#">Administración</a>
+    </li>
+    <li class="breadcrumb-item active">
+        Usuarios
+    </li>
+    @* *************************************************************************** *@
+</ol>
+<div class="container-fluid">
+    <div class="card card-body bg-primary text-light">
+        @* *************************************************************************** *@
+        @*<h3>Plan de prevención - @Html.DisplayFor(model => model.MyPlan.NombrePlan)</h3>*@
+        <h4>Empresa: @Model.MyEmpresa.NombreFantasia </h4>
+        @* *************************************************************************** *@
+    </div>
+    <hr />
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ApplicationUsers[0].ApplicationUserID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ApplicationUsers[0].Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ApplicationUsers[0].UserName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ApplicationUsers[0].NormalizedUserName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ApplicationUsers[0].Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ApplicationUsers[0].EmailConfirmed)
+                </th>
+
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.ApplicationUsers)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ApplicationUserID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UserName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NormalizedUserName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EmailConfirmed)
+                    </td>
+
+                    <td>
+                        <a asp-page="/Users/Adimistrators/UserInfo/Index" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

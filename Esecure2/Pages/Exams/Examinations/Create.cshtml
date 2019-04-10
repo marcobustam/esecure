@@ -1,0 +1,68 @@
+﻿@page
+@model EsecureWebApp.Pages.Exams.Examinations.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Crear nuevo</h2>
+
+<h4>Examination</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Exam.TimeStamp" class="control-label"></label>
+                <input asp-for="Exam.TimeStamp" class="form-control" />
+                <span asp-validation-for="Exam.TimeStamp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Exam.PersonaID1" class="control-label"></label>
+                <input asp-for="Exam.PersonaID1" class="form-control" />
+                <span asp-validation-for="Exam.PersonaID1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Exam.PersonaID2" class="control-label"></label>
+                <input asp-for="Exam.PersonaID2" class="form-control" />
+                <span asp-validation-for="Exam.PersonaID2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Exam.TestID" class="control-label"></label>
+                <select asp-for="Exam.TestID" class ="form-control" asp-items="ViewBag.TestID"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Exam.EmpresaID" class="control-label"></label>
+                <input asp-for="Exam.EmpresaID" class="form-control" />
+                <span asp-validation-for="Exam.EmpresaID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Exam.FaenaID" class="control-label"></label>
+                <input asp-for="Exam.FaenaID" class="form-control" />
+                <span asp-validation-for="Exam.FaenaID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Exam.TotalRespuestas" class="control-label"></label>
+                <input asp-for="Exam.TotalRespuestas" class="form-control" />
+                <span asp-validation-for="Exam.TotalRespuestas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Exam.RespuestasCompletadas" class="control-label"></label>
+                <input asp-for="Exam.RespuestasCompletadas" class="form-control" />
+                <span asp-validation-for="Exam.RespuestasCompletadas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Crear" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Volver</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

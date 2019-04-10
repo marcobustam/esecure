@@ -1,0 +1,55 @@
+﻿@page
+@model EsecureWebApp.Pages.Exams.Evidences.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Detalles:</h2>
+
+<div>
+    <h4>Evidence</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Evidence.Descripcion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Evidence.Descripcion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Evidence.EvidenceType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Evidence.EvidenceType)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Evidence.FileUp)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Evidence.FileUp.FileUpID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Evidence.TimeStamp)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Evidence.TimeStamp)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Evidence.LastMod)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Evidence.LastMod)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Evidence.PersonaID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Evidence.PersonaID)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Evidence.EvidenceID">Editar</a> |
+    <a asp-page="./Index">Volver</a>
+</div>

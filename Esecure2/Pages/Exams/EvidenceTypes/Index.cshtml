@@ -1,0 +1,46 @@
+﻿@page
+@model EsecureWebApp.Pages.Exams.EvidenceTypes.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Listado</h2>
+
+<p>
+    <a asp-page="Create">Nuevo</a>
+</p>
+<div class="bg-secondary">
+    <table class="table table-bordered table-striped table-hover text-dark table-responsive-md" style="width:100%" id="datata">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.EvidenceType[0].EvidenceTypeName)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.EvidenceType)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EvidenceTypeName)
+                    </td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.EvidenceTypeID">Editar</a> |
+                        <a asp-page="./Details" asp-route-id="@item.EvidenceTypeID">Detalles</a> |
+                        <a asp-page="./Delete" asp-route-id="@item.EvidenceTypeID">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>
+                </th>
+                <th></th>
+            </tr>
+        </tfoot>
+    </table>
+    </div>

@@ -1,0 +1,73 @@
+﻿@page
+@model EsecureWebApp.Pages.WebConfigurations.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Listado</h2>
+
+<p>
+    <a asp-page="Create">Nuevo</a>
+</p>
+<div class="bg-secondary">
+    <table class="table table-bordered table-striped table-hover text-dark table-responsive-md" style="width:100%" id="datata">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.WebConfiguration[0].WebConfigurationGroup)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.WebConfiguration[0].WebConfigurationIndex)
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.WebConfiguration[0].WebConfigurationName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.WebConfiguration[0].WebConfigurationValue)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.WebConfiguration)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.WebConfigurationGroup)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.WebConfigurationIndex)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.WebConfigurationName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.WebConfigurationValue)
+                    </td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.WebConfigurationID" class="btn btn-info btn-sm" role="button">Editar</a>
+                        <a asp-page="./Details" asp-route-id="@item.WebConfigurationID" class="btn btn-info btn-sm" role="button">Detalles</a>
+                        <a asp-page="./Delete" asp-route-id="@item.WebConfigurationID" class="btn btn-info btn-sm" role="button">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>
+                </th>
+                <th>
+                </th>
+
+                <th>
+                </th>
+                <th>
+                </th>
+                <th></th>
+            </tr>
+        </tfoot>
+    </table>
+    </div>

@@ -1,0 +1,28 @@
+﻿@page
+@model EsecureWebApp.Pages.Actividades.Verificaciones.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Eliminar registro</h2>
+
+<h3>¿Está seguro que quiere eliminar el registro?</h3>
+<div>
+    <h4>ActividadVerificacion</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ActividadVerificacion.Descripcion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ActividadVerificacion.Descripcion)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="ActividadVerificacion.ActividadVerificacionID" />
+        <input type="submit" value="Eliminar" class="btn btn-default" /> |
+        <a asp-page="./Index">Volver</a>
+    </form>
+</div>

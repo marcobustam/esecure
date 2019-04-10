@@ -1,0 +1,77 @@
+﻿@page
+@model EsecureWebApp.Pages.Exams.Evidences.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Crear nuevo</h2>
+
+<h4>Evidence</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <fieldset>
+
+
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Evidence.Descripcion" class="control-label"></label>
+                    <input asp-for="Evidence.Descripcion" class="form-control" />
+                    <span asp-validation-for="Evidence.Descripcion" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Evidence.EvidenceType" class="control-label"></label>
+                    <select asp-for="Evidence.EvidenceType" class="form-control" asp-items="ViewBag.EvidenceType">
+                        <option value="">Escoja una Opción</option>
+                    </select>
+                    <span asp-validation-for="Evidence.EvidenceType" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <div class="input-group mb-3">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="inputGroupFile02">
+                            <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
+                        </div>
+                        <div class="input-group-append">
+                            <span class="input-group-text" id="">Upload</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Evidence.FileUpID" class="control-label"></label>
+                    <select asp-for="Evidence.FileUpID" class="form-control" asp-items="ViewBag.FileUpID">
+                        <option value="">Escoja una Opción</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Evidence.TimeStamp" class="control-label"></label>
+                    <input asp-for="Evidence.TimeStamp" class="form-control" />
+                    <span asp-validation-for="Evidence.TimeStamp" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Evidence.LastMod" class="control-label"></label>
+                    <input asp-for="Evidence.LastMod" class="form-control" />
+                    <span asp-validation-for="Evidence.LastMod" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Evidence.PersonaID" class="control-label"></label>
+                    <input asp-for="Evidence.PersonaID" class="form-control" />
+                    <span asp-validation-for="Evidence.PersonaID" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Crear" class="btn btn-default" />
+                </div>
+            </form>
+        </fieldset>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Volver</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

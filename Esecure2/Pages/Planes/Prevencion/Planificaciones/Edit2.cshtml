@@ -1,0 +1,118 @@
+﻿@page
+@model EsecureWebApp.Pages.Planes.Prevencion.Planificaciones.Edit2Model
+
+@{
+    ViewData["Title"] = "Edit2";
+}
+
+
+@* ************************************************ *@
+<ol class="breadcrumb">
+    @* *************************************************************************** *@
+    <li class="breadcrumb-item">
+        <a asp-page="/Mantenedores/Empresas/Index">Empresa</a>
+        @*<a href="#">Empresa</a>*@
+    </li>
+    <li class="breadcrumb-item">
+        <a href="#">Planificaciones</a>
+    </li>
+    <li class="breadcrumb-item active">
+        Planes de Prevención
+    </li>
+    @* *************************************************************************** *@
+</ol>
+<div id="content-wrapper">
+    <div class="container-fluid">
+        <!-- Breadcrumbs-->
+
+        <div class="card card-body bg-primary text-light">
+            @* *************************************************************************** *@
+            <h3>Planes de prevención</h3>
+            <h4>Empresa:  </h4>
+            @* *************************************************************************** *@
+        </div>
+        <hr />
+
+        <div class="card">
+            <div class="col-md-12">
+                <br />
+                @* *************************************************************************** *@
+                <h4 class="card card-body bg-primary text-light">
+                    Editar plan - prevención:
+                </h4>
+                <hr />
+                @* --------------------------------------------------------------------------- *@
+                <div class="container-fluid card bg-light text-dark">
+                    <br />
+
+                    <form method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="PlanPrevencion.PlanID" />
+                        <div class="form-group">
+                            <label asp-for="PlanPrevencion.NombrePlan" class="control-label"></label>
+                            <input asp-for="PlanPrevencion.NombrePlan" class="form-control" />
+                            <span asp-validation-for="PlanPrevencion.NombrePlan" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="PlanPrevencion.Descripcion" class="control-label"></label>
+                            <input asp-for="PlanPrevencion.Descripcion" class="form-control" />
+                            <span asp-validation-for="PlanPrevencion.Descripcion" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="PlanPrevencion.PersonaID" class="control-label"></label>
+                            <select asp-for="PlanPrevencion.PersonaID" class="form-control" asp-items="ViewBag.PersonaID"></select>
+                            <span asp-validation-for="PlanPrevencion.PersonaID" class="text-danger"></span>
+                        </div>
+                        <div class="form-group" hidden="hidden">
+                            <label asp-for="PlanPrevencion.EmpresaID" class="control-label"></label>
+                            <select asp-for="PlanPrevencion.EmpresaID" class="form-control" asp-items="ViewBag.EmpresaID"></select>
+                            <span asp-validation-for="PlanPrevencion.EmpresaID" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="PlanPrevencion.TimeStamp" class="control-label"></label>
+                            <input asp-for="PlanPrevencion.TimeStamp" class="form-control" disabled />
+                            <span asp-validation-for="PlanPrevencion.TimeStamp" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="PlanPrevencion.Umod" class="control-label"></label>
+                            <input asp-for="PlanPrevencion.Umod" class="form-control" disabled />
+                            <span asp-validation-for="PlanPrevencion.Umod" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" value="Guardar" class="btn btn-primary btn-sm" role="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Guardar" />
+                            <a asp-page="/Planes/Prevencion/Planificaciones/Index" asp-route-emid="@Model.MyEmpresa.EmpresaID" class="btn btn-info btn-sm" asp-route-plid="@Model.PlanPrevencion.PlanID" data-toggle="tooltip" data-placement="top" title="" data-original-title="Cancelar">Cancelar</a>
+                        </div>
+                    </form>
+                </div>
+                <p>
+                    @*<div>
+                        <a asp-page="./Create" asp-route-emid="" class="btn btn-primary btn-sm" role="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Nuevo Plan">Agregar Plan <span class="glyphicon glyphicon-plus-sign"></span>   </a>
+                        <br />
+                    </div>*@
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+@* *************************************************************************** *@
+<hr />
+@* ************************************************ *@
+
+@*<h2>Edit2</h2>
+
+<h4>PlanPrevencion</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Volver</a>
+</div>*@
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

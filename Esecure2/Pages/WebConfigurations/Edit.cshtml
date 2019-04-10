@@ -1,0 +1,50 @@
+﻿@page
+@model EsecureWebApp.Pages.WebConfigurations.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Editar</h2>
+
+<h4>WebConfiguration</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="WebConfiguration.WebConfigurationID" />
+            <div class="form-group">
+                <label asp-for="WebConfiguration.WebConfigurationIndex" class="control-label"></label>
+                <input asp-for="WebConfiguration.WebConfigurationIndex" class="form-control" />
+                <span asp-validation-for="WebConfiguration.WebConfigurationIndex" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WebConfiguration.WebConfigurationGroup" class="control-label"></label>
+                <input asp-for="WebConfiguration.WebConfigurationGroup" class="form-control" />
+                <span asp-validation-for="WebConfiguration.WebConfigurationGroup" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WebConfiguration.WebConfigurationName" class="control-label"></label>
+                <input asp-for="WebConfiguration.WebConfigurationName" class="form-control" />
+                <span asp-validation-for="WebConfiguration.WebConfigurationName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WebConfiguration.WebConfigurationValue" class="control-label"></label>
+                <input asp-for="WebConfiguration.WebConfigurationValue" class="form-control" />
+                <span asp-validation-for="WebConfiguration.WebConfigurationValue" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Volver</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

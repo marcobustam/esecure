@@ -1,0 +1,47 @@
+﻿@page
+@model EsecureWebApp.Pages.FileUploaders.FileTypes.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Listado</h2>
+
+<p>
+    <a asp-page="Create">Nuevo</a>
+</p>
+<div class="bg-secondary">
+    <table class="table table-bordered table-striped table-hover text-dark table-responsive-md" style="width:100%" id="datata">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.FileUpType[0].FileUpTypeName)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.FileUpType)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FileUpTypeName)
+                    </td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.FileUpTypeID">Editar</a> |
+                        <a asp-page="./Details" asp-route-id="@item.FileUpTypeID">Detalles</a> |
+                        <a asp-page="./Delete" asp-route-id="@item.FileUpTypeID">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>
+              
+                </th>
+                <th></th>
+            </tr>
+        </tfoot>
+    </table>
+</div>

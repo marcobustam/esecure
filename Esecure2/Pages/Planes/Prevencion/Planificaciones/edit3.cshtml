@@ -1,0 +1,60 @@
+﻿@page
+@model EsecureWebApp.Pages.Planes.Prevencion.Planificaciones.edit3Model
+
+@{
+    ViewData["Title"] = "Edit2";
+}
+
+<h2>edit3</h2>
+
+<h4>Plan</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Plan.PlanID" />
+            <div class="form-group">
+                <label asp-for="Plan.NombrePlan" class="control-label"></label>
+                <input asp-for="Plan.NombrePlan" class="form-control" />
+                <span asp-validation-for="Plan.NombrePlan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Plan.Descripcion" class="control-label"></label>
+                <input asp-for="Plan.Descripcion" class="form-control" />
+                <span asp-validation-for="Plan.Descripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Plan.PersonaID" class="control-label"></label>
+                <select asp-for="Plan.PersonaID" class="form-control" asp-items="ViewBag.PersonaID"></select>
+                <span asp-validation-for="Plan.PersonaID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Plan.EmpresaID" class="control-label"></label>
+                <select asp-for="Plan.EmpresaID" class="form-control" asp-items="ViewBag.EmpresaID"></select>
+                <span asp-validation-for="Plan.EmpresaID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Plan.TimeStamp" class="control-label"></label>
+                <input asp-for="Plan.TimeStamp" class="form-control" />
+                <span asp-validation-for="Plan.TimeStamp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Plan.Umod" class="control-label"></label>
+                <input asp-for="Plan.Umod" class="form-control" />
+                <span asp-validation-for="Plan.Umod" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

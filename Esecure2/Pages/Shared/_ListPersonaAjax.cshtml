@@ -1,0 +1,66 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model EsecureWebApp.Pages.Mantenedores.Empresas.DetailsAjaxModel
+<div id="personas">
+    <h4>Listado de Personas</h4>
+    <table class="table table-bordered table-striped table-hover text-dark table-responsive-md" style="width:100%" id="datata">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ListaPersona[0].Documento)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ListaPersona[0].Alias)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ListaPersona[0].PrimerNombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ListaPersona[0].SegundoNombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ListaPersona[0].ApellidoPaterno)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ListaPersona[0].ApellidoMaterno)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ListaPersona[0].FechaNacimiento)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.ListaPersona)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Documento)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Alias)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PrimerNombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SegundoNombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ApellidoPaterno)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ApellidoMaterno)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FechaNacimiento)
+                    </td>
+                    <td></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

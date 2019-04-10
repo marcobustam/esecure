@@ -1,0 +1,84 @@
+﻿@page
+@model EsecureWebApp.Pages.Planes.Prevencion.Tasks.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Crear nuevo</h2>
+
+<h4>Tarea</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group" hidden="hidden">
+                <label asp-for="Tarea.PlanID" type="text" class="control-label"></label>
+                <input asp-for="Tarea.PlanID" value="@Model.MyPlan.PlanID" class="form-control" readonly />
+                <span asp-validation-for="Tarea.PlanID" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden="hidden">
+                <label asp-for="Tarea.EmpresaID" type="text" class="control-label"></label>
+                <input asp-for="Tarea.EmpresaID" value="@Model.MyEmpresa.EmpresaID" class="form-control" readonly />
+                <span asp-validation-for="Tarea.EmpresaID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tarea.NombreTarea" class="control-label"></label>
+                <input asp-for="Tarea.NombreTarea" class="form-control" />
+                <span asp-validation-for="Tarea.NombreTarea" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tarea.FaenaID" class="control-label"></label>
+                <input asp-for="Tarea.FaenaID" class="form-control" />
+                <span asp-validation-for="Tarea.FaenaID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tarea.FechaPlanificada" class="control-label"></label>
+                <input asp-for="Tarea.FechaPlanificada" class="form-control" />
+                <span asp-validation-for="Tarea.FechaPlanificada" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tarea.FechaFinPlanificada" class="control-label"></label>
+                <input asp-for="Tarea.FechaFinPlanificada" class="form-control" />
+                <span asp-validation-for="Tarea.FechaFinPlanificada" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tarea.FechaEjecucionReal" class="control-label"></label>
+                <input asp-for="Tarea.FechaEjecucionReal" class="form-control" />
+                <span asp-validation-for="Tarea.FechaEjecucionReal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tarea.FechaUltimaModificacion" class="control-label"></label>
+                <input asp-for="Tarea.FechaUltimaModificacion" class="form-control" />
+                <span asp-validation-for="Tarea.FechaUltimaModificacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tarea.FechaFinEjecucionReal" class="control-label"></label>
+                <input asp-for="Tarea.FechaFinEjecucionReal" class="form-control" />
+                <span asp-validation-for="Tarea.FechaFinEjecucionReal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tarea.EstadoID" class="control-label"></label>
+                <select asp-for="Tarea.EstadoID" class="form-control"></select>
+                <span asp-validation-for="Tarea.EstadoID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tarea.TestID" class="control-label"></label>
+                <input asp-for="Tarea.TestID" class="form-control" />
+                <span asp-validation-for="Tarea.TestID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Crear" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Volver</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

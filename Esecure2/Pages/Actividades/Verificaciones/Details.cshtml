@@ -1,0 +1,90 @@
+﻿@page
+@model EsecureWebApp.Pages.Actividades.Verificaciones.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Actividad de Verificación</h2>
+
+<div>
+    <h4>Detalle de la actividad</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ActividadVerificacion.Descripcion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ActividadVerificacion.Descripcion)
+        </dd>
+    </dl>
+</div>
+<h4>Items de Verificación</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="EsteItemVerificacion.ActividadVerificacionID" class="control-label"></label>
+                <input asp-for="EsteItemVerificacion.ActividadVerificacionID" class="form-control" readonly/>
+                <span asp-validation-for="EsteItemVerificacion.ActividadVerificacionID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EsteItemVerificacion.Glosa" class="control-label"></label>
+                <input asp-for="EsteItemVerificacion.Glosa" class="form-control" />
+                <span asp-validation-for="EsteItemVerificacion.Glosa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Crear" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Volver</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+<div class="bg-secondary">
+    <table class="table table-bordered table-striped table-hover text-dark table-responsive-md" style="width:100%" id="datata">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ItemVerificacion[0].Glosa)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.ItemVerificacion)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Glosa)
+                    </td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.ItemVerificacionID">Editar</a> |
+                        <a asp-page="./Details" asp-route-id="@item.ItemVerificacionID">Detalles</a> |
+                        <a asp-page="./Delete" asp-route-id="@item.ItemVerificacionID">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>
+                </th>
+                <th>
+                </th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+    <div>
+        <a asp-page="./Edit" asp-route-id="@Model.ActividadVerificacion.ActividadVerificacionID">Editar</a> |
+        <a asp-page="./Index">Volver</a>
+    </div>

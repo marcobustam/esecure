@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAhNQSiTPP1UOuCOkl3DaD6AAAAAACAAAAAAAQZgAAAAEAACAAAADxIsikhnyirOl127lFP6gFMhgGtHMAXXgS4kJ4HbGOTgAAAAAOgAAAAAIAACAAAACiXdTA/n6ZM8SGWfhwNlDatwTpnuFxk8dmuzn1suNIjSAAAABNrZk+U0S5KggEJvXDo3YCvw1Qi6/TdVqxgfwBIczidkAAAADQFB96KkNPRSE0Xqbmb3CVc5xjGakceNcMdaQaUIUPNezhYnzuQ8TOxFyiOVIv768xyACrV7dZl/WF7C3WKdkH</EncryptedPassword>
+    <_PublishTargetUrl>ftp://18.231.176.208/gemba</_PublishTargetUrl>
+  </PropertyGroup>
+</Project>

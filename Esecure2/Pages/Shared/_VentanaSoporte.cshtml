@@ -1,0 +1,101 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+        <div class="card card-footer text-center text-black-50">
+            <p class="text-dark m-0">
+                En caso de cualquier problema contacta con nuestro
+                <!-- Trigger the modal with a button -->
+                <button type="button" class="btn btn-success btn-sm" data-toggle="modal" data-target="#modalMsg" id="soporte">
+                    Soporte 24/7
+                </button>
+            </p>
+        </div>
+    
+    
+<!-- Modal -->
+<div id="modalMsg" class="modal fade bg-light" role="dialog">
+
+    <div class="modal-dialog bg-transparent">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header bg-success">
+                <div class="text-white text-center py-2">
+                    <h3><i class="fa fa-envelope"></i> Contactanos</h3>
+                    <p class="m-0">Con gusto te ayudaremos</p>
+                </div>
+            </div>
+            <form asp-page="/API/TicketsController" method="post">
+                <div class="modal-body bg-light">
+
+                    <!--Form with header-->
+
+                    <div class="card border-success rounded-0  bg-light">
+                        <div class="card-header p-0">
+
+                        </div>
+                        <div class="card-body">
+                            <!--Body-->
+                            <div class="form-group">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text"><i class="fa fa-user text-success"></i></div>
+                                    </div>
+                                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre y Apellido" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text"><i class="fa fa-envelope text-success"></i></div>
+                                    </div>
+                                    <input type="email" class="form-control" id="nombre" name="email" placeholder="ejemplo@gmail.com" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group mb-2">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text"><i class="fa fa-comment text-success"></i></div>
+                                    </div>
+                                    <textarea class="form-control" placeholder="Envianos tu Mensaje" required></textarea>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!--Form with header-->
+
+                </div>
+                <div class="modal-footer bg-success">
+                    <div class="text-center">
+                        <input type="submit" value="Enviar" class="btn btn-default btn-sm">
+
+                    </div>
+                    <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cerrar</button>
+                </div>
+            </form>
+        </div>
+
+
+    </div>
+</div>
+<div id="modalMsg" class="modal fade" role="dialog">
+    <div class="container">
+        <h2 class="text-center">Contact Form</h2>
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8 col-lg-6 pb-5">
+
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+    </div>
+</div>
+
+
+
+

@@ -1,0 +1,46 @@
+﻿@page
+@model EsecureWebApp.Pages.Actividades.Items.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Listado</h2>
+
+<p>
+    <a asp-page="Create">Nuevo</a>
+</p>
+<div class="bg-secondary">
+    <table class="table table-bordered table-striped table-hover text-dark table-responsive-md" style="width:100%" id="datata">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ItemVerificacion[0].Glosa)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.ItemVerificacion)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Glosa)
+                    </td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.ItemVerificacionID">Editar</a> |
+                        <a asp-page="./Details" asp-route-id="@item.ItemVerificacionID">Detalles</a> |
+                        <a asp-page="./Delete" asp-route-id="@item.ItemVerificacionID">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>
+                </th>
+                <th></th>
+            </tr>
+        </tfoot>
+    </table>
+    </div>

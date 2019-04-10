@@ -1,0 +1,12 @@
+C:\Users\marco\source\repos\Esecure2\EsecureModel\bin\Release\netcoreapp2.1\EsecureModel.deps.json
+C:\Users\marco\source\repos\Esecure2\EsecureModel\bin\Release\netcoreapp2.1\EsecureModel.dll
+C:\Users\marco\source\repos\Esecure2\EsecureModel\bin\Release\netcoreapp2.1\EsecureModel.pdb
+C:\Users\marco\source\repos\Esecure2\EsecureModel\obj\Release\netcoreapp2.1\EsecureModel.csprojAssemblyReference.cache
+C:\Users\marco\source\repos\Esecure2\EsecureModel\obj\Release\netcoreapp2.1\EsecureModel.csproj.CoreCompileInputs.cache
+C:\Users\marco\source\repos\Esecure2\EsecureModel\obj\Release\netcoreapp2.1\EsecureModel.AssemblyInfoInputs.cache
+C:\Users\marco\source\repos\Esecure2\EsecureModel\obj\Release\netcoreapp2.1\EsecureModel.AssemblyInfo.cs
+C:\Users\marco\source\repos\Esecure2\EsecureModel\obj\Release\netcoreapp2.1\EsecureModel.dll
+C:\Users\marco\source\repos\Esecure2\EsecureModel\obj\Release\netcoreapp2.1\EsecureModel.pdb
+C:\Users\marco\source\repos\Esecure2\EsecureModel\bin\Release\netcoreapp2.1\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\marco\source\repos\Esecure2\EsecureModel\bin\Release\netcoreapp2.1\Microsoft.Extensions.Identity.Stores.xml
+C:\Users\marco\source\repos\Esecure2\EsecureModel\obj\Release\netcoreapp2.1\EsecureModel.csproj.CopyComplete

@@ -1,0 +1,58 @@
+﻿@page
+@model Bbs.Pages.Params.ObsCategories.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+<div class="card card-body bg-primary text-light"><h4><i class="fa fa-sitemap">&nbsp; </i>&nbsp; Administración de categorías</h4></div>
+<hr />
+<div class="container-fluid card bg-light text-dark">
+    <table class="table table-bordered table-striped table-hover text-dark table-responsive table-responsive-sm  table-responsive-md table-responsive-lg table-responsive-xl" id="datata">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ObsCategory[0].ObsCategoryDescription)
+                </th>
+                <th>
+                    Acciones
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.ObsCategory)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ObsCategoryDescription)
+                    </td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.ObsCategoryID">Edit</a> |
+                        <a asp-page="./Details" asp-route-id="@item.ObsCategoryID">Details</a> |
+                        <a asp-page="./Delete" asp-route-id="@item.ObsCategoryID">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+@section Scripts {
+    <script type="text/javascript">
+        $(function () {
+            // alert("ready");
+            $('#datata').DataTable({
+                "paging": true,
+                "ordering": true,
+                "info": true,
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+                }
+            });
+        });
+    </script>
+    }

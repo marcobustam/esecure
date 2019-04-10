@@ -1,0 +1,46 @@
+﻿@page
+@model EsecureWebApp.Pages.Mantenedores.Empresas.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Eliminar registro</h2>
+
+<h3>¿Está seguro que quiere eliminar el registro?</h3>
+<div>
+    <h4>Empresa</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Empresa.NombreFantasia)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Empresa.NombreFantasia)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Empresa.RazonSocial)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Empresa.RazonSocial)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Empresa.RutChile)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Empresa.RutChile)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Empresa.PersonaID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Empresa.PersonaID)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Empresa.EmpresaID" />
+        <input type="submit" value="Eliminar" class="btn btn-default" /> |
+        <a asp-page="./Index">Volver</a>
+    </form>
+</div>

@@ -1,0 +1,43 @@
+﻿@page
+@model EsecureWebApp.Pages.FileUploaders.Folders.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Detalles:</h2>
+
+<div>
+    <h4>FolderUp</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FolderUp.FolderUpName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FolderUp.FolderUpName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FolderUp.FolderUpParent)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FolderUp.FolderUpParent)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FolderUp.TimeStamp)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FolderUp.TimeStamp)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FolderUp.LastMod)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FolderUp.LastMod)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.FolderUp.FolderUpID">Editar</a> |
+    <a asp-page="./Index">Volver</a>
+</div>

@@ -1,0 +1,25 @@
+﻿@page
+@model EsecureWebApp.Pages.Actividades.Items.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Detalles:</h2>
+
+<div>
+    <h4>ItemVerificacion</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ItemVerificacion.Glosa)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ItemVerificacion.Glosa)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.ItemVerificacion.ItemVerificacionID">Editar</a> |
+    <a asp-page="./Index">Volver</a>
+</div>

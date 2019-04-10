@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <!-- Site made with Mobirise Website Builder v4.9.1, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v4.9.1, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/logo3-200x68.png" type="image/x-icon">
+  <meta name="description" content="Web Page Maker Description">
+  <title>desarrollo</title>
+  <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
+  <link rel="stylesheet" href="assets/web/assets/mobirise-icons2/mobirise2.css">
+  <link rel="stylesheet" href="assets/tether/tether.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+  <link rel="stylesheet" href="assets/dropdown/css/style.css">
+  <link rel="stylesheet" href="assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+  
+  
+  
+</head>
+<body>
+  <link rel="stylesheet" href="style.less" class="cid-rhy1pK1fcC" id="menu1-g" data-rv-view="88"><section class="menu cid-rhy1pK1fcC" once="menu" id="menu1-g">
+
+    
+
+    <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+        <div class="menu-logo">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="http://www.colab.cl">
+                         <img src="assets/images/logo3-200x68.png" alt="Mobirise" title="" style="height: 3.8rem;">
+                    </a>
+                </span>
+                
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item">
+                    <a class="nav-link link text-white display-4" href="http://www.kolab.cl"><span class="mobi-mbri mobi-mbri-home mbr-iconfont mbr-iconfont-btn"></span>
+                        
+                        inicio</a>
+                </li><li class="nav-item"><a class="nav-link link text-white display-4" href="nosotros.html"><span class="socicon socicon-persona mbr-iconfont mbr-iconfont-btn"></span>
+                        
+                        nosotros</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="desarrollo.html"><span class="mbri-code mbr-iconfont mbr-iconfont-btn"></span>desarrollo</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="uncafe.html"><span class="mbri-hot-cup mbr-iconfont mbr-iconfont-btn"></span>¿un café?</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="conversemos.html"><span class="socicon socicon-mail mbr-iconfont mbr-iconfont-btn"></span>conversemos</a></li>
+                <li class="nav-item">
+                    <a class="nav-link link text-white display-4" href="https://mobirise.co">
+                        </a>
+                </li></ul>
+            
+        </div>
+    </nav>
+</section>
+
+<section class="engine"><a href="https://mobirise.info/h">create a web page for free</a></section><section class="mbr-section article content11 cid-rhy9qOiKKR" id="content11-n">
+     
+
+    <div class="container">
+        <div class="media-container-row">
+            <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
+                <ol>
+                    <li><strong>MOBILE FRIENDLY</strong> - no special actions required, all sites you make with Mobirise are mobile-friendly. You don't have to create a special mobile version of your site, it will adapt automagically. <a href="https://mobirise.co/">Try it now!</a></li>
+                    <li><strong>EASY AND SIMPLE</strong> - cut down the development time with drag-and-drop website builder. Drop the blocks into the page, edit content inline and publish - no technical skills required. <a href="https://mobirise.co/">Try it now!</a></li>
+                    <li><strong>UNIQUE STYLES</strong> - choose from the large selection of latest pre-made blocks - full-screen intro, bootstrap carousel, content slider, responsive image gallery with lightbox, parallax scrolling, video backgrounds, hamburger menu, sticky header and more. <a href="https://mobirise.co/">Try it now!</a></li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="toggle1 cid-rhyaUpYRjB" id="toggle1-t">
+
+    
+
+    
+        <div class="container">
+            <div class="media-container-row">
+                <div class="col-12 col-md-8">
+                    <div class="section-head text-center space30">
+                       <h2 class="mbr-section-title pb-5 mbr-fonts-style display-2">
+                            PLanes FAST WEB</h2>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div id="bootstrap-toggle" class="toggle-panel accordionStyles tab-content">
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingOne">
+                                <a role="button" class="collapsed panel-title text-black" data-toggle="collapse" data-parent="#accordion" data-core="" href="#collapse1_2" aria-expanded="false" aria-controls="collapse1">
+                                    <h4 class="mbr-fonts-style display-5">
+                                        <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>Fast Básica</h4>
+                                </a>
+                            </div>
+                            <div id="collapse1_2" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body p-4">
+                                    <p class="mbr-fonts-style panel-text display-7">Usted nos envía la información y en 48 horas su web estará online.
+<br>Su web cuenta con:
+<br>                                  
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Galería de imágenes<br><br>
+<br></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingTwo">
+                                <a role="button" class="collapsed panel-title text-black" data-toggle="collapse" data-parent="#accordion" data-core="" href="#collapse2_2" aria-expanded="false" aria-controls="collapse2">
+                                    <h4 class="mbr-fonts-style display-5">
+                                        <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>Fast Media</h4>
+                                </a>
+
+                            </div>
+                            <div id="collapse2_2" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                <div class="panel-body p-4">
+                                    <p class="mbr-fonts-style panel-text display-7"></p><p>
+                                       Usted nos envía la información y en 72 horas su web estará online.<br>Su web cuenta con:<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Galería de imágenes<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Formulario de contacto</p><br><p><br></p><p><br> </p><p></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" role="tab" id="headingThree">
+                                <a role="button" class="collapsed panel-title text-black" data-toggle="collapse" data-parent="#accordion" data-core="" href="#collapse3_2" aria-expanded="false" aria-controls="collapse3">
+                                    <h4 class="mbr-fonts-style display-5">
+                                        <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>Fast Advanced</h4>
+                                </a>
+                            </div>
+                            <div id="collapse3_2" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingThree">
+                                <div class="panel-body p-4">
+                                    <p class="mbr-fonts-style panel-text display-7">Usted nos envía la información y en 72 horas su web estará online.
+<br>Su web cuenta con:
+<br>                                  
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Galería de imágenes<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Formulario de contacto<br>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Mapa de ubicación (google maps)<br></p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+<section class="toggle2 cid-rhyb5PwiNX" id="toggle2-u">
+    
+        
+
+    
+        <div class="container">
+            <div class="media-container-row">
+                    <div class="toggle-content">
+                        <h2 class="mbr-section-title pb-3 align-left mbr-fonts-style display-1">
+                            Planes Wordpress<br>Web admin</h2>
+                        
+                        <div id="bootstrap-toggle" class="toggle-panel accordionStyles tab-content pt-5 mt-2">
+                            <div class="card">
+                                <div class="card-header" role="tab" id="headingOne">
+                                    <a role="button" class="collapsed panel-title text-black" data-toggle="collapse" data-parent="#accordion" data-core="" href="#collapse1_3" aria-expanded="false" aria-controls="collapse1">
+                                        <h4 class="mbr-fonts-style display-5">
+                                            <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>Plan Inicia</h4>
+                                    </a>
+                                </div>
+                                <div id="collapse1_3" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne">
+                                    <div class="panel-body p-4">
+                                        <p class="mbr-fonts-style panel-text display-7">5 elementos de menú: Inicio, quiénes somos, productos, contacto, ubicación.<br>Manual de administración del contenido.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" role="tab" id="headingTwo">
+                                    <a role="button" class="collapsed panel-title text-black" data-toggle="collapse" data-parent="#accordion" data-core="" href="#collapse2_3" aria-expanded="false" aria-controls="collapse2">
+                                        <h4 class="mbr-fonts-style display-5">
+                                            <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>Plan admin</h4>
+                                    </a>
+                                </div>
+                                <div id="collapse2_3" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                    <div class="panel-body p-4">
+                                        <p class="mbr-fonts-style panel-text display-7">5 elementos de menú: Inicio, quiénes somos, productos, contacto, ubicación, carrito de compra.<br>Capacitación de administración del contenido.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" role="tab" id="headingThree">
+                                    <a role="button" class="collapsed panel-title text-black" data-toggle="collapse" data-parent="#accordion" data-core="" href="#collapse3_3" aria-expanded="true" aria-controls="collapse3">
+                                        <h4 class="mbr-fonts-style display-5">
+                                            <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>Plan Vendo</h4>
+                                    </a>
+                                </div>
+                                <div id="collapse3_3" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingThree">
+                                    <div class="panel-body p-4">
+                                        <p class="mbr-fonts-style panel-text display-7">5 elementos de menú: Inicio, quiénes somos, productos, contacto, ubicación, carrito de compra.<br>Manual de administración del contenido.<br>Capacitación de administración.<br>Desarrollo extra a convenir (integración con webpay, transbank, medios de pago en general)</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            
+                        </div>
+                    </div>
+                <div class="mbr-figure" style="width: 89%;">
+                     <img src="assets/images/mbr-950x633.jpg" alt="Mobirise" title="">
+                </div>
+            </div>
+        </div>
+</section>
+
+<section class="toggle2 cid-rhyapyH7Mv" id="toggle2-s">
+    
+        
+
+    
+        <div class="container">
+            <div class="media-container-row">
+                    <div class="toggle-content">
+                        <h2 class="mbr-section-title pb-3 align-left mbr-fonts-style display-2">&lt;/&gt;Desarrollo</h2>
+                        
+                        <div id="bootstrap-toggle" class="toggle-panel accordionStyles tab-content pt-5 mt-2">
+                            <div class="card">
+                                <div class="card-header" role="tab" id="headingOne">
+                                    <a role="button" class="collapsed panel-title text-black" data-toggle="collapse" data-parent="#accordion" data-core="" href="#collapse1_4" aria-expanded="false" aria-controls="collapse1">
+                                        <h4 class="mbr-fonts-style display-5">
+                                            <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>WEB SITE (sitio web)</h4>
+                                    </a>
+                                </div>
+                                <div id="collapse1_4" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingOne">
+                                    <div class="panel-body p-4">
+                                        <p class="mbr-fonts-style panel-text display-7">
+                                           Mobirise is an offline app for Window and Mac to easily create small/medium websites, landing pages, online resumes and portfolios, promo sites for apps, events, services and products.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" role="tab" id="headingTwo">
+                                    <a role="button" class="collapsed panel-title text-black" data-toggle="collapse" data-parent="#accordion" data-core="" href="#collapse2_4" aria-expanded="false" aria-controls="collapse2">
+                                        <h4 class="mbr-fonts-style display-5">
+                                            <span class="sign mbr-iconfont mbri-arrow-down inactive"></span>WEB APP (aplicación web)</h4>
+                                    </a>
+                                </div>
+                                <div id="collapse2_4" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                    <div class="panel-body p-4">
+                                        <p class="mbr-fonts-style panel-text display-7">
+                                           Mobirise is perfect for non-techies who are not familiar with the intricacies of web development and for designers who prefer to work as visually as possible, without fighting with code. Also great for pro-coders for fast prototyping and small customers' projects.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="card-header" role="tab" id="headingThree">
+                                    <a role="button" class="collapsed panel-title text-black" data-toggle="collapse" data-parent="#accordion" data-core="" href="#collapse3_4" aria-expanded="true" aria-controls="collapse3">
+                                        <h4 class="mbr-fonts-style display-5">
+                                            <span class="sign mbr-iconfont mbri-arrow-down inactive"></span> Why Mobirise?
+                                        </h4>
+                                    </a>
+                                </div>
+                                <div id="collapse3_4" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingThree">
+                                    <div class="panel-body p-4">
+                                        <p class="mbr-fonts-style panel-text display-7">
+                                           Key differences from traditional builders:<br>* Minimalistic, extremely <strong>easy-to-use</strong> interface<br>* <strong>Mobile</strong>-friendliness, latest website blocks and techniques "out-the-box"<br>* <strong>Free</strong> for commercial and non-profit use</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            
+                        </div>
+                    </div>
+                <div class="mbr-figure" style="width: 89%;">
+                     <img src="assets/images/mbr-1-950x633.jpg" alt="Mobirise" title="">
+                </div>
+            </div>
+        </div>
+</section>
+
+<section class="mbr-section article content10 cid-rhy9tmYDxK" id="content10-o">
+    
+     
+
+    <div class="container">
+        <div class="inner-container" style="width: 66%;">
+            <hr class="line" style="width: 25%;">
+            <div class="section-text align-center mbr-white mbr-fonts-style display-5">
+                    Mobirise is one of the easiest website development tools available today. It also gives you the freedom to develop as many websites as you like given the fact that it is a desktop app.
+                </div>
+            <hr class="line" style="width: 25%;">
+        </div>
+    </div>
+</section>
+
+<section class="footer4 cid-rhy9LsLpCQ" id="footer4-p">
+
+    
+
+    
+
+    <div class="container">
+        <div class="media-container-row content mbr-white">
+            <div class="col-md-3 col-sm-4">
+                <div class="mb-3 img-logo">
+                    <a href="https://mobirise.co/">
+                        <img src="assets/images/logo2.png" alt="Mobirise">
+                    </a>
+                </div>
+                <p class="mb-3 mbr-fonts-style foot-title display-7">
+                    MOBIRISE
+                </p>
+                <p class="mbr-text mbr-fonts-style mbr-links-column display-7">
+                    <a href="#" class="text-white">About Us</a>
+                    <br><a href="#" class="text-white">Services</a>
+                    <br><a href="#" class="text-white">Selected Work</a>
+                    <br><a href="#" class="text-white">Get In Touch</a>
+                </p>
+            </div>
+            <div class="col-md-4 col-sm-8">
+                <p class="mb-4 foot-title mbr-fonts-style display-7">
+                    RECENT NEWS
+                </p>
+                <p class="mbr-text mbr-fonts-style foot-text display-7">
+                    Footer with solid color background and a contact form, Easily add subscribe and contact forms without any server-side integration.
+                    <br>
+                    <br>Mobirise helps you cut down development time by providing you with a flexible website editor with a drag and drop interface.
+                </p>
+            </div>
+            <div class="col-md-4 offset-md-1 col-sm-12">
+                <p class="mb-4 foot-title mbr-fonts-style display-7">
+                    SUBSCRIBE
+                </p>
+                <p class="mbr-text mbr-fonts-style form-text display-7">
+                    Get monthly updates and free resources.
+                </p>
+                <div class="media-container-column" data-form-type="formoid">
+                    <div data-form-alert="" hidden="" class="align-center">
+                        Thanks for filling out the form!
+                    </div>
+
+                    <form class="form-inline" action="https://mobirise.com/" method="post" data-form-title="Mobirise Form">
+                        <input type="hidden" value="Siz6Md/EW3o/3HRL9x2pmE4d6e3U5CkEEBCmOLQqanPqLdeOfo5PfAVotLo4DHHSoHrN1AYxywLhUFh0/gXKCSj1xZYfXK9c9iP7yXYifhLgfI6sFMjB9dPOWeX2DcU/" data-form-email="true">
+                        <div class="form-group">
+                            <input type="email" class="form-control input-sm input-inverse my-2" name="email" required="" data-form-field="Email" placeholder="Email" id="email-footer4-p">
+                        </div>
+                        <div class="input-group-btn m-2">
+                            <button href="" class="btn btn-primary display-4" type="submit" role="button">Subscribe</button>
+                        </div>
+                    </form>
+                </div>
+                <p class="mb-4 mbr-fonts-style foot-title display-7">
+                    CONNECT WITH US
+                </p>
+                <div class="social-list pl-0 mb-0">
+                        <div class="soc-item">
+                            <a href="https://twitter.com/mobirise" target="_blank">
+                                <span class="socicon-twitter socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="https://www.facebook.com/pages/Mobirise/1616226671953247" target="_blank">
+                                <span class="socicon-facebook socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="https://www.youtube.com/c/mobirise" target="_blank">
+                                <span class="socicon-youtube socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="https://instagram.com/mobirise" target="_blank">
+                                <span class="socicon-instagram socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="https://plus.google.com/u/0/+Mobirise" target="_blank">
+                                <span class="socicon-googleplus socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                        <div class="soc-item">
+                            <a href="https://www.behance.net/Mobirise" target="_blank">
+                                <span class="socicon-behance socicon mbr-iconfont mbr-iconfont-social"></span>
+                            </a>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-lower">
+            <div class="media-container-row">
+                <div class="col-sm-12">
+                    <hr>
+                </div>
+            </div>
+            <div class="media-container-row mbr-white">
+                <div class="col-sm-12 copyright">
+                    <p class="mbr-text mbr-fonts-style display-7">
+                        © Copyright 2019 Mobirise - All Rights Reserved
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+  <script src="assets/web/assets/jquery/jquery.min.js"></script>
+  <script src="assets/popper/popper.min.js"></script>
+  <script src="assets/tether/tether.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/dropdown/js/script.min.js"></script>
+  <script src="assets/touchswipe/jquery.touch-swipe.min.js"></script>
+  <script src="assets/mbr-switch-arrow/mbr-switch-arrow.js"></script>
+  <script src="assets/smoothscroll/smooth-scroll.js"></script>
+  <script src="assets/theme/js/script.js"></script>
+  <script src="assets/formoid/formoid.min.js"></script>
+  
+  
+</body>
+</html>

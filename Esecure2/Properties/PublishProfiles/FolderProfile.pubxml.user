@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\marco\OneDrive\Escritorio\SafetyCheck\WebSite</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="Data/ApplicationDbContext.cs">
+      <publishTime>12/19/2018 12:41:58</publishTime>
+    </File>
+    <File Include="Data/DummyData.cs">
+      <publishTime>11/20/2018 11:59:59</publishTime>
+    </File>
+    <File Include="Data/Migrations/00000000000000_CreateIdentitySchema.cs">
+      <publishTime>09/02/2018 13:47:57</publishTime>
+    </File>
+    <File Include="Data/Migrations/00000000000000_CreateIdentitySchema.Designer.cs">
+      <publishTime>09/02/2018 13:47:57</publishTime>
+    </File>
+    <File Include="Data/Migrations/20180903143612_2018090301.cs">
+      <publishTime>09/03/2018 11:36:12</publishTime>
+    </File>
+    <File Include="Data/Migrations/20180903143612_2018090301.Designer.cs">
+      <publishTime>09/03/2018 11:36:12</publishTime>
+    </File>
+    <File Include="Data/Migrations/20180903152656_2018090302.cs">
+      <publishTime>09/03/2018 12:26:56</publishTime>
+    </File>
+    <File Include="Data/Migrations/20180903152656_2018090302.Designer.cs">
+      <publishTime>09/03/2018 12:26:56</publishTime>
+    </File>
+    <File Include="Data/Migrations/20180904035755_2018090401.cs">
+      <publishTime>09/04/2018 00:57:55</publishTime>
+    </File>
+    <File Include="Data/Migrations/20180904035755_2018090401.Designer.cs">
+      <publishTime>09/04/2018 00:57:55</publishTime>
+    </File>
+    <File Include="Data/Migrations/20180904194756_2018090402.cs">
+      <publishTime>09/04/2018 16:47:56</publishTime>
+    </File>
+    <File Include="Data/Migrations/20180904194756_2018090402.Designer.cs">
+      <publishTime>09/04/2018 16:47:56</publishTime>
+    </File>
+    <File Include="Data/Migrations/20180907015605_2018090601.cs">
+      <publishTime>09/06/2018 22:56:05</publishTime>
+    </File>
+    <File Include="Data/Migrations/20180907015605_2018090601.Designer.cs">
+      <publishTime>09/06/2018 22:56:05</publishTime>
+    </File>
+    <File Include="Data/Migrations/20180907034129_2018090602.cs">
+      <publishTime>09/07/2018 00:41:29</publishTime>
+    </File>
+    <File Include="Data/Migrations/20180907034129_2018090602.Designer.cs">
+      <publishTime>09/07/2018 00:41:29</publishTime>
+    </File>
+    <File Include="Data/Migrations/20180907190552_2018090701.cs">
+      <publishTime>09/07/2018 16:05:52</publishTime>
+    </File>
+    <File Include="Data/Migrations/20180907190552_2018090701.Designer.cs">
+      <publishTime>09/07/2018 16:05:52</publishTime>
+    </File>
+    <File Include="Data/Migrations/20180907210302_2018090703.cs">
+      <publishTime>09/07/2018 18:03:02</publishTime>
+    </File>
+    <File Include="Data/Migrations/20180907210302_2018090703.Designer.cs">
+      <publishTime>09/07/2018 18:03:02</publishTime>
+    </File>
+    <File Include="Data/Migrations/20180910135325_2018091001.cs">
+      <publishTime>09/10/2018 10:53:25</publishTime>
+    </File>
+    <File Include="Data/Migrations/20180910135325_2018091001.Designer.cs">
+      <publishTime>09/10/2018 10:53:25</publishTime>
+    </File>
+    <File Include="Data/Migrations/20180910210242_2018091002.cs">
+      <publishTime>09/10/2018 18:02:42</publishTime>
+    </File>
+    <File Include="Data/Migrations/20180910210242_2018091002.Designer.cs">
+      <publishTime>09/10/2018 18:02:42</publishTime>
+    </File>
+    <File Include="Data/Migrations/20180910220317_2018091003.cs">
+      <publishTime>09/10/2018 19:03:17</publishTime>
+    </File>
+    <File Include="Data/Migrations/20180910220317_2018091003.Designer.cs">
+      <publishTime>09/10/2018 19:03:17</publishTime>
+    </File>
+    <File Include="Data/Migrations/20180911135704_2018091101.cs">
+      <publishTime>09/11/2018 10:57:04</publishTime>
+    </File>
+    <File Include="Data/Migrations/20180911135704_2018091101.Designer.cs">
+      <publishTime>09/11/2018 10:57:04</publishTime>
+    </File>
+    <File Include="Data/Migrations/20180911182025_2018091102.cs">
+      <publishTime>09/11/2018 15:20:25</publishTime>
+    </File>
+    <File Include="Data/Migrations/20180911182025_2018091102.Designer.cs">
+      <publishTime>09/11/2018 15:20:25</publishTime>
+    </File>
+    <File Include="Data/Migrations/20180920150645_2018092001.cs">
+      <publishTime>09/20/2018 12:06:45</publishTime>
+    </File>
+    <File Include="Data/Migrations/20180920150645_2018092001.Designer.cs">
+      <publishTime>09/20/2018 12:06:45</publishTime>
+    </File>
+    <File Include="Data/Migrations/20180921004442_2018092002.cs">
+      <publishTime>09/20/2018 21:44:42</publishTime>
+    </File>
+    <File Include="Data/Migrations/20180921004442_2018092002.Designer.cs">
+      <publishTime>09/20/2018 21:44:42</publishTime>
+    </File>
+    <File Include="Data/Migrations/20180921153203_2018092101.cs">
+      <publishTime>09/21/2018 12:32:03</publishTime>
+    </File>
+    <File Include="Data/Migrations/20180921153203_2018092101.Designer.cs">
+      <publishTime>09/21/2018 12:32:03</publishTime>
+    </File>
+    <File Include="Data/Migrations/20180924051608_2018092401.cs">
+      <publishTime>09/24/2018 02:16:08</publishTime>
+    </File>
+    <File Include="Data/Migrations/20180924051608_2018092401.Designer.cs">
+      <publishTime>09/24/2018 02:16:08</publishTime>
+    </File>
+    <File Include="Data/Migrations/20180924180330_2018092402.cs">
+      <publishTime>09/24/2018 15:03:30</publishTime>
+    </File>
+    <File Include="Data/Migrations/20180924180330_2018092402.Designer.cs">
+      <publishTime>09/24/2018 15:03:30</publishTime>
+    </File>
+    <File Include="Data/Migrations/20180930230527_2018093001.cs">
+      <publishTime>09/30/2018 20:05:27</publishTime>
+    </File>
+    <File Include="Data/Migrations/20180930230527_2018093001.Designer.cs">
+      <publishTime>09/30/2018 20:05:27</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181003162807_len100Char.cs">
+      <publishTime>10/03/2018 13:28:07</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181003162807_len100Char.Designer.cs">
+      <publishTime>10/03/2018 13:28:07</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181003165242_len100213.cs">
+      <publishTime>10/03/2018 13:52:42</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181003165242_len100213.Designer.cs">
+      <publishTime>10/03/2018 13:52:42</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181004025535_dirPersona.cs">
+      <publishTime>10/03/2018 23:55:35</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181004025535_dirPersona.Designer.cs">
+      <publishTime>10/03/2018 23:55:35</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181015135515_2018101501.cs">
+      <publishTime>10/15/2018 10:55:15</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181015135515_2018101501.Designer.cs">
+      <publishTime>10/15/2018 10:55:15</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181015235528_2018101502.cs">
+      <publishTime>10/15/2018 20:55:28</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181015235528_2018101502.Designer.cs">
+      <publishTime>10/15/2018 20:55:28</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181017185948_2018101701.cs">
+      <publishTime>10/17/2018 15:59:48</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181017185948_2018101701.Designer.cs">
+      <publishTime>10/17/2018 15:59:48</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181018031447_2018101801.cs">
+      <publishTime>10/18/2018 00:14:47</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181018031447_2018101801.Designer.cs">
+      <publishTime>10/18/2018 00:14:47</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181018043140_2018101802.cs">
+      <publishTime>10/18/2018 01:31:40</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181018043140_2018101802.Designer.cs">
+      <publishTime>10/18/2018 01:31:40</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181018052857_2018101869.cs">
+      <publishTime>10/18/2018 02:31:02</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181018052857_2018101869.Designer.cs">
+      <publishTime>10/18/2018 02:28:57</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181018053135_2018101899.cs">
+      <publishTime>10/18/2018 02:31:35</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181018053135_2018101899.Designer.cs">
+      <publishTime>10/18/2018 02:31:35</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181018163119_20181018x2.cs">
+      <publishTime>10/18/2018 13:33:39</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181018163119_20181018x2.Designer.cs">
+      <publishTime>10/18/2018 13:31:19</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181018164651_20181018x3.cs">
+      <publishTime>10/18/2018 13:46:51</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181018164651_20181018x3.Designer.cs">
+      <publishTime>10/18/2018 13:46:51</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181025022544_2018102401.cs">
+      <publishTime>10/24/2018 23:25:44</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181025022544_2018102401.Designer.cs">
+      <publishTime>10/24/2018 23:25:44</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181030133421_20181030.cs">
+      <publishTime>10/30/2018 10:34:21</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181030133421_20181030.Designer.cs">
+      <publishTime>10/30/2018 10:34:21</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181106204947_2018110601.cs">
+      <publishTime>11/06/2018 17:49:47</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181106204947_2018110601.Designer.cs">
+      <publishTime>11/06/2018 17:49:47</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181108145017_2018110801.cs">
+      <publishTime>11/08/2018 11:50:17</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181108145017_2018110801.Designer.cs">
+      <publishTime>11/08/2018 11:50:17</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181108190038_2018110802.cs">
+      <publishTime>11/08/2018 16:00:38</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181108190038_2018110802.Designer.cs">
+      <publishTime>11/08/2018 16:00:38</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181119205041_2018111901.cs">
+      <publishTime>11/19/2018 17:50:41</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181119205041_2018111901.Designer.cs">
+      <publishTime>11/19/2018 17:50:41</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181120151232_ExtendedUserRole.cs">
+      <publishTime>11/20/2018 12:12:32</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181120151232_ExtendedUserRole.Designer.cs">
+      <publishTime>11/20/2018 12:12:32</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181121234947_2018112101.cs">
+      <publishTime>11/21/2018 20:49:47</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181121234947_2018112101.Designer.cs">
+      <publishTime>11/21/2018 20:49:47</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181122000652_2018112102.cs">
+      <publishTime>11/21/2018 21:06:52</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181122000652_2018112102.Designer.cs">
+      <publishTime>11/21/2018 21:06:52</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181122163545_2018112201.cs">
+      <publishTime>11/22/2018 13:35:45</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181122163545_2018112201.Designer.cs">
+      <publishTime>11/22/2018 13:35:45</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181122174818_2018112202.cs">
+      <publishTime>11/22/2018 14:48:18</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181122174818_2018112202.Designer.cs">
+      <publishTime>11/22/2018 14:48:18</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181123120400_2018112301.cs">
+      <publishTime>11/23/2018 09:04:00</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181123120400_2018112301.Designer.cs">
+      <publishTime>11/23/2018 09:04:00</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181126221803_2018112601.cs">
+      <publishTime>11/26/2018 19:18:03</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181126221803_2018112601.Designer.cs">
+      <publishTime>11/26/2018 19:18:03</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181206174028_2018120601.cs">
+      <publishTime>12/06/2018 14:40:28</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181206174028_2018120601.Designer.cs">
+      <publishTime>12/06/2018 14:40:28</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181218201640_2018121801.cs">
+      <publishTime>12/18/2018 17:16:40</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181218201640_2018121801.Designer.cs">
+      <publishTime>12/18/2018 17:16:40</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181219162955_2018121901.cs">
+      <publishTime>12/19/2018 13:29:55</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181219162955_2018121901.Designer.cs">
+      <publishTime>12/19/2018 13:29:55</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181219173742_2018121902.cs">
+      <publishTime>12/19/2018 14:37:42</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181219173742_2018121902.Designer.cs">
+      <publishTime>12/19/2018 14:37:42</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181229021517_2018122801.cs">
+      <publishTime>12/28/2018 23:15:18</publishTime>
+    </File>
+    <File Include="Data/Migrations/20181229021517_2018122801.Designer.cs">
+      <publishTime>12/28/2018 23:15:18</publishTime>
+    </File>
+    <File Include="Data/Migrations/ApplicationDbContextModelSnapshot.cs">
+      <publishTime>12/28/2018 23:15:18</publishTime>
+    </File>
+    <File Include="Data/Uploads/0885df17-eb9d-49f5-b070-a26f6cd6ada0">
+      <publishTime>12/28/2018 22:34:39</publishTime>
+    </File>
+    <File Include="Data/Uploads/0e65e583-cf73-49f1-84d5-61d00ceaa676">
+      <publishTime>01/02/2019 16:37:07</publishTime>
+    </File>
+    <File Include="Data/Uploads/1e998cc2-796e-4241-a1f7-8aee700bf2ec">
+      <publishTime>12/28/2018 22:58:33</publishTime>
+    </File>
+    <File Include="Data/Uploads/250eb91d-50c5-4069-9959-a29a23c1d517">
+      <publishTime>12/22/2018 22:52:37</publishTime>
+    </File>
+    <File Include="Data/Uploads/38cf925c-b5d0-491b-a9c8-dfbc241d1f25">
+      <publishTime>01/02/2019 15:57:01</publishTime>
+    </File>
+    <File Include="Data/Uploads/4d4bbe28-dc1c-4468-aedd-ccc947de08b1">
+      <publishTime>12/28/2018 01:56:09</publishTime>
+    </File>
+    <File Include="Data/Uploads/7561e45a-0aed-4dc2-bff0-61609da69f29">
+      <publishTime>01/02/2019 17:03:24</publishTime>
+    </File>
+    <File Include="Data/Uploads/8b501857-5efd-4625-bc73-a84576c733f0">
+      <publishTime>12/28/2018 22:44:47</publishTime>
+    </File>
+    <File Include="Data/Uploads/b497920b-3404-435c-a26e-672c606b094a">
+      <publishTime>12/28/2018 22:50:04</publishTime>
+    </File>
+    <File Include="Data/Uploads/bd46a41c-c04f-4d19-8224-fa75182c7224">
+      <publishTime>01/02/2019 16:19:25</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

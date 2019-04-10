@@ -1,0 +1,131 @@
+﻿@page
+@model Bbs.Pages.AdminModel
+@{
+    ViewData["Title"] = "Admin";
+}
+
+<h2></h2>
+<h4 class="card card-body bg-primary text-light">Sitio de Administración</h4>
+<div class="row">
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h2 class="card-title text-center text-info"><a class="" asp-page="/Bl/Create"><i class="fa fa-sitemap fa-4x"></i></a></h2>
+                <h2 class="card-title">Categorías</h2>
+                <p class="card-text">Permite modificar los parámetros del sistema.</p>
+
+            </div>
+            <div class="card-footer text-center">
+                <a asp-page="/Params/ObsCategories/Index" class="btn btn-primary btn-sm">Categorías</a>
+            </div>
+        </div>
+    </div>
+    <!-- /.col-md-4 -->
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h2 class="card-title text-center text-primary"><a class="" asp-page="/Params/ObsItems/Index"><i class="fa fa-check-square fa-4x" role="button"></i></a></h2>
+                <h2 class="card-title">Items de verificación.</h2>
+                <p class="card-text">Permite modificar los parámetros del sistema.</p>
+
+            </div>
+
+
+
+            <div class="card-footer text-center">
+                <a asp-page="/Params/ObsItems/Index" class="btn btn-primary btn-sm">Items</a>
+            </div>
+        </div>
+    </div>
+    <!-- /.col-md-4 -->
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h2 class="card-title text-center text-warning"><i class="fa fa-chevron-up fa-4x"></i></h2>
+                <h2 class="card-title">Gerencias</h2>
+                <p class="card-text">Permite modificar los parámetros del sistema.</p>
+            </div>
+            <div class="card-footer text-center">
+                <a asp-page="/Params/Divisions/Index" class="btn btn-primary btn-sm">Gerencias</a>
+            </div>
+        </div>
+    </div>
+    <!-- /.col-md-4 -->
+</div>
+<!-- /.row -->
+<div class="row">
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h2 class="card-title text-center text-info"><a class="" asp-page="/Params/Sites/Index"><i class="fa fa-industry fa-4x"></i></a></h2>
+                <h2 class="card-title">Instalaciones</h2>
+                <p class="card-text">Permite modificar los parámetros del sistema.</p>
+
+            </div>
+            <div class="card-footer text-center">
+                <a asp-page="/Params/Sites/Index" class="btn btn-primary btn-sm">Instalaciones</a>
+            </div>
+        </div>
+    </div>
+    <!-- /.col-md-4 -->
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h2 class="card-title text-center text-primary"><a class="" asp-page="/Params/WorkSites/Index"><i class="fa fa-map-marker fa-4x" role="button"></i></a></h2>
+                <h2 class="card-title">Zonas de trabajo</h2>
+                <p class="card-text">Permite modificar los parámetros del sistema.</p>
+
+            </div>
+
+
+
+            <div class="card-footer text-center">
+                <a asp-page="/Params/WorkSites/Index" class="btn btn-primary btn-sm">Zonas de trabajo</a>
+            </div>
+        </div>
+    </div>
+    <!-- /.col-md-4 -->
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h2 class="card-title text-center text-warning"><i class="fa fa-id-card fa-4x"></i></h2>
+                <h2 class="card-title">Personal</h2>
+                <p class="card-text">Permite modificar los parámetros del sistema.</p>
+            </div>
+            <div class="card-footer text-center">
+                <a asp-page="/Params/Persons/Index" class="btn btn-primary btn-sm">Personas</a>
+            </div>
+        </div>
+    </div>
+    <!-- /.col-md-4 -->
+</div>
+<!-- /.row -->
+
+
+<div class="row">
+    <div class="col-2">
+        <div>
+        </div>
+    </div>
+    <div class="col-2">
+        <div>
+
+        </div>
+    </div>
+    <div class="col-2">
+        <div>
+
+        </div>
+    </div>
+    <div class="col-2">
+        <div>
+        </div>
+    </div>
+    <div class="col-2">
+        <div>
+        </div>
+    </div>
+    <div class="col-2">
+        <div></div>
+    </div>
+</div>

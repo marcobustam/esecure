@@ -1,0 +1,98 @@
+﻿@page
+@model EsecureWebApp.Pages.Planes.Prevencion.Tareas.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Detalles:</h2>
+
+<div>
+    <h4>Tarea</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EstaTarea.PlanID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EstaTarea.PlanID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EstaTarea.NombreTarea)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EstaTarea.NombreTarea)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EstaTarea.FechaPlanificada)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EstaTarea.FechaPlanificada)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EstaTarea.FechaFinPlanificada)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EstaTarea.FechaFinPlanificada)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EstaTarea.FechaEjecucionReal)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EstaTarea.FechaEjecucionReal)
+        </dd>
+       <dt>
+            @Html.DisplayNameFor(model => model.EstaTarea.FechaFinEjecucionReal)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EstaTarea.FechaFinEjecucionReal)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EstaTarea.EstadoID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EstaTarea.EstadoID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EstaTarea.TestID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EstaTarea.TestID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EstaTarea.EstadoID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EstaTarea.EstadoID)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.EstaTarea.TareaID">Editar</a> |
+    <a asp-page="./Index">Volver</a>
+</div>
+<div class="container">
+    <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="@Model.NuevoHistoricoTarea.TareaID" class="control-label"></label>
+            <input asp-for="@Model.NuevoHistoricoTarea.TareaID" value="@Model.EstaTarea.TareaID" class="form-control" />
+            <span asp-validation-for="@Model.NuevoHistoricoTarea.TareaID" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.NuevoHistoricoTarea.EstadoAnterior" class="control-label"></label>
+            <input asp-for="@Model.NuevoHistoricoTarea.EstadoAnterior" value="@Model.EstaTarea.EstadoID" class="form-control" />
+            <span asp-validation-for="@Model.NuevoHistoricoTarea.EstadoAnterior" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="@Model.NuevoHistoricoTarea.NuevoEstado" class="control-label"></label>
+            <input asp-for="@Model.NuevoHistoricoTarea.NuevoEstado" value="1" class="form-control" />
+            <span asp-validation-for="@Model.NuevoHistoricoTarea.NuevoEstado" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-info">
+                Planificar <i class="fa fa-forward"></i>
+            </button>
+        </div>
+    </form>
+</div>

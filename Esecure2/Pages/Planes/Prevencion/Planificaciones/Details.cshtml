@@ -1,0 +1,507 @@
+﻿@page
+@model EsecureWebApp.Pages.Planes.Prevencion.Planificaciones.DetailsModel
+@using EsecureModel.Exam;
+@using EsecureModel.Planificacion;
+
+@{
+    ViewData["Title"] = "Planificación de Prevención ";
+}
+@* *************************************************************************** *@
+<!-- Breadcrumbs-->
+<ol class="breadcrumb">
+    @* *************************************************************************** *@
+    <li class="breadcrumb-item">
+        <a asp-page="/Mantenedores/Empresas/Index">Empresa</a>
+        @*<a href="#">Empresa</a>*@
+    </li>
+    <li class="breadcrumb-item">
+        <a href="#">Planificaciones</a>
+    </li>
+    <li class="breadcrumb-item active">
+        Planes de Prevención
+    </li>
+    @* *************************************************************************** *@
+</ol>
+@*<div id="content-wrapper">*@
+
+<div class="container-fluid">
+    <div class="card card-body bg-primary text-light">
+        @* *************************************************************************** *@
+        <h3>Plan de prevención - @Html.DisplayFor(model => model.MyPlan.NombrePlan)</h3>
+        <h4>Empresa: @Model.MyEmpresa.NombreFantasia </h4>
+        @* *************************************************************************** *@
+    </div>
+    <hr />
+    <div class="card card-footer">
+        <h4 class="card card-body bg-primary text-light">
+            Detalle del plan:
+        </h4>
+        @*<hr />*@
+        <div class=" card card-body">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-2 col-xl-1">
+                    <label asp-for="MyPlan.PlanID" type="text" class="control-label"></label>
+                    <input asp-for="MyPlan.PlanID" type="text" value="@Model.MyPlan.PlanID" class="form-control" readonly />
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                    <label asp-for="MyPlan.NombrePlan" type="text" class="control-label"></label>
+                    <input asp-for="MyPlan.NombrePlan" type="text" value="@Model.MyPlan.NombrePlan" class="form-control" readonly />
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                    <label asp-for="MyPlan.Descripcion" type="text" class="control-label"></label>
+                    @if (!string.IsNullOrEmpty(Model.MyPlan.Descripcion))
+                    {
+                        <input asp-for="MyPlan.Descripcion" type="text" value="@Model.MyPlan.Descripcion" class="form-control" readonly />
+                    }
+                    else
+                    {
+                        <input asp-for="MyPlan.Descripcion" type="text" value="Sin descripción" class="form-control" readonly />
+                    }
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-5 col-xl-4">
+                    <label asp-for="MyPlan.Persona" type="text" class="control-label"></label>
+                    <input asp-for="MyPlan.Persona" type="text" value="@Model.MyPlan.Persona.FullName()" class="form-control" readonly />
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-2 col-xl-1">
+                    <a class="btn btn-warning btn-sm" asp-page="/Planes/Prevencion/Planificaciones/Edit" asp-route-emid="@Model.MyPlan.EmpresaID" asp-route-plid="@Model.MyPlan.PlanID"><i class="fa fa-edit"></i></a>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <h4 class="card card-body bg-primary text-light">
+            Resumen:
+        </h4>
+        @*<hr />*@
+        <div class=" card card-body text-center">
+            @* *************************************************************************** *@
+            <div class="row">
+                @foreach (var est in new List<EsecureModel.Planificacion.EstadoTarea>
+                                                                                {
+                                                                                EsecureModel.Planificacion.EstadoTarea.Nueva,
+                                                                                EsecureModel.Planificacion.EstadoTarea.Iniciada,
+                                                                                EsecureModel.Planificacion.EstadoTarea.Cancelada,
+                                                                                EsecureModel.Planificacion.EstadoTarea.Pendiente,
+                                                                                EsecureModel.Planificacion.EstadoTarea.Planificada,
+                                                                                EsecureModel.Planificacion.EstadoTarea.Realizada,
+                                                                                EsecureModel.Planificacion.EstadoTarea.Suspendida
+                                                                                })
+                {
+                    <div class="card mb-3" style="max-width: 20rem;">
+                        <div class="card-header">@est.ToString()</div>
+                        <div class="card-body">
+                            <h4 class="card-titl text-center">@Model.ListaTareas.Where(ta => ta.EstadoID == est).Count()</h4>
+                            <p class="card-text">Tareas</p>
+                        </div>
+                    </div>
+
+                }
+                <div class="card mb-3" style="max-width: 20rem;">
+                    <div class="card-header">Total Tareas:</div>
+                    <div class="card-body">
+                        <h4 class="card-titl text-center">@Model.ListaTareas.Count()</h4>
+                        <p class="card-text">Tareas</p>
+                    </div>
+                </div>
+                <div class="card mb-3" style="max-width: 20rem;">
+                    <div class="card-header">Avance</div>
+                    <div class="card-body">
+                        <h4 class="card-titl text-center">
+                            @{
+                                // var avance = ( Model.ListaTareas.Where(lata => lata.EstadoID == EsecureModel.Planificacion.EstadoTarea.Realizada).Count()  / Model.ListaTareas.Count ) * 100;
+
+                                var tarRealizadas = Model.ListaTareas
+                                        .Where(lata => lata.EstadoID == EsecureModel.Planificacion.EstadoTarea.Realizada).ToList().Count;
+
+                                var tarTodas = Model.ListaTareas.Count;
+                                var avance = 0;
+                                if (tarTodas > 0)
+                                {
+                                    avance = (int)(((double)tarRealizadas / (double)tarTodas) * 100);
+                                }
+
+                            }
+                            @String.Concat(avance.ToString(), "%")
+
+                        </h4>
+
+                    </div>
+                </div>
+            </div>
+            @* *************************************************************************** *@
+        </div>
+        <hr />
+        <br />
+        <h4 class="card card-body bg-primary text-light">
+            Lista de tareas creadas:
+        </h4>
+        @*<hr />*@
+        @* *************************************************************************** *@
+        <div class=" card card-body text-center">
+            <div class="container-fluid card bg-light text-dark">
+                <table class="table table-bordered table-striped table-hover text-dark table-responsive-md" style="width:100%" id="datata">
+                    <thead>
+                        <tr>
+                            <!--ID TAREA-->
+                            <th>
+                                @Html.DisplayNameFor(model => model.ListaTareas[0].TareaID)
+                            </th>
+                            <!-- DESCRIPCION -->
+                            <th>
+                                @Html.DisplayNameFor(model => model.ListaTareas[0].NombreTarea)
+                            </th>
+                            <!-- FECHA INICIO PLANIFICADA -->
+                            <th>
+                                @Html.DisplayNameFor(model => model.ListaTareas[0].FechaPlanificada)
+                            </th>
+                            <!-- FECHA INICIO REAL -->
+                            <th>
+                                @Html.DisplayNameFor(model => model.ListaTareas[0].FechaEjecucionReal)
+                            </th>
+                            <!-- FECHA FIN PLANIFICADA -->
+                            <th>
+                                @Html.DisplayNameFor(model => model.ListaTareas[0].FechaFinPlanificada)
+                            </th>
+                            <!-- FECHA FIN REAL -->
+                            <th>
+                                @Html.DisplayNameFor(model => model.ListaTareas[0].FechaFinEjecucionReal)
+                            </th>
+                            <!-- ESTADO DE LA TAREA -->
+                            <th>
+                                @Html.DisplayNameFor(model => model.ListaTareas[0].EstadoID)
+                            </th>
+                            <!-- ACCIONES DEL ESTADO -->
+                            <th>Acciones</th>
+                            <!-- ENLACES -->
+                            <th>Enlaces</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.ListaTareas)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.TareaID)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.NombreTarea)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.FechaPlanificada)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.FechaEjecucionReal)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.FechaFinPlanificada)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.FechaFinEjecucionReal)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.EstadoID)
+                                </td>
+                                <td>
+                                    <button id="planifica" class="btn btn-outline-warning btn-sm" onclick="CambiaEstadx( '@item.EmpresaID','@item.PlanID','@item.TareaID', 2 )"><i class="fa fa-fast-forward"></i></button>
+                                    <button type="button" id="btnIniciar" class="btn btn-danger btn-sm" title="Iniciar" onclick='CambiaEstadx( "@item.EmpresaID" , "@item.PlanID","@item.TareaID", "2" );'>
+                                        <i class="fa fa-arrow-circle-right"></i>
+                                    </button>
+
+                                    <a asp-page="/API/TareasController" asp-page-handler="GetCambiaEstado" asp-route-emid="@item.EmpresaID" asp-route-plid="@item.PlanID" asp-route-taid="@item.TareaID" asp-route-esid="2" class="btn btn-outline-info btn-sm">
+                                        <i class="fa fa-play">
+                                            GO!
+                                        </i>
+                                    </a>
+
+                                </td>
+                                <td>
+                                    @if (Model.ExamList.Where(wx => wx.TareaID == item.TareaID).FirstOrDefault() != null)
+                                    {
+                                        <a asp-page="/Exams/Examinations/Details" asp-route-emid="@item.EmpresaID" asp-route-plid="@item.PlanID" asp-route-taid="@item.TareaID" asp-route-exid="@Model.ExamList.Where(wx => wx.TareaID == item.TareaID).FirstOrDefault().ExaminationID" class="btn btn-sm btn-info"><i class="fa fa-search-plus"></i></a>
+                                    }
+                                    else
+                                    {
+                                        <form method="post" asp-page="/Exams/Examinations/Create">
+                                            <div hidden="hidden">
+                                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                                <div class="form-group">
+                                                    <label asp-for="Exam.EmpresaID" class="control-label"></label>
+                                                    <input asp-for="Exam.EmpresaID" value="@item.EmpresaID" class="form-control" />
+                                                    <span asp-validation-for="Exam.EmpresaID" class="text-danger"></span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label asp-for="Exam.PlanID" class="control-label"></label>
+                                                    <input asp-for="Exam.PlanID" value="@item.PlanID" class="form-control" />
+                                                    <span asp-validation-for="Exam.PlanID" class="text-danger"></span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label asp-for="Exam.TareaID" class="control-label"></label>
+                                                    <input asp-for="Exam.TareaID" value="@item.TareaID" class="form-control" />
+                                                    <span asp-validation-for="Exam.TareaID" class="text-danger"></span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label asp-for="Exam.PersonaID1" class="control-label"></label>
+                                                    <input asp-for="Exam.PersonaID1" value="1" class="form-control" />
+                                                    <span asp-validation-for="Exam.PersonaID1" class="text-danger"></span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label asp-for="Exam.PersonaID2" class="control-label"></label>
+                                                    <input asp-for="Exam.PersonaID2" value="1" class="form-control" />
+                                                    <span asp-validation-for="Exam.PersonaID2" class="text-danger"></span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label asp-for="Exam.TestID" class="control-label"></label>
+                                                    <input asp-for="Exam.TestID" value="@item.TestID" class="form-control" asp-items="ViewBag.TestID" />
+                                                    <span asp-validation-for="Exam.TestID" class="text-danger"></span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label asp-for="Exam.FaenaID" class="control-label"></label>
+                                                    <input asp-for="Exam.FaenaID" value="@item.FaenaID" class="form-control" />
+                                                    <span asp-validation-for="Exam.FaenaID" class="text-danger"></span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label asp-for="Exam.TotalRespuestas" class="control-label"></label>
+                                                    <input asp-for="Exam.TotalRespuestas" value="0" class="form-control" />
+                                                    <span asp-validation-for="Exam.TotalRespuestas" class="text-danger"></span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label asp-for="Exam.RespuestasCompletadas" class="control-label"></label>
+                                                    <input asp-for="Exam.RespuestasCompletadas" value="0" class="form-control" />
+                                                    <span asp-validation-for="Exam.RespuestasCompletadas" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                            <input type="submit" value="Inspeccionar (submit)" class="btn btn-info btn-sm" />
+                                        </form>
+                                        @*<a asp-page="/Exams/Examinations/Create" asp-route-emid="@item.EmpresaID" asp-route-plid="@item.PlanID" asp-route-taid="@item.TareaID" class="btn btn-sm btn-info"><i class="fa fa-search-plus"></i></a>*@
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>
+                            </th>
+                            <th>
+                            </th>
+                            <th>
+                            </th>
+                            <th>
+                            </th>
+                            <th>
+                            </th>
+                            <th>
+                            </th>
+                            <th>
+                            </th>
+                            <th>
+                            </th>
+                            <th>
+                            </th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+
+        @*DATATABLES*@
+
+        @* --------------------------------------------------------------------------- *@
+
+        @* --------------------------------------------------------------------------- *@
+
+
+
+        @* --------------------------------------------------------------------------- *@
+        <p>
+            <div>
+                <a asp-page="./Index" asp-route-emid="@Model.MyPlan.EmpresaID" class="btn btn-primary btn-sm" role="button">Volver</a>
+
+                <button onclick="$('#myModal').modal('show');" class="btn btn-success btn-sm">Nueva Tarea</button>
+                <br />
+            </div>
+        </p>
+        @*FORM OR DETAILS OR CONFIRM DELETION*@
+        @* --------------------------------------------------------------------------- *@
+        @* *************************************************************************** *@
+        <br />
+    </div>
+</div>
+@* *************************************************************************** *@
+<hr />
+@* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ *@
+<div class="modal" id="myModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form method="post" asp-page="~/Planes/Prevencion/Task/Create" name="CreateTask" id="CreateTask">
+                <div class="modal-header bg-primary text-light">
+                    <h5 class="modal-title">Agregar Tarea</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true" class="text-light">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="card card-footer">
+
+                        @*<form method="post" name="CreateTask" id="CreateTask">*@
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group" hidden="hidden">
+                            <label asp-for="NewTarea.PlanID" type="text" class="control-label"></label>
+                            <input asp-for="NewTarea.PlanID" value="@Model.MyPlan.PlanID" class="form-control" readonly />
+                            <span asp-validation-for="NewTarea.PlanID" class="text-danger"></span>
+                        </div>
+                        <div class="form-group" hidden="hidden">
+                            <label asp-for="NewTarea.EmpresaID" type="text" class="control-label"></label>
+                            <input asp-for="NewTarea.EmpresaID" value="@Model.MyEmpresa.EmpresaID" class="form-control" readonly />
+                            <span asp-validation-for="NewTarea.EmpresaID" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="NewTarea.NombreTarea" class="control-label"></label>
+                            <input asp-for="NewTarea.NombreTarea" value="Nueva Tarea" class="form-control" />
+                            <span asp-validation-for="NewTarea.NombreTarea" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+
+                            <label asp-for="NewTarea.FechaPlanificada" class="control-label"></label>
+                            <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+                                <input type="text" class="form-control datetimepicker-input" value="@DateTime.Now" data-target="#datetimepicker1" data-date-format="dd/mm/yyyy" asp-for="NewTarea.FechaPlanificada" />
+                                <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                </div>
+                            </div>
+                            <span asp-validation-for="NewTarea.FechaPlanificada" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="NewTarea.TestID" class="control-label"></label>
+                            <select asp-for="NewTarea.TestID" class="form-control" asp-items="@Model.CheckListSL">
+                                <option value="">-- Escoja un nombre --</option>
+                            </select>
+                            <span asp-validation-for="NewTarea.TestID" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="NewTarea.FaenaID" class="control-label"></label>
+                            <select asp-for="NewTarea.FaenaID" class="form-control" asp-items="@Model.FaenasSL">
+                                <option value="">-- Escoja un nombre --</option>
+                            </select>
+                            <span asp-validation-for="NewTarea.FaenaID" class="text-danger"></span>
+                        </div>
+                        @*<div class="form-group">
+                                <a asp-page="/Planes/Prevencion/Tasks/Create" asp-route-emid="@Model.MyEmpresa.EmpresaID" asp-route-plid="@Model.MyPlan.PlanID">asd</a>
+                                <input type="submit" value="Crear" class="btn btn-default" />
+                            </div>*@
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-info btn-sm">Crear</button>
+                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Cerrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ *@
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script type="text/javascript">
+
+
+        /******************************************************/
+        function CambiaEstadx(empresaId, planId, tareaId, nuevoEstado) {
+            //var empresaID = 1;
+            // alert("Vals: " + empresaId + " " + planId + " " + tareaId + " " + nuevoEstado);
+            /*
+             * $.ajax({
+                            type: "GET",
+                            url: "/Mantenedores/Empresas/DetailsAjax?handler=List&emid=" + empresaID + "&tipo=" + callingType,
+                            beforeSend: function (xhr) {
+                                xhr.setRequestHeader("XSRF-TOKEN",
+                                    $('input:hidden[name="__RequestVerificationToken"]').val());
+                            },
+
+             */
+            var txturl = "/api/Tareas/CambiaEstado2?emid=" + empresaId + "&plid=" + planId + "&taid=" + tareaId + "&esid=" + nuevoEstado;
+            alert(txturl);
+            $.ajax({
+                type: 'GET',
+                url: txturl,
+                beforeSend: function (xhr) {
+                    alert("before");
+                    xhr.setRequestHeader('XSRF-TOKEN',
+                        $('input:hidden[name="__RequestVerificationToken"]').val());
+                    //alert(url);
+                },
+                contentType: "application/json",
+                dataType: "html",
+                complete: function (response) {
+                    alert("Complete!" + response);
+                },
+                success: function (response) {
+                    alert("success!" + response);
+                    $('#Inicia').submit();
+                    location.reload();
+                },
+                failure: function (response) {
+                    alert("Error en la comunicación!!\n Detalle:" + response);
+                }
+            });
+            location.reload();
+        }
+
+
+        /******************************************************/
+        function planifClick(empresaId, planId, tareaId, examinationId) {
+            var urlBase = '/API/Tareas/';
+            var urlCall = urlBase + empresaId + ' ' + planId + ' ' + tareaId + ' ' + examinationId;
+            alert(urlCall);
+        }
+        function ajaxcall(url, emid, plid, taid, esid) {
+            /// siteId) {
+            alert(url);
+            $.ajax({
+                type: "GET",
+                url: url,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    $.each(data, function (i, item) {
+
+                    });
+                }, //End of AJAX Success function
+
+                failure: function (data) {
+                    alert(data.responseText);
+                }, //End of AJAX failure function
+                error: function (data) {
+                    alert(data.responseText);
+                } //End of AJAX error function
+
+            });
+        }
+
+
+        $('#planif').click(function () {
+            var urlCall = ''
+
+            alert("click! Ajax");
+        });
+        /******************************************************/
+
+
+        $('#datetimepicker1').datetimepicker({
+            //format: 'dd/mm/yyyy',
+            format: 'L',
+            inline: false,
+            sideBySide: true,
+            locale: 'es'
+        });
+        $(document).ready(function () {
+
+        });
+        /***************************************************/
+
+    </script>
+}

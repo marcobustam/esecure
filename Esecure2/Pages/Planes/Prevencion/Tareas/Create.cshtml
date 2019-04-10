@@ -1,0 +1,62 @@
+﻿@page
+@model EsecureWebApp.Pages.Planes.Prevencion.Tareas.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create Tarea de Prevención</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group" hidden="hidden">
+                <label asp-for="EstaTarea.PlanID" class="control-label"></label>
+                <input asp-for="EstaTarea.PlanID" class="form-control" />
+                <span asp-validation-for="EstaTarea.PlanID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EstaTarea.NombreTarea" class="control-label"></label>
+                <input asp-for="EstaTarea.NombreTarea" class="form-control" />
+                <span asp-validation-for="EstaTarea.NombreTarea" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EstaTarea.FechaPlanificada" class="control-label"></label>
+                <input asp-for="EstaTarea.FechaPlanificada" class="form-control" value=@DateTime.Now />
+                <span asp-validation-for="EstaTarea.FechaPlanificada" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EstaTarea.TestID" class="control-label"></label>
+                <select asp-for="EstaTarea.TestID" class="form-control" asp-items="@Model.CheckListSL">
+                    <option value="">-- Escoja un nombre --</option>
+                </select>
+                <span asp-validation-for="EstaTarea.TestID" class="text-danger"></span>
+            </div>
+            <!--
+                <div class="form-group">
+                    <label asp-for="EstaTarea.FechaEjecucionReal" class="control-label"></label>
+                    <input asp-for="EstaTarea.FechaEjecucionReal" class="form-control" />
+                    <span asp-validation-for="EstaTarea.FechaEjecucionReal" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="EstaTarea.EstadoID" class="control-label"></label>
+                    <select asp-for="EstaTarea.EstadoID" class="form-control"></select>
+                    <span asp-validation-for="EstaTarea.EstadoID" class="text-danger"></span>
+                </div>
+            -->
+            <div class="form-group">
+                <input type="submit" value="Crear" class="btn btn-default btn-sm" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index" asp-route-emid="@Model.MyEmpresa.EmpresaID" asp-route-plid="@Model.EstaTarea.PlanID">Volver</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+}

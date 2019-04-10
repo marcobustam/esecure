@@ -1,0 +1,36 @@
+﻿@page
+@model Index2Model
+@{
+    ViewData["Title"] = "Home page";
+}
+<link rel="stylesheet" href="~/lib/bootstrap3-wysiwyg/bootstrap3-wysihtml5.css" />
+<div class="row" style="border:solid">
+    <div class="col col-md-12" style="height:400px">
+        <form>
+            
+            <!-- Latest compiled and minified CSS -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+            <textarea id="wisy2" style="width:90%; height:300px"></textarea>
+        </form>
+        @section Scripts
+            {
+            <script src="~/lib/bootstrap3-wysiwyg/bootstrap3-wysihtml5.all.js"></script>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    console.log('hi from jQuery!');
+                    $('#wisy2').wysihtml5({
+                        "font-styles": true, //Font styling, e.g. h1, h2, etc. Default true
+                        "emphasis": true, //Italics, bold, etc. Default true
+                        "lists": true, //(Un)ordered lists, e.g. Bullets, Numbers. Default true
+                        "html": false, //Button which allows you to edit the generated HTML. Default false
+                        "link": true, //Button to insert a link. Default true
+                        "image": true, //Button to insert an image. Default true,
+                        "color": true, //Button to change color of font
+                        "fa": false
+                    });
+                    //alert("Acato");
+                });
+            </script>
+        }
+    </div>
+</div>

@@ -1,0 +1,50 @@
+﻿@page
+@model EsecureWebApp.Pages.FileUploaders.Folders.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Editar</h2>
+
+<h4>FolderUp</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="FolderUp.FolderUpID" />
+            <div class="form-group">
+                <label asp-for="FolderUp.FolderUpName" class="control-label"></label>
+                <input asp-for="FolderUp.FolderUpName" class="form-control" />
+                <span asp-validation-for="FolderUp.FolderUpName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FolderUp.FolderUpParent" class="control-label"></label>
+                <input asp-for="FolderUp.FolderUpParent" class="form-control" />
+                <span asp-validation-for="FolderUp.FolderUpParent" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FolderUp.TimeStamp" class="control-label"></label>
+                <input asp-for="FolderUp.TimeStamp" class="form-control" />
+                <span asp-validation-for="FolderUp.TimeStamp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FolderUp.LastMod" class="control-label"></label>
+                <input asp-for="FolderUp.LastMod" class="form-control" />
+                <span asp-validation-for="FolderUp.LastMod" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Volver</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

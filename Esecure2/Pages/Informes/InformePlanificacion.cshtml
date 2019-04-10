@@ -1,0 +1,103 @@
+﻿@page
+@model EsecureWebApp.Pages.Informes.InformePlanificacionModel
+@{
+    ViewData["Title"] = "InformePlanificacion";
+}
+
+<h2>InformePlanificacion</h2>
+<div class=" bg-secondary">
+    <table class="table table-bordered table-striped table-hover text-dark table-responsive-md" style="width:100%" id="datata">
+        <thead>
+            <tr>
+                <th style="width:50%">
+                    Chart 1
+                </th>
+                <th style="width:50%">
+                    Chart 2
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <canvas id="densityChart1" width="300" height="200"></canvas>
+                </td>
+                <td>
+                    <canvas id="densityChart2" width="300" height="200"></canvas>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>
+                </th>
+                <th>
+                </th>
+            </tr>
+        </tfoot>
+    </table>
+    </div>
+<div class=" bg-secondary">
+    <table class="table table-bordered table-striped table-hover text-dark table-responsive-md" style="width:100%" id="datata">
+
+        <thead>
+            <tr>
+                <th style="width:50%">
+                    Chart 3
+                </th>
+                <th style="width:50%">
+                    Chart 4
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <canvas id="densityChart3" width="300" height="200"></canvas>
+                </td>
+                <td>
+                    <canvas id="densityChart4" width="300" height="200"></canvas>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>
+                </th>
+                <th>
+                </th>
+            </tr>
+        </tfoot>
+    </table>
+        </div>
+        @section Scripts
+            {
+            <script src="~/lib/Chart.js/Chart.js" type="text/javascript"></script>
+            <script type="text/javascript">
+                DisplayChart("densityChart1");
+                DisplayChart("densityChart2");
+                DisplayChart("densityChart3");
+                DisplayChart("densityChart4");
+                function DisplayChart(divName) {
+                    // alert("Display: " + divName );
+                    var densityCanvas = document.getElementById(divName);
+
+                    Chart.defaults.global.defaultFontFamily = "Lato";
+                    Chart.defaults.global.defaultFontSize = 18;
+
+                    var densityData = {
+                        label: 'Density of Planets (kg/m3)',
+                        data: [5427, 5243, 5514, 3933, 1326, 687, 1271, 1638]
+                    };
+
+                    var barChart = new Chart(densityCanvas, {
+                        type: 'bar',
+                        data: {
+                            labels: ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"],
+                            datasets: [densityData]
+                        }
+                    });
+                }
+            </script>
+        }
+

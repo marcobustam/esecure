@@ -1,0 +1,118 @@
+﻿@page
+@model EsecureWebApp.Pages.Mantenedores.Personas.IndexModel
+
+@{
+    ViewData["Title"] = "Mant. Personas";
+}
+
+<h2>Listado de Trabajadores</h2>
+<h4>Empresa: @Model.MyEmpresa.NombreFantasia </h4>
+<hr />
+
+<div class="bg-secondary">
+    <table class="table table-bordered table-striped table-hover text-dark table-responsive-md" style="width:100%" id="datata">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Persona[0].Documento)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Persona[0].Alias)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Persona[0].PrimerNombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Persona[0].SegundoNombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Persona[0].ApellidoPaterno)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Persona[0].ApellidoMaterno)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Persona[0].FechaNacimiento)
+                </th>
+                <th>
+
+                </th>
+                <th>
+
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Persona)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Documento)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Alias)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PrimerNombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SegundoNombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ApellidoPaterno)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ApellidoMaterno)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FechaNacimiento)
+                    </td>
+                    <td>
+                        <div class=" btn-group-justified">
+                            <a asp-page="./Edit" asp-route-emid="@item.EmpresaID" asp-route-peid="@item.PersonaID" role="button" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
+                            <a asp-page="./Details" asp-route-emid="@item.EmpresaID" asp-route-peid="@item.PersonaID" role="button" class="btn btn-amber btn-sm"><i class="fa fa-info"></i></a>
+                            <a asp-page="./Delete" asp-route-emid="@item.EmpresaID" asp-route-peid="@item.PersonaID" role="button" class="btn btn-brown btn-sm"><i class="fa fa-times"></i></a>
+                        </div>
+                    </td>
+                    <td>
+                        <a asp-page="/" role="button" class="btn btn-warning btn-sm">Asignar usuario</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>
+                </th>
+                <th>
+                </th>
+                <th>
+                </th>
+                <th>
+                </th>
+                <th>
+                </th>
+                <th>
+                </th>
+                <th>
+                </th>
+                <th>
+                </th>
+                <th>
+                </th>
+            </tr>
+        </tfoot>
+    </table>
+    </div>
+    <hr /><hr />
+    <p class="float-md-right">
+        <div class="btn-group">
+            <a asp-page="Create" asp-route-emid="@Model.MyEmpresa.EmpresaID" class="btn btn-info">Nueva Persona</a>
+            <a asp-page="/Mantenedores/Empresas/Index" asp-route-emid="@Model.MyEmpresa.EmpresaID" class="btn btn-info">Volver</a>
+        </div>
+    </p>
+    @section Scripts {
+        <script type="text/javascript">
+
+        </script>
+    }

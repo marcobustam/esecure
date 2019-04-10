@@ -1,0 +1,64 @@
+﻿@page
+@model EsecureWebApp.Pages.Mantenedores.Direcciones.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Eliminar registro</h2>
+
+<h3>¿Está seguro que quiere eliminar el registro?</h3>
+<div>
+    <h4>Direccion</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Direccion.EmpresaID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Direccion.EmpresaID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Direccion.ShortName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Direccion.ShortName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Direccion.Calle)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Direccion.Calle)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Direccion.Numeracion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Direccion.Numeracion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Direccion.Comuna)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Direccion.Comuna)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Direccion.Region)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Direccion.Region)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Direccion.Pais)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Direccion.Pais)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Direccion.DireccionID" />
+        <input type="submit" value="Eliminar" class="btn btn-default" /> |
+        <a asp-page="./Index">Volver</a>
+    </form>
+</div>

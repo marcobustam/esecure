@@ -1,0 +1,28 @@
+﻿@page
+@model EsecureWebApp.Pages.Planes.Mitigacion.Issues.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Eliminar registro</h2>
+
+<h3>¿Está seguro que quiere eliminar el registro?</h3>
+<div>
+    <h4>IssueItem</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IssueItem.Descripcion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IssueItem.Descripcion)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="IssueItem.IssueItemID" />
+        <input type="submit" value="Eliminar" class="btn btn-default" /> |
+        <a asp-page="./Index">Volver</a>
+    </form>
+</div>

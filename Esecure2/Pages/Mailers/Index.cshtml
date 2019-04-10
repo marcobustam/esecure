@@ -1,0 +1,78 @@
+﻿@page
+@model EsecureWebApp.Pages.Mailers.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Listado</h2>
+
+<p>
+    <a asp-page="Create" role="button" class="btn btn-sm">Nuevo</a>
+</p>
+<div class="bg-secondary text-dark">
+    <table class="table table-bordered table-striped table-hover text-dark table-responsive-md" style="width:100%" id="datata">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.MailSender[0].MailSenderFrom)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MailSender[0].MailSenderTo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MailSender[0].MailSenderSubject)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MailSender[0].MailSenderMessage)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.MailSender[0].Timestamp)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.MailSender)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MailSenderFrom)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MailSenderTo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MailSenderSubject)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MailSenderMessage)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Timestamp)
+                    </td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.MailSenderID" class="btn btn-info btn-sm" role="button">Editar</a> |
+                        <a asp-page="./Details" asp-route-id="@item.MailSenderID" class="btn btn-info btn-sm" role="button">Detalles</a> |
+                        <a asp-page="./Delete" asp-route-id="@item.MailSenderID" class="btn btn-info btn-sm" role="button">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <thead>
+            <tr>
+                <th>
+                </th>
+                <th>
+                </th>
+                <th>
+                </th>
+                <th>
+                </th>
+                <th>
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+    </table>
+</div>

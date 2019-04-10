@@ -1,0 +1,70 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model EsecureWebApp.Pages.Mantenedores.Empresas.DetailsModel
+<div id="planes">
+    <h4>Detalle de Planes:</h4>
+    <table class="table table-hover table-striped" >
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.PlanList[0].PlanID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PlanList[0].NombrePlan)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PlanList[0].PersonaID)
+                </th>
+                <!--th>
+                    @@Html.DisplayNameFor(model => model.PlanList[0].EmpresaID)
+                </!--th -->
+                <th>
+                    @Html.DisplayNameFor(model => model.PlanList[0].TimeStamp)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PlanList[0].Umod)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.PlanList)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PlanID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NombrePlan)
+                    </td>
+                    <td>
+
+                        @Html.DisplayFor(modelItem => item.PersonaID)
+                        @{
+                            var pe = Model.ListaResponsables.FirstOrDefault(p => p.PersonaID == item.PersonaID);
+                        }
+                        @pe.PrimerNombre;
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TimeStamp)
+                    </td>
+                    <td>
+                        @item.GetUmod();
+                        @Html.DisplayFor(modelItem => item.Umod)
+                    </td>
+                    <td>
+                        <a asp-page="./Details" asp-route-emid="@Model.MyEmpresa.EmpresaID" asp-route-plid="@item.PlanID" class="btn btn-primary btn-sm" role="button">Actividades</a>
+                        <span class="badge alert-success">Nuevo!</span>
+                    </td>
+                    <td>
+                        <a asp-page="/Planes/Mitigacion/IssueLists/Index" asp-route-emid="@Model.MyEmpresa.EmpresaID" asp-route-plid="@item.PlanID">Plan de Acción</a>
+                        <a asp-page="/Actividades/Verificaciones/Index" asp-route-emid="@Model.MyEmpresa.EmpresaID" asp-route-plid="@item.PlanID">Ver CheckList Disponibles</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

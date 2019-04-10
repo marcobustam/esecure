@@ -1,0 +1,167 @@
+﻿@page
+@model EsecureWebApp.Pages.Exams.Examinations.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+<ol class="breadcrumb">
+    @* *************************************************************************** *@
+    <li class="breadcrumb-item">
+        <a asp-page="/Mantenedores/Empresas/Index">Empresa</a>
+        @*<a href="#">Empresa</a>*@
+    </li>
+    <li class="breadcrumb-item">
+        <a href="#">Planificaciones</a>
+    </li>
+    <li class="breadcrumb-item active">
+        Planes de Prevención
+    </li>
+    @* *************************************************************************** *@
+</ol>
+<div id="content-wrapper">
+    <div class="container-fluid">
+        <!-- Breadcrumbs-->
+
+        <div class="card card-body bg-primary text-light">
+            @* *************************************************************************** *@
+            <h3>Listado de Inspecciones</h3>
+            <h4>Empresa: @Model.MyEmpresa.NombreFantasia </h4>
+            @* *************************************************************************** *@
+        </div>
+        <hr />
+        @* --------------------------------------------------------------------------- *@
+        <div class="container container-fluid respon card card-body bg-light text-dark">
+            <br />
+
+            <table class="table  table-bordered table-striped table-hover text-dark table-responsive table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl" id="datata">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => Model.ExaminationList[0].TimeStamp)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => Model.ExaminationList[0].ExaminationID)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => Model.ExaminationList[0].EmpresaID)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => Model.ExaminationList[0].PlanID)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => Model.ExaminationList[0].TareaID)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => Model.ExaminationList[0].PersonaID1)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => Model.ExaminationList[0].PersonaID2)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => Model.ExaminationList[0].Prueba)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => Model.ExaminationList[0].EmpresaID)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => Model.ExaminationList[0].FaenaID)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => Model.ExaminationList[0].TotalRespuestas)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => Model.ExaminationList[0].RespuestasCompletadas)
+                        </th>
+                        <th>
+                            Acciones
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.ExaminationList)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TimeStamp)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ExaminationID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EmpresaID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PlanID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TareaID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PersonaID1)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PersonaID2)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Prueba.TestID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EmpresaID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FaenaID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TotalRespuestas)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.RespuestasCompletadas)
+                            </td>
+                            <td>
+                                <div class="btn-group">
+                                    <a role="button" class="btn btn-warning btn-sm" asp-page="./Edit" asp-route-id="@item.ExaminationID"><i class="fa fa-edit"></i></a>
+                                    <a role="button" class="btn btn-success btn-sm" asp-page="./Details" asp-route-emid="@item.EmpresaID" asp-route-plid="@item.PlanID" asp-route-taid="@item.TareaID" asp-route-exid="@item.ExaminationID"><i class="fa fa-info-circle"></i></a>
+                                    <a role="button" class="btn btn-danger btn-sm" asp-page="./Delete" asp-route-id="@item.ExaminationID"><i class="fa fa-eraser"></i></a>
+                                    <button type="button" id="btnIniciar" class="btn btn-info btn-sm" title="Iniciar" onclick="CambiaEstado(@item.EmpresaID , @item.PlanID, @item.TareaID, @EsecureModel.Planificacion.EstadoTarea.Cancelada);">
+                                        <i class="fa fa-times"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>
+                        </th>
+                        <th>
+                        </th>
+                        <th>
+                        </th>
+                        <th>
+                        </th>
+                        <th>
+                        </th>
+                        <th>
+                        </th>
+                        <th>
+                        </th>
+                        <th>
+                        </th>
+                        <th>
+                        </th>
+                        <th>
+                        </th>
+                        <th>
+                        </th>
+                        <th>
+                        </th>
+                        <th>
+                        </th>
+                    </tr>
+                </tfoot>
+            </table>
+            <br />
+        </div>
+    </div>
+</div>

@@ -1,0 +1,247 @@
+﻿@page
+@model Bbs.Pages.IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<br />
+<br />
+<div class="card card-body bg-primary text-light"><h4><i class="fa fa-search">&nbsp; </i>&nbsp; Inspecciones de comportamiento seguro</h4></div>
+<hr />
+@*<!-- Heading Row -->
+    <div class="row my-4">
+        <div class="col-lg-8">
+            <img class="img-fluid rounded" src="http://placehold.it/900x400" alt="">
+        </div>
+        <!-- /.col-lg-8 -->
+        <div class="col-lg-4">
+            <h1>Business Name or Tagline</h1>
+            <p>This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!</p>
+            <a class="btn btn-primary btn-lg" href="#">Call to Action!</a>
+        </div>
+        <!-- /.col-md-4 -->
+    </div>
+    <!-- /.row -->
+    <!-- Call to Action Well -->
+    <div class="card text-white bg-secondary my-4 text-center">
+        <div class="card-body">
+            <p class="text-white m-0">This call to action card is a great place to showcase some important information or display a clever tagline!</p>
+        </div>
+    </div>*@
+<!-- Content Row -->
+<div class="row">
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h2 class="card-title text-center text-info"><a class="" asp-page="/Bl/Create"><i class="fa fa-search-plus fa-4x"></i></a></h2>
+                <h2 class="card-title">Inspecciones</h2>
+                <p class="card-text">Permite realizar inspección BBS. </p>
+            </div>
+            <div class="card-footer text-center">
+                @*<a href="#" class="btn btn-primary">More Info</a>*@
+                <a class="btn btn-primary" asp-page="/Bl/Create">Inspeccionar </a>
+            </div>
+        </div>
+    </div>
+    <!-- /.col-md-4 -->
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body">
+                <h2 class="card-title text-center text-primary"><a class="" asp-page="/Indicators"><i class="fa fa-line-chart fa-4x" role="button"></i></a></h2>
+                <h2 class="card-title">Estadísticas</h2>
+                <p class="card-text">Revisa y analiza las situaciones detectadas. </p>
+            </div>
+            <div class="card-footer text-center">
+                <a class="btn btn-primary" asp-page="/Indicators">Estadísticas</a>
+            </div>
+        </div>
+    </div>
+    <!-- /.col-md-4 -->
+    @*<div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h2 class="card-title text-center text-warning"><i class="fa fa-cogs fa-4x"></i></h2>
+                    <h2 class="card-title">Configuración</h2>
+                    <p class="card-text">Permite modificar los parámetros del sistema.</p>
+                </div>
+                <div class="card-footer text-center">
+                    <a asp-page="/Admin" class="btn btn-primary">Configurar</a>
+                </div>
+            </div>
+        </div>*@
+    <!-- /.col-md-4 -->
+</div>
+<!-- /.row -->
+<!-- Bootstrap core JavaScript -->
+@*<script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>*@
+
+
+@*<div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+                        <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1" />
+                        <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <div class="input-group date" id="datetimepicker3" data-target-input="nearest">
+                        <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker3" />
+                        <div class="input-group-append" data-target="#datetimepicker3" data-toggle="datetimepicker">
+                            <div class="input-group-text"><i class="fa fa-clock-o"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <div class="input-group date" id="datetimepicker4" data-target-input="nearest">
+                        <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker4" />
+                        <div class="input-group-append" data-target="#datetimepicker4" data-toggle="datetimepicker">
+                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>*@
+
+@*<section class="" id="links">
+        <div class="container-fluid">
+            <div class="media-container-row">
+                <div class="card p-3 col-3 col-md-6 col-lg-2">
+                    <div class="card-wrapper">
+                        <div class="card-img align-self-center">
+                            <i class="fa fa-industry fa-2x"></i>
+                        </div>
+                        <div class="card-box">
+                            <h4 class="card-title pb-3 mbr-fonts-style display-7">
+                                <a asp-page="/">Ubicaciones</a>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="card p-3 col-3 col-md-6 col-lg-2">
+                    <div class="card-wrapper">
+                        <div class="card-img align-self-center">
+                            <i class="fa fa-user fa-2x"></i>
+                        </div>
+                        <div class="card-box">
+                            <h4 class="card-title pb-3 mbr-fonts-style display-7">
+                                <a asp-page="/Params/Genders/Index">Trabajadores</a>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="card p-3 col-3 col-md-6 col-lg-2">
+                    <div class="card-wrapper">
+                        <div class="card-img align-self-center">
+                            <i class="fa fa-folder fa-2x"></i>
+                        </div>
+                        <div class="card-box">
+                            <h4 class="card-title pb-3 mbr-fonts-style display-7">
+                                <a asp-page="/Params/Genders/Index">Documentos</a>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="card p-3 col-3 col-md-6 col-lg-2">
+                    <div class="card-wrapper">
+                        <div class="card-img align-self-center">
+                            <i class="fa fa-bar-chart fa-2x"></i>
+                        </div>
+                        <div class="card-box">
+                            <h4 class="card-title pb-3 mbr-fonts-style display-7">
+
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <div class="card p-3 col col-md-6 col-lg-2">
+                        <div class="card-wrapper">
+                            <div class="card-img align-self-center">
+                                <i class="fa fa-search-plus fa-2x"></i>
+                            </div>
+                            <div class="card-box">
+                                <h4 class="card-title pb-3 mbr-fonts-style display-7">
+                                    <a asp-page="/BbsInspects/Create">Inspeccionar</a>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div class="card p-3 col col-md-6 col-lg-2">
+                        <div class="card-wrapper">
+                            <div class="card-img align-self-center">
+                                <i class="fa fa-search fa-2x"></i>
+                            </div>
+                            <div class="card-box">
+                                <h4 class="card-title pb-3 mbr-fonts-style display-7">
+                                    <a asp-page="/Bl/Create">Inspeccionar</a>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>*@
+@section Scripts {
+    @*<script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker({
+                    locale: 'es'
+                });
+            });
+        </script>
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker3').datetimepicker({
+                    format: 'LT'
+                });
+            });
+        </script>
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker4').datetimepicker({
+                    format: 'L'
+                });
+            });
+        </script>
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker13').datetimepicker({
+                    format: 'LT',
+                    inline: true,
+                    sideBySide: false,
+                    locale: 'es'
+                });
+            });
+        </script>*@
+}

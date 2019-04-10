@@ -1,0 +1,96 @@
+﻿@page
+@model EsecureWebApp.Pages.Mantenedores.Direcciones.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Listado</h2>
+
+<p>
+    <a asp-page="Create">Nuevo</a>
+</p>
+
+<div class=" bg-secondary">
+    <table class="table table-bordered table-striped table-hover text-dark table-responsive-md" style="width:100%" id="datata">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Direccion[0].EmpresaID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Direccion[0].ShortName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Direccion[0].Calle)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Direccion[0].Numeracion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Direccion[0].Comuna)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Direccion[0].Region)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Direccion[0].Pais)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Direccion)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EmpresaID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ShortName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Calle)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Numeracion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Comuna)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Region)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Pais)
+                    </td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.DireccionID">Editar</a> |
+                        <a asp-page="./Details" asp-route-id="@item.DireccionID">Detalles</a> |
+                        <a asp-page="./Delete" asp-route-id="@item.DireccionID">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>
+                </th>
+                <th>
+                </th>
+                <th>
+                </th>
+                <th>
+                </th>
+                <th>
+                </th>
+                <th>
+                </th>
+                <th>
+                </th>
+                <th>
+                </th>
+            </tr>
+        </tfoot>
+    </table>
+</div>

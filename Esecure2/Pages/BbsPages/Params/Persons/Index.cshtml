@@ -1,0 +1,84 @@
+﻿@page
+@model Bbs.Pages.Params.Persons.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Person[0].RutChile)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Person[0].Names)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Person[0].LastName1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Person[0].LastName2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Person[0].GenderID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Person[0].BirthDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Person[0].IsObserved)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Person[0].IsObserver)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Person[0].IsDirector)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Person) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RutChile)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Names)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GenderID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BirthDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsObserved)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsObserver)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsDirector)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.PersonID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.PersonID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.PersonID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

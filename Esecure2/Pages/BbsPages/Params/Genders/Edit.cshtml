@@ -1,0 +1,74 @@
+﻿@page
+@model Bbs.Pages.Params.Genders.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div id="content-wrapper">
+    <div class="container-fluid">
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+            @* *************************************************************************** *@
+            <li class="breadcrumb-item">
+                <a asp-page="/Admin">Mantenedores</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="#">Géneros</a>
+            </li>
+            <li class="breadcrumb-item active">
+                Editar Género
+            </li>
+            @* *************************************************************************** *@
+        </ol>
+        <div class="card card-footer">
+            @* *************************************************************************** *@
+            <h2>Mantenedor de Géneros</h2>
+            @*<h4>Empresa: @Model.MyEmpresa.NombreFantasia </h4>*@
+            @* *************************************************************************** *@
+        </div>
+        <hr />
+        <div class="card">
+
+            <div class="col-md-12">
+                <br />
+                @* *************************************************************************** *@
+                @* --------------------------------------------------------------------------- *@
+                <div class="container-fluid card bg-light text-dark">
+                    <br />
+                    <h3>Editar:</h3>
+                    <form method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input type="hidden" asp-for="Gender.GenderId" />
+                        <div class="form-group">
+                            <label asp-for="Gender.GenderName" class="control-label"></label>
+                            <input asp-for="Gender.GenderName" class="form-control" />
+                            <span asp-validation-for="Gender.GenderName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Guardar cambios" class="btn btn-info btn-sm" />
+                        </div>
+                    </form>
+                    <br />
+                </div>
+                <br />
+                <a asp-page="./Index" class="btn btn-info btn-sm float-right" role="button">Volver al listado</a>
+                <br />
+                <br />
+            </div>
+            
+            
+
+        </div>
+        
+        <div>
+
+        </div>
+    </div>
+</div>
+    
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

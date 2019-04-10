@@ -1,0 +1,77 @@
+﻿@page
+@model EsecureWebApp.Pages.Exams.Responses.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Listado</h2>
+
+<p>
+    <a asp-page="Create">Nuevo</a>
+    <div class="bg-secondary">
+        <table class="table table-bordered table-striped table-hover text-dark table-responsive-md" style="width:100%" id="datata">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EstaResponse[0].ExaminationID)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EstaResponse[0].TestID)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EstaResponse[0].QuestionID)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EstaResponse[0].ResponseTypeID)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EstaResponse[0].TimeStamp)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.EstaResponse)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ExaminationID)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TestID)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.QuestionID)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ResponseTypeID)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TimeStamp)
+                        </td>
+                        <td>
+                            <a asp-page="./Edit" asp-route-id="@item.ResponseID">Editar</a> |
+                            <a asp-page="./Details" asp-route-id="@item.ResponseID">Detalles</a> |
+                            <a asp-page="./Delete" asp-route-id="@item.ResponseID">Eliminar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>
+                    </th>
+                    <th>
+                    </th>
+                    <th>
+                    </th>
+                    <th>
+                    </th>
+                    <th>
+                    </th>
+                    <th></th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>

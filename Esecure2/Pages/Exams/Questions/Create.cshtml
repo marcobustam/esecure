@@ -1,0 +1,83 @@
+﻿@page
+@model EsecureWebApp.Pages.Exams.Questions.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+<ol class="breadcrumb">
+    @* *************************************************************************** *@
+    <li class="breadcrumb-item">
+        <a href="#">Empresa</a>
+    </li>
+    <li class="breadcrumb-item">
+        <a href="#">Mantenedores</a>
+    </li>    
+    <li class="breadcrumb-item">
+        <a href="#">Evaluaciones</a>
+    </li>
+    <li class="breadcrumb-item active">
+        Items
+    </li>
+    @* *************************************************************************** *@
+</ol>
+<div id="content-wrapper">
+    <div class="container-fluid">
+        <!-- Breadcrumbs-->
+
+        <div class="card card-body bg-primary text-light">
+            @* *************************************************************************** *@
+            <h2>Crear Item de Evaluación</h2>
+            @*<h4>Empresa: @Model.MyEmpresa.NombreFantasia </h4>*@
+            @* *************************************************************************** *@
+        </div>
+        <hr />
+
+        <div class="card">
+            <div class="col-md-12">
+                <br />
+                @* *************************************************************************** *@
+                <h4 class="card card-body bg-primary text-light">
+                    Nuevo Item:
+                </h4>
+                @* --------------------------------------------------------------------------- *@
+                <div class="container-fluid card bg-light text-dark">
+                    <br />
+
+                    <form method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="Question.TestID" class="control-label"></label>
+                            <input asp-for="Question.TestID" class="form-control" value="ViewBag.teid" />
+                            <!-- select asp-for="Question.TestID" class="form-control" asp-items="ViewBag.TestID"></!select -->
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Question.CategoryID" class="control-label"></label>
+                            <!-- input asp-for="Question.CategoryID" class="form-control" / -->
+                            <select asp-for="Question.CategoryID" class="form-control" asp-items="ViewBag.CategoryList"></select>
+                            <span asp-validation-for="Question.CategoryID" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Question.QuestionTxt" class="control-label"></label>
+                            <input asp-for="Question.QuestionTxt" class="form-control" />
+                            <span asp-validation-for="Question.QuestionTxt" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Crear" class="btn btn-success" />
+                        </div>
+                    </form>
+                </div>
+                <br />
+                @* *************************************************************************** *@
+            </div>
+            <br />
+        </div>
+        <br />
+    </div>
+</div>
+@* *************************************************************************** *@
+<hr />
+@* *********************************** *@
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

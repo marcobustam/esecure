@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EsecureWebApp</name>
+    </assembly>
+    <members>
+        <member name="M:EsecureWebApp.Pages.Planes.Prevencion.Planificaciones.DetailsModel.OnPostAsync">
+            <summary>
+            Crear nueva tarea para el plan
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

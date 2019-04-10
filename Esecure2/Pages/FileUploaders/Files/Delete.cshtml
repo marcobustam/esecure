@@ -1,0 +1,64 @@
+﻿@page
+@model EsecureWebApp.Pages.FileUploaders.Files.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Eliminar registro</h2>
+
+<h3>¿Está seguro que quiere eliminar el registro?</h3>
+<div>
+    <h4>FileUp</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FileUp.FileName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FileUp.FileName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FileUp.FileUid)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FileUp.FileUid)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FileUp.FolderUpID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FileUp.FolderUpID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FileUp.FileTypeID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FileUp.FileTypeID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FileUp.FileSize)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FileUp.FileSize)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FileUp.TimeStamp)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FileUp.TimeStamp)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FileUp.LastMod)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FileUp.LastMod)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="FileUp.FileUpID" />
+        <input type="submit" value="Eliminar" class="btn btn-default" /> |
+        <a asp-page="./Index">Volver</a>
+    </form>
+</div>

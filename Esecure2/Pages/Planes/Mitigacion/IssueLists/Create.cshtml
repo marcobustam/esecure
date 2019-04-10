@@ -1,0 +1,42 @@
+﻿@page
+@model EsecureWebApp.Pages.Planes.Mitigacion.IssueLists.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Crear</h2>
+<h4>Nuevo plan de acción</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="EsteIssueList.PlanID" class="control-label"></label>
+                <input asp-for="EsteIssueList.PlanID" class="form-control" readonly />
+            </div>
+            <div class="form-group">
+                <label asp-for="MyPlan.NombrePlan" class="control-label"></label>
+                <input asp-for="MyPlan.NombrePlan" class="form-control" readonly />
+            </div>
+            <div class="form-group">
+                <label asp-for="EsteIssueList.Nombre" class="control-label"></label>
+                <input asp-for="EsteIssueList.Nombre" class="form-control" />
+                <span asp-validation-for="EsteIssueList.Nombre" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Crear" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Volver</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

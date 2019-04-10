@@ -1,0 +1,46 @@
+﻿@page
+@model EsecureWebApp.Pages.Planes.Mitigacion.Issues.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+<h2>Listado de No conformidades</h2>
+<h4>Empresa: @Model.MyEmpresa.NombreFantasia </h4>
+
+<div class="bg-secondary">
+    <table class="table table-bordered table-striped table-hover text-dark table-responsive-md" style="width:100%" id="datata">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ListaIssueItem[0].Descripcion)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.ListaIssueItem)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descripcion)
+                    </td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-iiid="@item.IssueItemID">Editar</a> |
+                        <a asp-page="./Details" asp-route-iiid="@item.IssueItemID">Detalles</a> |
+                        <a asp-page="./Delete" asp-route-iiid="@item.IssueItemID">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>
+                </th>
+                <th></th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+<p>
+    <a asp-page="~/Planes/Prevencion/Planificaciones" class="float-md-right btn btn-info" role="button">Crear Issue</a><a asp-page="Create" class="float-md-right btn btn-info" role="button">Crear Issue</a>
+</p>

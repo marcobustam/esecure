@@ -1,0 +1,72 @@
+﻿@page
+@model EsecureWebApp.Pages.Planes.Prevencion.Tareas.HistoricoTareas.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Listado</h2>
+
+<p>
+    <a asp-page="Create">Nuevo</a>
+</p>
+<div class="bg-secondary">
+    <table class="table table-bordered table-striped table-hover text-dark table-responsive-md" style="width:100%" id="datata">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.HistoricoTarea[0].TareaID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.HistoricoTarea[0].EstadoAnterior)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.HistoricoTarea[0].NuevoEstado)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.HistoricoTarea[0].TimeStamp)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.HistoricoTarea)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TareaID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EstadoAnterior)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NuevoEstado)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TimeStamp)
+                    </td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.HistoricoTareaID" class="btn btn-info btn-sm" role="button">Editar</a>
+                        <a asp-page="./Details" asp-route-id="@item.HistoricoTareaID" class="btn btn-info btn-sm" role="button">Detalles</a>
+                        <a asp-page="./Delete" asp-route-id="@item.HistoricoTareaID" class="btn btn-info btn-sm" role="button">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>
+                </th>
+                <th>
+                </th>
+                <th>
+                </th>
+                <th>
+                </th>
+                <th>
+                </th>
+            </tr>
+        </tfoot>
+    </table>
+    </div>
+

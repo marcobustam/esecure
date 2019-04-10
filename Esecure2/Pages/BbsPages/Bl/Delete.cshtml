@@ -1,0 +1,88 @@
+﻿@page
+@model Bbs.Pages.Bl.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Inspection</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Inspection.InspectionDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Inspection.InspectionDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Inspection.MyProperty)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Inspection.MyProperty)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Inspection.PersonID1)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Inspection.PersonID1)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Inspection.PersonID2)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Inspection.PersonID2)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Inspection.PersonID3)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Inspection.PersonID3)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Inspection.DivisionID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Inspection.DivisionID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Inspection.SiteID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Inspection.SiteID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Inspection.WorkSiteID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Inspection.WorkSiteID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Inspection.ObsCategoryID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Inspection.ObsCategoryID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Inspection.ObsItemID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Inspection.ObsItemID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Inspection.IsSafeAction)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Inspection.IsSafeAction)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Inspection.InspectionID" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

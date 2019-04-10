@@ -1,0 +1,61 @@
+﻿@page
+@model EsecureWebApp.Pages.FileUploaders.Files.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Detalles:</h2>
+
+<div>
+    <h4>FileUp</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FileUp.FileName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FileUp.FileName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FileUp.FileUid)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FileUp.FileUid)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FileUp.FolderUpID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FileUp.FolderUpID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FileUp.FileTypeID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FileUp.FileTypeID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FileUp.FileSize)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FileUp.FileSize)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FileUp.TimeStamp)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FileUp.TimeStamp)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FileUp.LastMod)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FileUp.LastMod)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.FileUp.FileUpID">Editar</a> |
+    <a asp-page="./Index">Volver</a>
+</div>

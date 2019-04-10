@@ -1,0 +1,84 @@
+﻿@page
+@model EsecureWebApp.Pages.FileUploaders.Folders.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Creación de directorios</h2>
+<hr />
+<div class="row">
+    <div class="col-lg-4 collapse" id="hdndiv">
+        <!--agregar hidden-->
+        <div id="jstreeCreater" class="pre-scrollable" style="height:700px;width:100%">
+            <!-- in this example the tree is populated from inline HTML -->
+            <ul>
+                @Html.Raw(Model.htmlTree)
+            </ul>
+        </div>
+    </div>
+    <button id="showTree" class="btn" hidden="hidden" type="button" data-toggle="collapse" data-target="#hdndiv" aria-expanded="true" aria-controls="collapseExample">
+        Button with data-target
+    </button>
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FolderUp.FolderUpName" class="control-label"></label>
+                <input asp-for="FolderUp.FolderUpName" class="form-control" />
+                <span asp-validation-for="FolderUp.FolderUpName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FolderUp.FolderUpParent" class="control-label"></label>
+                <input id="FolderUpParent" asp-for="FolderUp.FolderUpParent" class="form-control" />
+                <span asp-validation-for="FolderUp.FolderUpParent" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <button type="submit" value="Crear" class="btn btn-default">Crear Directorio</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Volver</a>
+</div>
+
+@section Scripts {
+
+    <script>
+
+        $(function () {
+            // alert("ready to show");
+            $('#jstreeCreater').jstree({
+                "plugins": [
+                    "wholerow",
+                    "search"
+                ],
+                "core": {
+                    "multiple": false
+                }
+            });
+            // $('#jstreeCreater').show();
+            $('#hdndiv').show();
+            $('#showTree').click();
+
+            // 7 bind to events triggered on the tree
+            $('#jstreeCreater').on("select_node.jstree", function (e, data) {
+                // alert(data.node.id);
+                // putPath(e, data.node);
+                // var alrt = document.getElementById('alertPath');
+                var alrt2 = document.getElementById('FolderUpParent');
+                // alrt.innerText = '';
+                //alert(e.getAttribute("id"));
+                var dirty = $('#jstreeCreater').jstree().get_path($('#jstreeCreater').jstree("get_selected", true)[0], '/');
+                var cleanPath = $.map(dirty.split("/"), $.trim);
+                // alrt.innerText = '/' + cleanPath.join('/');
+                // alrt2.innerText = alrt.innerText;
+                alrt2.value = data.node.id;
+                return;
+            });
+        });
+    </script>
+    
+}

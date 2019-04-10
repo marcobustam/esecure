@@ -1,0 +1,174 @@
+﻿@page
+@model EsecureWebApp.Pages.Mantenedores.Empresas.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+@* *************************************************************************** *@
+<div id="content-wrapper">
+    <div class="container-fluid">
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+            @* *************************************************************************** *@
+            <li class="breadcrumb-item">
+                <a asp-page="/Mantenedores/Empresas/Index">Empresa</a>
+                @*<a href="#">Empresa</a>*@
+            </li>
+            <li class="breadcrumb-item">
+                <a href="#">Mantenedores</a>
+            </li>
+            <li class="breadcrumb-item active">
+                Crear Empresas
+            </li>
+            @* *************************************************************************** *@
+        </ol>
+        <div class="card card-footer">
+            @* *************************************************************************** *@
+            <h2>Incorporar Empresa</h2>
+            @*<h4>Empresa: @Model.MyEmpresa.NombreFantasia </h4>*@
+            @* *************************************************************************** *@
+        </div>
+        <hr />
+
+        <div class="card">
+            <div class="col-md-12">
+                <br />
+                @* *************************************************************************** *@
+                @* --------------------------------------------------------------------------- *@
+                @*<div class="container-fluid card bg-light text-dark">
+
+                    </div>*@
+
+                @*DATATABLES*@
+
+                @* --------------------------------------------------------------------------- *@
+
+                @* --------------------------------------------------------------------------- *@
+                <div class="container-fluid card bg-light text-dark">
+                    <form method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+
+
+
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Empresa.NombreFantasia" class="control-label"></label>
+                            @* ***************************************************************** *@
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-pen-square"></i></span>
+                                </div>
+                                @* ----------------------------------------------------------------- *@
+                                <input asp-for="Empresa.NombreFantasia" class="form-control" />
+                                @* ----------------------------------------------------------------- *@
+                            </div>
+                            @* ***************************************************************** *@
+                            <span asp-validation-for="Empresa.NombreFantasia" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Empresa.RazonSocial" class="control-label"></label>
+                            @* ***************************************************************** *@
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-pen-square"></i></span>
+                                </div>
+                                @* ----------------------------------------------------------------- *@
+                                <input asp-for="Empresa.RazonSocial" class="form-control" />
+                                @* ----------------------------------------------------------------- *@
+                            </div>
+                            @* ***************************************************************** *@                            
+                            <span asp-validation-for="Empresa.RazonSocial" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Empresa.RutChile" class="control-label"></label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-pen-square"></i></span>
+                                </div>
+                                <input asp-for="Empresa.RutChile" class="form-control" />
+                            </div>
+                            <span asp-validation-for="Empresa.RutChile" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Empresa.PersonaID" class="control-label"></label>
+                            @* ***************************************************************** *@
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-pen-square"></i></span>
+                                </div>
+                                @* ----------------------------------------------------------------- *@
+                                <input asp-for="Empresa.PersonaID" class="form-control" />
+                                @* ----------------------------------------------------------------- *@
+                            </div>
+                            @* ***************************************************************** *@
+                            <span asp-validation-for="Empresa.PersonaID" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Crear" class="btn btn-default btn-sm" />
+                        </div>
+                    </form>
+                </div>
+
+
+                @* --------------------------------------------------------------------------- *@
+                <p>
+                    <div>
+                        <a asp-page="/Mantenedores/Empresas/Index" class="btn btn-info btn-sm float-md-right" role="button">Volver</a>
+                        <br />
+                    </div>
+                </p>
+                @*FORM OR DETAILS OR CONFIRM DELETION*@
+                @* --------------------------------------------------------------------------- *@
+                @* *************************************************************************** *@
+                <br />
+            </div>
+        </div>
+    </div>
+</div>
+@* *************************************************************************** *@
+@*<h2>Crear nuevo</h2>
+
+    <h4>Empresa</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Empresa.NombreFantasia" class="control-label"></label>
+                    <input asp-for="Empresa.NombreFantasia" class="form-control" />
+                    <span asp-validation-for="Empresa.NombreFantasia" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Empresa.RazonSocial" class="control-label"></label>
+                    <input asp-for="Empresa.RazonSocial" class="form-control" />
+                    <span asp-validation-for="Empresa.RazonSocial" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Empresa.RutChile" class="control-label"></label>
+                    <input asp-for="Empresa.RutChile" class="form-control" />
+                    <span asp-validation-for="Empresa.RutChile" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Empresa.PersonaID" class="control-label"></label>
+
+                    <input asp-for="Empresa.PersonaID" class="form-control" />
+
+
+                    <span asp-validation-for="Empresa.PersonaID" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Crear" class="btn btn-default" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-page="Index">Volver</a>
+    </div>*@
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

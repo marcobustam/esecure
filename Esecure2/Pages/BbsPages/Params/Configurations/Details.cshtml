@@ -1,0 +1,43 @@
+﻿@page
+@model Bbs.Pages.Params.Configurations.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Configuration</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Configuration.ConfigurationIndex)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Configuration.ConfigurationIndex)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Configuration.ConfigurationGroup)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Configuration.ConfigurationGroup)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Configuration.ConfigurationName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Configuration.ConfigurationName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Configuration.ConfigurationValue)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Configuration.ConfigurationValue)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Configuration.ConfigurationID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

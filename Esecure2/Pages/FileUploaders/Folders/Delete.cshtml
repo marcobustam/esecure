@@ -1,0 +1,46 @@
+﻿@page
+@model EsecureWebApp.Pages.FileUploaders.Folders.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Eliminar registro</h2>
+
+<h3>¿Está seguro que quiere eliminar el registro?</h3>
+<div>
+    <h4>FolderUp</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FolderUp.FolderUpName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FolderUp.FolderUpName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FolderUp.FolderUpParent)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FolderUp.FolderUpParent)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FolderUp.TimeStamp)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FolderUp.TimeStamp)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FolderUp.LastMod)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FolderUp.LastMod)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="FolderUp.FolderUpID" />
+        <input type="submit" value="Eliminar" class="btn btn-default" /> |
+        <a asp-page="./Index">Volver</a>
+    </form>
+</div>

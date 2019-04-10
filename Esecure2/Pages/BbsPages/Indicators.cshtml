@@ -1,0 +1,501 @@
+﻿@page
+@model Bbs.Pages.IndicatorsModel
+@{
+    ViewData["Title"] = "Indicators";
+}
+
+<h4 class="card card-body bg-primary text-light">
+    Indicadores
+</h4>
+<hr />
+
+@*Model.json.ToString()
+
+
+    foreach(var number in Model.json)*@
+
+
+@* ******************************************************************************** *@
+<!-- Icon Cards-->
+<div class="row" hidden="hidden">
+    <div class="col-xl-3 col-sm-6 mb-3">
+        <div class="card text-white bg-primary o-hidden h-100">
+            <div class="card-body">
+                <div class="card-body-icon">
+                    <i class="fa fa-fw fa-comments"></i>
+                </div>
+                <div class="mr-5">@Model.IconCardStats[0].ToString() Inspecciones! @Model.IconCardStats[0].ToString() </div>
+            </div>
+            <a class="card-footer text-white clearfix small z-1" href="#">
+                <span class="float-left">View Details</span>
+                <span class="float-right">
+                    <i class="fa fa-angle-right"></i>
+                </span>
+            </a>
+        </div>
+    </div>
+    <div class="col-xl-3 col-sm-6 mb-3">
+        <div class="card text-white bg-warning o-hidden h-100">
+            <div class="card-body">
+                <div class="card-body-icon">
+                    <i class="fa fa-fw fa-list"></i>
+                </div>
+                <div class="mr-5">11 New Tasks!</div>
+            </div>
+            <a class="card-footer text-white clearfix small z-1" href="#">
+                <span class="float-left">View Details</span>
+                <span class="float-right">
+                    <i class="fa fa-angle-right"></i>
+                </span>
+            </a>
+        </div>
+    </div>
+    <div class="col-xl-3 col-sm-6 mb-3">
+        <div class="card text-white bg-success o-hidden h-100">
+            <div class="card-body">
+                <div class="card-body-icon">
+                    <i class="fa fa-fw fa-shopping-cart"></i>
+                </div>
+                <div class="mr-5">123 New Orders!</div>
+            </div>
+            <a class="card-footer text-white clearfix small z-1" href="#">
+                <span class="float-left">View Details</span>
+                <span class="float-right">
+                    <i class="fa fa-angle-right"></i>
+                </span>
+            </a>
+        </div>
+    </div>
+    <div class="col-xl-3 col-sm-6 mb-3">
+        <div class="card text-white bg-danger o-hidden h-100">
+            <div class="card-body">
+                <div class="card-body-icon">
+                    <i class="fa fa-fw fa-life-ring"></i>
+                </div>
+                <div class="mr-5">13 New Tickets!</div>
+            </div>
+            <a class="card-footer text-white clearfix small z-1" href="#">
+                <span class="float-left">View Details</span>
+                <span class="float-right">
+                    <i class="fa fa-angle-right"></i>
+                </span>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+@* ******************************************************************************** *@
+<!-- Inspecciones -->
+<div class="card mb-3" hidden="hidden">
+    <div class="card-header">
+        <i class="fa fa-chart-area"></i>
+        Inspecciones realizadas x día
+    </div>
+    <div class="card-body">
+        <canvas id="myAreaChart" width="100%" height="30"></canvas>
+    </div>
+    <div class="card-footer small text-muted">Última actualización: @DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss")</div>
+</div>
+@* ******************************************************************************** *@
+@* ******************************************************************************** *@
+<!-- Inspecciones -->
+<div class="card mb-3">
+    <div class="card-header bg-primary text-light">
+        <i class="fa fa-chart-bar"></i>
+        Cumplimiento x Categoría
+    </div>
+    <div class="card-body">
+        <canvas id="myHBarChart" width="100%" height="30"></canvas>
+    </div>
+    <div class="card-footer small text-muted">Última actualización: @DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss")</div>
+</div>
+@* ******************************************************************************** *@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card mb-3 ">
+            <div class="card-header bg-primary text-light">
+                <i class="fa fa-chart-bar"></i>
+                Cumplimiento por mes:
+            </div>
+            <div class="card-body">
+                <canvas id="myBarChart" width="100%" height="30"></canvas>
+            </div>
+            <div class="card-footer small text-muted">Última actualización: @DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss")</div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    @* ******************************************************************************** *@
+    <div class="col-lg-4">
+        <div class="card mb-3">
+            <div class="card-header  bg-primary text-light">
+                <i class="fa fa-chart-pie"></i>
+                Estado de cumplimiento (General):
+            </div>
+            <div class="card-body">
+                <canvas id="myPieChart" width="100%" height="100"></canvas>
+            </div>
+            <div class="card-footer small text-muted">Última actualización: @DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss")</div>
+        </div>
+    </div>
+    <div class="col-lg-8">
+        <div class="card mb-3">
+            <div class="card-header bg-primary text-light">
+                <i class="fa fa-chart-bar"></i>
+                Cumplimiento x Área
+            </div>
+            <div class="card-body">
+                <canvas id="myABarChart" width="100%" height="45"></canvas>
+            </div>
+            <div class="card-footer small text-muted">Última actualización: @DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss")</div>
+        </div>
+    </div>
+</div>
+@* ******************************************************************************** *@
+<div class="card">
+    <div class="col-md-12">
+        <br />
+        <div class="card-header bg-primary text-light">
+            Inspecciones realizadas:
+        </div>
+        <hr />
+        @* *************************************************************************** *@
+        <div class="container-fluid card bg-light text-dark">
+            <table class="table table-bordered table-striped table-hover text-dark table-responsive table-responsive-sm  table-responsive-md table-responsive-lg table-responsive-xl" id="datata">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.InspectionsList[0].InspectionDate)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.InspectionsList[0].PersonID1)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.InspectionsList[0].PersonID2)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.InspectionsList[0].PersonID3)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.InspectionsList[0].DivisionID)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.InspectionsList[0].SiteID)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.InspectionsList[0].WorkSiteID)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.InspectionsList[0].ObsCategoryID)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.InspectionsList[0].ObsItemID)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.InspectionsList[0].IsSafeAction)
+                        </th>
+                        <th>
+                            Acciones
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.InspectionsList)
+                    {
+                        <tr>
+                            <td>
+                                @item.InspectionDate.ToString("yyyy-MM-dd")
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PersonID1)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PersonID2)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.PersonID3)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DivisionID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SiteID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.WorkSiteID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ObsCategoryID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ObsItemID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.IsSafeAction)
+                            </td>
+                            <td>
+                                <a asp-page="./Details" asp-route-id="@item.InspectionID">Details</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</div>
+
+@* ******************************************************************************** *@
+@section Scripts {
+    <script type="text/javascript">
+            /************************************************************************************/
+            $(function () {
+                // alert("ready");
+                $('#datata').DataTable({
+                    "paging": true,
+                    "ordering": true,
+                    "info": true,
+                    "language": {
+                        //"url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+                        "url": "/lib/datatables/json/Spanish.json"
+                    }
+                });
+            });
+            /************************************************************************************/
+            // Pie Chart Example
+            var ctx = document.getElementById("myPieChart");
+            var myPieChart = new Chart(ctx, {
+                type: 'pie',
+                data: {
+                    labels: ["Acción Insegura","Acción Segura"],
+                    datasets: [{
+                        data: @Json.Serialize(Model.PorcGral) ,
+                        //data: [12.21, 15.58, 11.25, 8.32],
+                        //backgroundColor: ['#007bff', '#dc3545', '#ffc107', '#28a745'],
+                        backgroundColor: ['#dc3545', '#28a745'],
+                        borderWidth: 3,
+                    }],
+                },
+                options: {
+                    legend: {
+                        display: true
+                    }
+                },
+            });
+            /************************************************************************************/
+            // Cumplimiento por mes
+            var ctx = document.getElementById("myBarChart");
+            var myLineChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: @Json.Serialize(Model.Datagrd.LabelList),
+                    datasets: [
+                    {
+                        label: "Acciones Seguras",
+                            backgroundColor: '#28a745',
+                        borderColor: "rgba(2,117,216,1)",
+                        data:  @Json.Serialize(Model.Datagrd.DataListas[0])
+                    },
+                    {
+                        label: "Acciones Inseguras",
+                        backgroundColor: '#dc3545',
+                        borderColor: "rgba(22,17,21,1)",
+                        data:  @Json.Serialize(Model.Datagrd.DataListas[1]) ,
+                    }],
+                },
+                options: {
+                    scales: {
+                        xAxes: [{
+                            stacked: true,
+                            time: {
+                                unit: 'month'
+                            },
+                            gridLines: {
+                                display: false
+                            },
+                            ticks: {
+                                maxTicksLimit: 12 //meses
+                            }
+                        }],
+                        yAxes: [{
+                            stacked: true,
+                            /*****************
+                             * ticks: {
+                    suggestedMin: 50,
+                    suggestedMax: 100
+                }
+                             */
+
+                            ticks: {
+                                min: 0,
+                                // max: 100,
+                                @{
+                                    var mxim = ((int)(Model.Datagrd.DataList.Max() / 10) + 1) * 10;
+                                    var stpz = (int)(mxim / 10);
+                                }
+                                stepSize: @stpz.ToString(),
+                            max: @mxim.ToString() ,
+                            maxTicksLimit: 5
+                            },
+                            gridLines: {
+                                display: true
+                            }
+                        }],
+                    },
+                    legend: {
+                        display: true
+                    }
+                }
+            });
+
+        /************************************************************************************/
+                // Inspecciones por categoría Datagrh
+            var ctx = document.getElementById("myHBarChart");
+            var myLineChart = new Chart(ctx, {
+                type: 'horizontalBar',
+                data: {
+                    labels: @Json.Serialize(Model.Datagrh.LabelList),
+                    datasets: [
+                    {
+                        label: "Acciones Seguras",
+                            backgroundColor: '#28a745',
+                        borderColor: "rgba(2,117,216,1)",
+                        data:  @Json.Serialize(Model.Datagrh.DataListas[0])
+                    },
+                    {
+                        label: "Acciones Inseguras",
+                        backgroundColor: '#dc3545',
+                        borderColor: "rgba(22,17,21,1)",
+                        data:  @Json.Serialize(Model.Datagrh.DataListas[1]) ,
+                        }
+                    ],
+                },
+                options: {
+                    title: {
+                        display: true
+                    },
+                    scales: {
+                        xAxes: [{
+                            stacked: true,
+                            time: {
+                                unit: 'Inspecciones'
+                            },
+                            gridLines: {
+                                display: false
+                            },
+                            ticks: {
+                                @{
+                                    var hmxim = ((int)(Model.Datagrh.DataList.Max() / 10) + 1) * 10;
+                                }
+                                maxTicksLimit: @hmxim.ToString(),
+                                stepSize: 1
+                            }
+                        }],
+                        yAxes: [{
+                            stacked: true,
+                            ticks: {
+                                min: 0,
+                                // max: 100,
+                                @{ 
+                                    var dlh = Model.Datagrh.LabelList.Count;
+                                }
+                                max: @dlh,
+                                maxTicksLimit: @dlh
+                            },
+                            gridLines: {
+                                display: true
+                            }
+                        }],
+                    },
+                    legend: {
+                        display: true
+                    }
+                }
+            });
+    /************************************************************************************/
+                // Inspecciones por área Datagra
+            var ctx = document.getElementById("myABarChart");
+            var myLineChart = new Chart(ctx, {
+                type: 'horizontalBar',
+                data: {
+                    labels: @Json.Serialize(Model.Datagra.LabelList),
+                    datasets: [
+                    {
+                        label: "Acciones Seguras",
+                            backgroundColor: '#28a745',
+                        borderColor: "rgba(2,117,216,1)",
+                        data:  @Json.Serialize(Model.Datagra.DataListas[0])
+                    },
+                    {
+                        label: "Acciones Inseguras",
+                        backgroundColor: '#dc3545',
+                        borderColor: "rgba(22,17,21,1)",
+                        data:  @Json.Serialize(Model.Datagra.DataListas[1]) ,
+                        }
+                    ],
+                },
+                options: {
+                    title: {
+                        display: true
+                    },
+                    scales: {
+                        xAxes: [{
+                            stacked: true,
+                            time: {
+                                unit: 'Inspecciones'
+                            },
+                            gridLines: {
+                                display: false
+                            },
+                            ticks: {
+                                @{
+                                    var amxim = ((int)(Model.Datagra.DataList.Max() / 10) + 1) * 10;
+                                }
+                                max: @amxim.ToString(),
+                                maxTicksLimit: 6,
+                                stepSize: 1
+                            }
+                        }],
+                        yAxes: [{
+                            stacked: true,
+                            ticks: {
+                                min: 0,
+                                // max: 100,
+                                @{
+                                    var dla = Model.Datagra.LabelList.Count;
+                                }
+                                max: @dla,
+                                maxTicksLimit: @dla
+                            },
+                            gridLines: {
+                                display: true
+                            }
+                        }],
+                    },
+                    legend: {
+                        display: true
+                    }
+                }
+            });
+        /************************************************************************************/
+    </script>
+}

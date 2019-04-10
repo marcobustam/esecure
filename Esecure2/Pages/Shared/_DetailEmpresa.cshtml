@@ -1,0 +1,42 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model EsecureWebApp.Pages.Mantenedores.Empresas.DetailsModel
+<div id="empresa">
+    <h4>Información comercial</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Empresa.NombreFantasia)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Empresa.NombreFantasia)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Empresa.RazonSocial)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Empresa.RazonSocial)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Empresa.RutChile)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Empresa.RutChile)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Empresa.PersonaID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Empresa.PersonaID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Representante.PrimerNombre)
+        </dt>
+        <dd>
+            @Model.Representante.FullName();
+        </dd>
+    </dl>
+</div>

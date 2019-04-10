@@ -1,0 +1,197 @@
+﻿@page
+@model IndexModel
+@using Microsoft.AspNetCore.Identity
+@using EsecureModel.Usuario
+@inject SignInManager<ApplicationUser> SignInManager
+@inject UserManager<ApplicationUser> UserManager
+@inject RoleManager<IdentityRole> RoleManager
+@{
+    ViewData["Title"] = "eSafy";
+    ViewData["Message"] = Model.Message;
+}
+<!-- Page Content -->
+<div class="container">
+    <!-- Heading Row -->
+    <div class="row my-4">
+        <div class="col-lg-8">
+            <object data="~/images/esafy_blanconegro.svg" style="height:100%;width:100%;" type="image/svg+xml">                
+            </object>
+            @*<img src="~/images/logoEsafy.png" alt="eSafy.cl" class="img-responsive" width="auto" height="auto">*@
+        </div>
+        <!-- /.col-lg-8 -->
+        <div class="col-4 col-md-4 ">
+            @if (SignInManager.IsSignedIn(User))
+            {
+                @*<h2>Hola "" </h2>*@
+                <div class="user-pic">
+                    <img class="" src="~/images/user_sm.jpg" alt="User picture">
+                </div>
+
+                <h1>Bienvenido @Model.AppUser.FirstName. </h1>
+                <p>Comienza con la revisión de tus indicadores. Un correcto seguimiento porporciona una base para alcanzar las metas.</p>
+                <a class="btn btn-primary btn-sm" href="#">Perfil</a>
+                <div class="user-info">
+                    @*<span class="user-name">
+                        <strong>Hola</strong>
+                        @Model.Message
+                    </span>
+                    <span class="user-role"></span>*@
+                    <span class="user-status">
+                        <i class="fa fa-circle text-success"></i>
+                        <span>Online</span>
+                    </span>
+                </div>
+            }
+            else
+            {
+                @*<partial name="_LoginPartial" />*@
+            }
+
+        </div>
+        <!-- /.col-md-4 -->
+    </div>
+    <!-- /.row -->
+    <!-- Call to Action Well -->
+
+    <!-- Content Row -->
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-sm-12 col-lg-4 col-xl-3 mb-4">
+            <div class="card h-100">
+                <div class="card-body text-center">
+                    <h2 class="card-title text-center text-info"><a class="" asp-page="/Params/ObsCategories/Index" asp-route-emid="@Model.AppUser.EmpresaID"><i class="fa fa-sitemap fa-4x"></i></a></h2>
+                    <p class="card-text"></p>
+                @*<h2 class="card-title">Categorías</h2>*@
+                </div>
+                <div class="card-footer text-center">
+                    <a asp-page="/Params/ObsCategories/Index" asp-route-emid="@Model.AppUser.EmpresaID" class="btn btn-primary" style="width:100%">Categorías</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-sm-12 col-lg-4 col-xl-3 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h2 class="card-title text-center text-info"><a class="" asp-page="/Users/Adimistrators/Users/Index" asp-route-emid="@Model.AppUser.EmpresaID"><i class="fa fa-id-badge fa-4x"></i></a></h2>
+                    @*<i class="fas fa-user float-md-right fa-6x text-white" style="margin-top:2%;"></i>
+                    <h2 class="card-title">Usuarios</h2>*@
+                    <p class="card-text">Agregar trabajadores y asígnales un usuario. </p>
+                </div>
+                <div class="card-footer">
+                    <a asp-page="/Users/Adimistrators/Users/Index"  asp-route-emid="@Model.AppUser.EmpresaID"  role="button" class="btn btn-primary" style="width:100%"><i class="fa fa-plus"> </i>&nbsp;Agregar usuarios</a>
+                </div>
+            </div>
+        </div>
+        <!-- /.col-md-4 -->
+        <div class="col-xs-12 col-sm-12 col-md-6 col-sm-12 col-lg-4 col-xl-3 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h2 class="card-title text-center text-info"><a class="" asp-page="/FileUploaders/FileUploading" asp-route-emid="@Model.AppUser.EmpresaID"><i class="fa fa-file fa-4x"></i></a></h2>
+                    @*<i class="fa fa-file fa-6x float-md-right text-white" style="margin-top:2%;"></i>
+                    <h2 class="card-title">Archivos</h2>*@
+                    <p class="card-text">Administra tus archivos de manera segura. Te permite crear directorios por cada trabajador o por cada Faena.</p>
+                </div>
+                <div class="card-footer">
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        <a asp-page="/FileUploaders/FileUploading"  asp-route-emid="@Model.AppUser.EmpresaID" role="button" class="btn btn-primary" style="width:100%"><i class="fa fa-plus"> </i>&nbsp;Subir Archivos</a>
+                    }
+                    else
+                    {
+                        <a asp-page="/FileUploaders/FileUploading"  asp-route-emid="@Model.AppUser.EmpresaID" role="button" class="btn btn-primary disabled" style="width:100%"><i class="fa fa-plus"> </i>&nbsp;Subir Archivos</a>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-sm-12 col-lg-4 col-xl-3 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h2 class="card-title text-center text-info"><a class="" asp-page="/Mantenedores/Faenas/Create" asp-route-emid="@Model.AppUser.EmpresaID" ><i class="fa fa-industry fa-4x"></i></a></h2>
+                    @*<i class="fa fa-file fa-6x float-md-right text-white" style="margin-top:2%;"></i>
+                    <h2 class="card-title">Faenas</h2>*@
+                    <p class="card-text">Agrega las faenas donde se producen las inspecciones.</p>
+                </div>
+                <div class="card-footer">
+                    <a asp-page="/Mantenedores/Faenas/Create" asp-route-emid="@Model.AppUser.EmpresaID" role="button" class="btn btn-primary" style="width:100%"><i class="fa fa-plus"> </i>&nbsp;Agregar Faenas</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-6 col-sm-12 col-lg-4 col-xl-3 mb-4">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h2 class="card-title text-center text-info"><a class="" asp-page="/Planes/Prevencion/Planificaciones/Index" asp-route-emid="@Model.AppUser.EmpresaID" ><i class="fa fa-tasks fa-4x"></i></a></h2>
+                    @*<i class="fa fa-file fa-6x float-md-right text-white" style="margin-top:2%;"></i>
+                    <h2 class="card-title">Planificaciones</h2>*@
+                    <p class="card-text">Ver o modificar los planes de prevención que tienes. @*Si no has creado ninguno, hazlo <a asp-page="/Planes/Prevencion/Planificaciones/Create" class="btn btn-sm btn-info"> </a>*@ </p>
+                </div>
+                <div class="card-footer">
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        <a asp-page="/Planes/Prevencion/Planificaciones/Index" asp-route-emid="@Model.AppUser.EmpresaID" role="button" class="btn btn-primary" style="width:100%"><i class="fa fa-search"> </i>&nbsp;Planificaciones</a>
+                    }
+                    else
+                    {
+                        <a asp-page="/Planes/Prevencion/Planificaciones/Index" asp-route-emid="@Model.AppUser.EmpresaID"  role="button" class="btn btn-primary disabled" style="width:100%"><i class="fa fa-search"> </i>&nbsp;Planificaciones</a>
+                        @*<partial name="_LoginPartial" />*@
+                    }
+                </div>
+            </div>
+        </div>
+        <!-- /.col-md-4 -->
+        <!-- /.col-md-4 -->
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+
+@*<div class="jumbotron-fluid">
+    <img class="img-fluid" src="~/images/logoEsafy.png" alt="eSafy logo">
+</div>*@
+
+
+@*<div class="row">
+    <div class="col-md-3">
+        <div class="card-box noradius noborder bg-info">
+            <i class="fa fa-user fa-6x font-weight-bold float-md-right text-white" style="margin-top:2%;"></i>
+            <h6 class="text-white text-uppercase m-b-20"><strong>Usuarios</strong></h6>
+            <h1 class="m-b-20 text-white counter">120</h1>
+            <span class="text-white">25 Nuevos usuarios</span>
+        </div>
+        @*<a asp-page="/Mantenedores/Personas/Index" asp-route-emid="3" role="button" class="btn btn-lg btn-outline-info" style="width:100%"><i class="fa fa-plus"> </i>&nbsp;Agregar usuarios</a>*
+        <a asp-page="/Users/Adimistrators/Users/Index" asp-route-emid="3" role="button" class="btn btn-lg btn-outline-info" style="width:100%"><i class="fa fa-plus"> </i>&nbsp;Agregar usuarios</a>
+    </div>
+    <div class="col-md-3">
+        <div class="card-box noradius noborder bg-secondary">
+            <i class="fa fa-file fa-6x float-md-right text-white" style="margin-top:2%;"></i>
+            <h6 class="text-white text-uppercase m-b-20"><strong>Puntos de control</strong></h6>
+            <h1 class="m-b-20 text-white counter">436</h1>
+            <span class="text-white">30 Sucursales / Faenas </span>
+        </div>
+        <a asp-page="/Mantenedores/Faenas/Create" asp-route-emid="3" role="button" class="btn btn-lg btn-outline-secondary" style="width:100%"><i class="fa fa-plus"> </i>&nbsp; Agregar Faenas</a>
+    </div>
+    <div class="col-md-3">
+        <div class="card-box noradius noborder bg-danger">
+            <i class="fa fa-bell fa-6x float-md-right text-white" style="margin-top:2%;"></i>
+            <h6 class="text-white text-uppercase m-b-20"><strong>No conformidades</strong></h6>
+            <h1 class="m-b-20 text-white counter">58</h1>
+            <span class="text-white">5 No conformidades abiertas.</span>
+        </div>
+        <a asp-page="/Planes/Mitigacion/IssueLists/Index" asp-route-emid="3" role="button" class="btn btn-lg btn-outline-danger" style="width:100%"><i class="fa fa-search"> </i>&nbsp; Ver No conformidades</a>
+    </div>
+    <div class="col-md-3">
+        <div class="card-box noradius noborder bg-warning">
+            <i class="fa fa-chart-bar float-md-right fa-6x text-white" style="margin-top:2%;"></i>
+            <h6 class="text-white text-uppercase m-b-20"><strong>Estatus</strong></h6>
+            <h1 class="m-b-20 text-white counter">75%</h1>
+            <span class="text-white">250 Inspecciones realizadas.</span>
+        </div>
+        <a asp-page="/Planes/Prevencion/Planificaciones/Index" asp-route-emid="3" role="button" class="btn btn-lg btn-outline-warning" style="width:100%"><i class="fa fa-search"> </i>&nbsp; Ver Planificaciones</a>
+    </div>
+</div>*@
+
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // alert("document ready!");
+
+        });
+    </script>
+}

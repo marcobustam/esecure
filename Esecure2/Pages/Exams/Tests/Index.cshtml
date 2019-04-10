@@ -1,0 +1,47 @@
+﻿@page
+@model EsecureWebApp.Pages.Exams.Tests.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Listado</h2>
+
+<p>
+    <a asp-page="Create">Nuevo</a>
+</p>
+<div class="bg-secondary">
+    <table class="table table-bordered table-striped table-hover text-dark table-responsive-md" style="width:100%" id="datata">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Test[0].Name)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Test)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-teid="@item.TestID">Editar</a> |
+                        <a asp-page="./Details" asp-route-teid="@item.TestID">Detalles</a> |
+                        <a asp-page="./Delete" asp-route-teid="@item.TestID">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>
+                </th>
+                <th></th>
+            </tr>
+        </tfoot>
+
+    </table>
+</div>

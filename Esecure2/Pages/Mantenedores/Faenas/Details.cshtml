@@ -1,0 +1,59 @@
+﻿@page
+@model EsecureWebApp.Pages.Mantenedores.Faenas.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+<div id="content-wrapper">
+    <div class="container-fluid">
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+            @* *************************************************************************** *@
+            <li class="breadcrumb-item">
+                <a href="#">Empresa</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="#">Mantenedores</a>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="#">Faenas</a>
+            </li>
+            <li class="breadcrumb-item active">Editar</li>
+            @* *************************************************************************** *@
+        </ol>
+        <div class="card-footer">
+            @* *************************************************************************** *@
+            <h2>Detalles Faena # @Model.Faena.FaenaID</h2>
+            <h4>Empresa: @Model.MyEmpresa.NombreFantasia </h4>
+            @* *************************************************************************** *@
+        </div>
+        <hr />
+
+        <div class="card">
+            <div class="col-md-4">
+                <br />
+                @* *************************************************************************** *@
+                <div>
+                    <h4>Faena</h4>
+                    <hr />
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Faena.NombreFaena)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Faena.NombreFaena)
+                        </dd>
+                    </dl>
+                </div>
+                <div>
+                    <a asp-page="./Edit" asp-route-id="@Model.Faena.FaenaID">Editar</a> |
+                    <a asp-page="./Index">Volver</a>
+                </div>
+                @* *************************************************************************** *@
+                <br />
+            </div>
+        </div>
+    </div>
+</div>
+
+

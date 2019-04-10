@@ -1,0 +1,136 @@
+﻿@page
+@model EsecureWebApp.Pages.Planes.Prevencion.Planificaciones.IndexModel
+
+@{
+    ViewData["Title"] = "Planes Prevención";
+}
+@* *************************************************************************** *@
+
+<ol class="breadcrumb">
+    @* *************************************************************************** *@
+    <li class="breadcrumb-item">
+        <a asp-page="/Mantenedores/Empresas/Index">Empresa</a>
+        @*<a href="#">Empresa</a>*@
+    </li>
+    <li class="breadcrumb-item">
+        <a href="#">Planificaciones</a>
+    </li>
+    <li class="breadcrumb-item active">
+        Planes de Prevención
+    </li>
+    @* *************************************************************************** *@
+</ol>
+<div id="content-wrapper">
+    <div class="container-fluid">
+        <!-- Breadcrumbs-->
+
+        <div class="card card-body bg-primary text-light">
+            @* *************************************************************************** *@
+            <h3>Planes de prevención</h3>
+            <h4>Empresa: @Model.MyEmpresa.NombreFantasia </h4>
+            @* *************************************************************************** *@
+        </div>
+        <hr />
+
+        <div class="card">
+            <div class="col-md-12">
+                <br />
+                @* *************************************************************************** *@
+                <h4 class="card card-body bg-primary text-light">
+                    Listado de planes - prevención:
+                </h4>
+                <hr />
+                @* --------------------------------------------------------------------------- *@
+                <div class="container-fluid card bg-light text-dark">
+                    <br />
+
+                    <table class="table table-bordered table-striped table-hover text-dark table-responsive-md" style="width:100%" id="datata">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PlanList[0].PlanID)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PlanList[0].Descripcion)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PlanList[0].NombrePlan)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.PlanList[0].Persona)
+                                </th>
+                                <th>
+                                    Acciones
+                                </th>
+                                <th>
+                                    Enlaces
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.PlanList)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PlanID)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Descripcion)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.NombrePlan)
+                                    </td>
+                                    <td>
+                                        @item.Persona.FullName()
+                                    </td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <a asp-page="/Planes/Prevencion/Planificaciones/Details" asp-route-emid="@Model.MyEmpresa.EmpresaID" asp-route-plid="@item.PlanID" class="btn btn-primary btn-sm" role="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Ver Tareas"><i class="fa fa-tasks"></i></a>
+                                            @*<a asp-page="/Planes/Prevencion/Planificaciones/Details" asp-route-emid="@Model.MyEmpresa.EmpresaID" asp-route-plid="@item.PlanID" class="btn btn-primary btn-sm" role="button">Tareas<i class="fa fa-tasks"></i></a>*@
+                                            <a asp-page="/Planes/Prevencion/Planificaciones/Edit2" asp-route-emid="@Model.MyEmpresa.EmpresaID" asp-route-plid="@item.PlanID" class="btn btn-warning btn-sm" role="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Editar"><i class="fa fa-edit"></i></a>
+                                            @*<a asp-page="/Planes/Prevencion/Planificaciones/Edit2" asp-route-emid="@Model.MyEmpresa.EmpresaID" asp-route-plid="@item.PlanID" class="btn btn-warning btn-sm" role="button">Editar<i class="fa fa-edit"></i></a>*@
+                                        </div>
+                                        
+                                    </td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <a asp-page="/Planes/Mitigacion/IssueLists/Index" asp-route-emid="@Model.MyEmpresa.EmpresaID" asp-route-plid="@item.PlanID" class="btn btn-warning btn-sm" role="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="No conformidades"><i class="fa fa-exclamation-triangle"></i></a>
+                                            <a asp-page="/Actividades/Verificaciones/Index" asp-route-emid="@Model.MyEmpresa.EmpresaID" asp-route-plid="@item.PlanID" class="btn btn-dark btn-sm" role="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Verificaciones"><i class="fa fa-check"></i></a>
+                                        </div>
+                                        
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>
+                                </th>
+                                <th>
+                                </th>
+                                <th>
+                                </th>
+                                <th>
+                                </th>
+                                <th>
+                                </th>
+                                <th>
+                                </th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <p>
+                    <div>
+                        <a asp-page="./Create" asp-route-emid="@Model.MyEmpresa.EmpresaID" class="btn btn-primary btn-sm" role="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Nuevo Plan">Agregar Plan <span class="glyphicon glyphicon-plus-sign"></span>   </a>
+                        <br />
+                    </div>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+@* *************************************************************************** *@
+<hr />
+
+

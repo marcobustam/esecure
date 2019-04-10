@@ -1,0 +1,46 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "moment.js@2.22.2",
+      "destination": "wwwroot/lib/moment.js/"
+    },
+    {
+      "library": "fullcalendar@3.9.0",
+      "destination": "wwwroot/lib/fullcalendar/"
+    },
+    {
+      "library": "jstree@3.3.5",
+      "destination": "wwwroot/lib/jstree/"
+    },
+    {
+      "library": "popper.js@1.14.4",
+      "destination": "wwwroot/lib/popper.js/"
+    },
+    {
+      "library": "bootstrap3-wysiwyg@0.3.3",
+      "destination": "wwwroot/lib/bootstrap3-wysiwyg/"
+    },
+    {
+      "library": "prettify@r298",
+      "destination": "wwwroot/lib/prettify/"
+    },
+    {
+      "library": "Chart.js@2.7.2",
+      "destination": "wwwroot/lib/Chart.js/"
+    },
+    {
+      "library": "bootstrap-select@1.13.2",
+      "destination": "wwwroot/lib/bootstrap-select/"
+    },
+    {
+      "library": "twitter-bootstrap@4.1.3",
+      "destination": "wwwroot/lib/twitter-bootstrap/"
+    },
+    {
+      "library": "malihu-custom-scrollbar-plugin@3.1.5",
+      "destination": "wwwroot/lib/malihu-custom-scrollbar-plugin/"
+    }
+  ]
+}

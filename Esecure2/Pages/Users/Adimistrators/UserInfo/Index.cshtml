@@ -1,0 +1,125 @@
+﻿@page
+@model EsecureWebApp.Pages.Users.Adimistrators.UserInfo.IndexModel
+@{
+    ViewData["Title"] = "Profile";
+}
+
+<h4>@ViewData["Title"]</h4>
+@*@Html.Partial("_StatusMessage", Model.StatusMessage)*@
+@*<partial name=" _StatusMessage" model=Model.StatusMessage />*@
+<div class="row">
+    <div class="col-md-6">
+
+        <div class="form-group">
+            @Html.DisplayNameFor(model => model.Username)
+            @Html.DisplayFor(model => model.Username)
+        </div>
+        <div class="form-group">
+            @Html.DisplayNameFor(model => model.Input.Email)
+            @if (Model.IsEmailConfirmed)
+            {
+                <div class="input-group">
+                    @Html.DisplayFor(model => model.Input.Email)
+                    <span class="input-group-addon" aria-hidden="true"><span class="glyphicon glyphicon-ok text-success"></span></span>
+                </div>
+            }
+            else
+            {
+                @Html.DisplayFor(model => model.Input.Email)
+                <button id="email-verification" type="submit" asp-page-handler="SendVerificationEmail" class="btn btn-link">Send verification email</button>
+            }
+            <span asp-validation-for="Input.Email" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        @*@while (!string.IsNullOrEmpty( Model.UserRoless.GetEnumerator().Current.ToString()) )
+            {
+            <div>
+                @Model.UserRoless.GetEnumerator().Current.ToString()
+                @Model.UserRoless.GetEnumerator().MoveNext()
+            </div>
+            }*@
+
+    </div>
+</div>
+<div class="table">
+    <div class="row">
+        <div class="col-md-2">
+            Role Name
+        </div>
+        <div class="col-md-2">
+            role.NormalizedName
+
+        </div>
+        <div class="col-md-2">
+            Asociado
+        </div>
+        <div class="col-md-1">
+            Simple
+        </div>
+        <div class="col-md-1">
+            Async
+        </div>
+    </div>
+
+
+    @foreach (var role in Model.listaRoles)
+    {
+        @if (User.IsInRole(role.Name))
+        {
+            <div class="row">
+                <form method="post">
+                    <div class="col-md-2">
+                        @role.Name
+                    </div>
+                    <div class="col-md-2">
+                        @role.NormalizedName
+                    </div>
+                    <div class="col-md-2">
+                        Si
+                    </div>
+                    <div class="col-md-1">
+                        <input type="text" asp-for="rolexchage" hidden="hidden" value="@role.NormalizedName" />
+                        <button id="email-verification" asp-page-handler="Off" type="submit" class="btn">Off</button>
+                    </div>
+                    <div class="col-md-1">
+                        <button id="email-verification" asp-page-handler="AsyncOff" type="submit" class="btn">AsyncOff</button>
+                    </div>
+                </form>
+            </div>
+        }
+        else
+        {
+            <div class="row">
+                <form method="post">
+
+                    <div class="col-md-2">
+                        @role.Name
+                    </div>
+                    <div class="col-md-2">
+                        @role.NormalizedName
+                    </div>
+                    <div class="col-md-2">
+                        No
+                    </div>
+                    <div class="col-md-1">
+                        <input type="text" asp-for="rolexchage" hidden="hidden" value="@role.NormalizedName" />
+                        <button id="email-verification" asp-page-handler="On" type="submit" class="btn">On</button>
+                    </div>
+                    <div class="col-md-1">
+                        <button id="email-verification" asp-page-handler="AsyncOn" type="submit" class="btn">On</button>
+                    </div>
+                </form>
+            </div>
+        }
+    }
+</div>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+

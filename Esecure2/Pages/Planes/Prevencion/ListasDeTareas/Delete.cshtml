@@ -1,0 +1,28 @@
+﻿@page
+@model EsecureWebApp.Pages.Planes.Prevencion.ListasDeTareas.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Eliminar registro</h2>
+
+<h3>¿Está seguro que quiere eliminar el registro?</h3>
+<div>
+    <h4>ListaDeTareas</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ListaDeTareas.Nombre)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ListaDeTareas.Nombre)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="ListaDeTareas.ListaDeTareasID" />
+        <input type="submit" value="Eliminar" class="btn btn-default" /> |
+        <a asp-page="./Index">Volver</a>
+    </form>
+</div>

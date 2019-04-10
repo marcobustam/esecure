@@ -1,0 +1,55 @@
+﻿@page
+@model EsecureWebApp.Pages.Planes.Prevencion.Tareas._TaskListModel
+
+<p>
+    <a asp-page="Create">Nuevo</a>
+</p>
+<table class="table table-bordered table-striped table-hover text-dark table-responsive-md" style="width:100%" id="datata">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ListaTarea[0].PlanID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListaTarea[0].NombreTarea)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListaTarea[0].FechaPlanificada)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListaTarea[0].FechaEjecucionReal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ListaTarea[0].EstadoID)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.ListaTarea)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PlanID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreTarea)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaPlanificada)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaEjecucionReal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EstadoID)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.TareaID">Editar</a> |
+                    <a asp-page="./Details" asp-route-id="@item.TareaID">Detalles</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.TareaID">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

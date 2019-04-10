@@ -1,0 +1,209 @@
+﻿@page
+@model EsecureWebApp.Pages.FileUploaders.Files.IndexModel
+@using System.IO;
+@{
+    ViewData["Title"] = "Index";
+}
+
+<ol class="breadcrumb">
+    @* *************************************************************************** *@
+    <li class="breadcrumb-item">
+        <a href="#">Empresa</a>
+    </li>
+    <li class="breadcrumb-item">
+        <a href="#">Gestión Documental</a>
+    </li>
+    <li class="breadcrumb-item">
+        <a href="#">Archivos</a>
+    </li>
+    <li class="breadcrumb-item active">
+        Listado de Archivos
+    </li>
+    @* *************************************************************************** *@
+</ol>
+<div id="content-wrapper">
+    <div class="container-fluid">
+        <!-- Breadcrumbs-->
+
+        <div class="card card-body bg-primary text-light">
+            @* *************************************************************************** *@
+            <h2>Archivos</h2>
+            @*<h4>Empresa: @Model.MyEmpresa.NombreFantasia </h4>*@
+            @* *************************************************************************** *@
+        </div>
+        <hr />
+
+        <div class="card">
+            <div class="col-md-12">
+                <br />
+                @* *************************************************************************** *@
+                <h4 class="card card-body bg-primary text-light">
+                    Listado de Archivos:
+                </h4>
+                @* --------------------------------------------------------------------------- *@
+                <div class="container-fluid card bg-light text-dark">
+                    <br />
+                    <table class="table table-bordered table-striped table-hover text-dark table-responsive table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl" id="datata">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.FileUp[0].FileName)
+                                </th>
+                                @*<th>
+                                    @Html.DisplayNameFor(model => model.FileUp[0].FileUid)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.FileUp[0].FolderUpID)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.FileUp[0].FileTypeID)
+                                </th>*@
+                                <th>
+                                    @Html.DisplayNameFor(model => model.FileUp[0].FileSize)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.FileUp[0].TimeStamp)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.FileUp[0].LastMod)
+                                </th>
+                                <th>
+                                    Acciones
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.FileUp)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.FileName)
+                                    </td>
+                                    @*<td>
+                                        @Html.DisplayFor(modelItem => item.FileUid)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.FolderUpID)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.FileTypeID)
+                                    </td>*@
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.FileSize)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.TimeStamp)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.LastMod)
+                                    </td>
+                                    <td>
+                                        <div class="btn-group">
+                                            @{ 
+                                                var filepath = System.IO.Path.Combine("file//",Model.FilePath, item.FileUid);
+                                                filepath = filepath.Replace("\"","/");
+                                            }
+                                            <a href=@filepath download=@item.FileName class="btn btn-xs btn-success"><i class="fa fa-file-download"></i></a>
+                                            <button class="btn btn-xs btn-info" onclick="openAjaxFile( '@Model.FilePath' , '@item.FileName' , '@item.FileUid' , '@item.FileUpID' );" id="btnGetFile"><i class="fa fa-file-download"></i></button>
+                                            <a href=@filepath download=@item.FileName class="btn btn-xs btn-success"><i class="fa fa-file-download"></i></a>
+                                            <a asp-page="/Planes/Prevencion/Tareas/Edit" class="btn btn-info btn-sm" role="button" title="Tooltip"><i class="fa fa-edit"></i></a>
+                                            @*<a class="btn btn-xs btn-info"><i class="fa fa-file-download"></i></a>
+                                            <a class="btn btn-xs btn-warning"><i class="fa fa-edit"></i></a>
+                                            <a class="btn btn-xs"><i class="fa fa-arrow-right"></i></a>
+                                            <a class="btn btn-xs btn-danger"><i class="fas fa-times"></i></a>*@
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                        <thead>
+                            <tr>
+                                @*<th>
+                                </th>
+                                <th>
+                                </th>
+                                <th>
+                                </th>*@
+                                <th>
+                                </th>
+                                <th>
+                                </th>
+                                <th>
+                                </th>
+                                <th>
+                                </th>
+                                <th>
+                                </th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+                @* *************************************************************************** *@
+            </div>
+            <br />
+            <p>
+                <div>
+                    <a asp-page="/FileUploaders/FileUploading" class="btn btn-info btn-sm float-md-right" role="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Agregar Item">Subir Archivo<i class="fa fa-plus-circle"></i></a>
+                    <br />
+                </div>
+            </p>
+        </div>
+        <br />
+    </div>
+</div>
+@* *************************************************************************** *@
+
+@section Scripts
+    {
+    <script>
+        $(document).ready(function () {
+            // alert("Document Ready!");
+@if (!String.IsNullOrEmpty(Model.Message))
+{
+    if (Model.Message.Length > 0)
+    {
+    <text>
+    $('#hdnbtn').click();
+   </text>
+    }
+}
+
+
+            $("#myInput").on("keyup", function () {
+                //alert("asdas");
+                var value = $(this).val().toLowerCase();
+                $("#fTable tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+                });
+            });
+            $('#btnGetFiled').on('click', function () {
+                // callAjax("h");
+                alert("File");
+            });
+        });
+        function openAjaxFile(filePath, fileName, fileAlias, fileId) {
+            alert("openAjaxFile");
+            var uri = "/FileUploaders/Files/Index?handler=PhysicalFileActionResult&filePath=" + filePath + "&fileName=" + fileName + "&fileUid=" + fileAlias;
+            $.ajax({
+                type: "GET",
+                url: uri,
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("XSRF-TOKEN", $('input:hidden[name="__RequestVerificationToken"]').val());
+                },
+                contentType: "application/json",
+                dataType: "html",
+                complete: function (response) {
+                    // location.href = "/index";
+                },
+                success: function (response) {
+                    alert("uri=" + uri);
+                    window.location.href = "/FileUploaders/Files/DownloadFile?id=" + fileId;
+
+                },
+                failure: function (response) {
+                    alert(response);
+                }
+            });
+        }
+    </script>
+}

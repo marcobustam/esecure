@@ -1,0 +1,109 @@
+﻿@page
+@model EsecureWebApp.Pages.Planes.Mitigacion.IssueLists.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    //var id = Model.MyPlan.PlanID;
+}
+
+<ol class="breadcrumb">
+    @* *************************************************************************** *@
+    <li class="breadcrumb-item">
+        <a asp-page="/Mantenedores/Empresas/Index">Empresa</a>
+        @*<a href="#">Empresa</a>*@
+    </li>
+    <li class="breadcrumb-item">
+        <a href="#">Planes de acción</a>
+    </li>
+    <li class="breadcrumb-item active">
+        Plan de Acción
+    </li>
+    @* *************************************************************************** *@
+</ol>
+<div id="content-wrapper">
+    <div class="container-fluid">
+        <!-- Breadcrumbs-->
+
+        <div class="card card-body bg-primary text-light">
+            @* *************************************************************************** *@
+            <h3>Plan de Acción</h3>
+            <h4>Empresa: @Model.MyEmpresa.NombreFantasia </h4>
+            @* *************************************************************************** *@
+        </div>
+        <hr />
+
+        <div class="card">
+            <div class="col-md-12">
+                <br />
+                @* *************************************************************************** *@
+                <h4 class="card card-body bg-primary text-light">
+                    Listado de planes - Mitigación:
+                </h4>
+                <hr />
+                @* --------------------------------------------------------------------------- *@
+                <div class="container-fluid card bg-light text-dark">
+                    <br />
+
+                    <table class="table table-bordered table-striped table-hover text-dark table-responsive-md" style="width:100%" id="datata">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.IssueList[0].Nombre)
+                                </th>
+                                <th>Acciones</th>
+                                <th>Ver Issues</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.IssueList)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Nombre)
+                                    </td>
+                                    <td>
+                                        <a asp-page="./Edit" asp-route-emid="@item.EmpresaID" asp-route-plid="@item.PlanID" asp-route-ilid="@item.IssueListId">Editar</a> |
+                                        <a asp-page="./Details" asp-route-emid="@item.EmpresaID" asp-route-plid="@item.PlanID" asp-route-ilid="@item.IssueListId">Detalles</a> |
+                                        <a asp-page="./Delete" asp-route-emid="@item.EmpresaID" asp-route-plid="@item.PlanID" asp-route-ilid="@item.IssueListId">Eliminar</a>
+                                    </td>
+                                    <td>
+                                        <a asp-page="/Planes/Mitigacion/Issues/Index" asp-route-emid="@item.EmpresaID" asp-route-plid="@item.PlanID" asp-route-ilid="@item.IssueListId">Ver Issues</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>
+                                </th>
+                                <th>
+                                </th>
+                                <th>
+                                </th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <p>
+                    <div>
+                        <a asp-page="./Create" asp-route-emid="" class="btn btn-primary btn-sm" role="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Nuevo Plan">Agregar Plan <span class="glyphicon glyphicon-plus-sign"></span>   </a>
+                        <br />
+                    </div>
+                </p>
+                @*FORM OR DETAILS OR CONFIRM DELETION*@
+                @* --------------------------------------------------------------------------- *@
+                @* *************************************************************************** *@
+
+            </div>
+        </div>
+    </div>
+</div>
+@* *************************************************************************** *@
+<hr />
+
+@{
+    if (Model.IssueList.Count == 0 && (Model.MyPlan != null))
+    {
+        <h3 class="alert-warning"> No existe un plan de acción asociado al plan de prevención @Model.MyPlan.NombrePlan </h3>
+    }
+}

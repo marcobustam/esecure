@@ -1,0 +1,59 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model EsecureWebApp.Pages.Mantenedores.Empresas.DetailsModel
+<h4>Direccion</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" asp-page="/Mantenedores/Direcciones/Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NewDireccion.EmpresaID" class="control-label"></label>
+                <input asp-for="NewDireccion.EmpresaID" class="form-control" />
+                <span asp-validation-for="NewDireccion.EmpresaID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NewDireccion.ShortName" class="control-label"></label>
+                <input asp-for="NewDireccion.ShortName" class="form-control" />
+                <span asp-validation-for="NewDireccion.ShortName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NewDireccion.Calle" class="control-label"></label>
+                <input asp-for="NewDireccion.Calle" class="form-control" />
+                <span asp-validation-for="NewDireccion.Calle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NewDireccion.Numeracion" class="control-label"></label>
+                <input asp-for="NewDireccion.Numeracion" class="form-control" />
+                <span asp-validation-for="NewDireccion.Numeracion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NewDireccion.Comuna" class="control-label"></label>
+                <input asp-for="NewDireccion.Comuna" value="0" class="form-control" />
+                <!-- >select asp-for="NewDireccion.Comuna" class="form-control"></select -->
+                <span asp-validation-for="NewDireccion.Comuna" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NewDireccion.Region" class="control-label"></label>
+                <!-- >select asp-for="NewDireccion.Region" class="form-control"></select -->
+                <input asp-for="NewDireccion.Region" value="0" class="form-control" />
+                <span asp-validation-for="NewDireccion.Region" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="NewDireccion.Pais" class="control-label"></label>
+                <!-- >select asp-for="NewDireccion.Pais" class="form-control"></!select -->
+                <input asp-for="NewDireccion.Pais" value="0" class="form-control" />
+                <span asp-validation-for="NewDireccion.Pais" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Crear" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,46 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model EsecureWebApp.Pages.Mantenedores.Empresas.DetailsModel
+<button type="button" data-toggle="collapse" data-target="#agregarPlan" class="btn btn-primary btn-sm" role="button">
+    Agregar Plan: <span class="glyphicon glyphicon-plus"></span>
+</button>
+<div class="collapse" id="agregarPlan">
+        <h4>Nuevo Plan</h4>
+        <div class="col-md-4">
+            <form method="post" asp-page="/Planes/Prevencion/Planificaciones/Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="NewPlan.NombrePlan" class="control-label"></label>
+                    <input asp-for="NewPlan.NombrePlan" class="form-control" />
+                    <span asp-validation-for="NewPlan.NombrePlan" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="NewPlan.PersonaID" class="control-label"></label>
+                    <select asp-for="NewPlan.PersonaID" class="form-control" asp-items="@Model.PersonasNameSL">
+                        <option value="">-- Escoja un nombre --</option>
+                    </select>
+                    <span asp-validation-for="@Model.NewPlan.PersonaID" class="text-danger"></span>
+
+                </div>
+                <div class="form-group">
+                    <label asp-for="NewPlan.EmpresaID" class="control-label"></label>
+                    <select asp-for="NewPlan.EmpresaID" class="form-control" asp-items="@Model.EmpresasNameSL">
+                        <option value="">-- Escoja un nombre --</option>
+                    </select>
+                    <span asp-validation-for="@Model.NewPlan.EmpresaID" class="text-danger"></span>
+
+                </div>
+                <!-- div class="form-group">
+                    <label asp-for="NewPlan.EmpresaID" class="control-label"></label>
+                    <input asp-for="NewPlan.EmpresaID" class="form-control" />
+                    <span asp-validation-for="NewPlan.EmpresaID" class="text-danger"></span>
+                </!--div -->
+                <div class="form-group">
+                    <input type="submit" value="Crear" class="btn btn-default" />
+                </div>
+            </form>
+        </div>
+</div>

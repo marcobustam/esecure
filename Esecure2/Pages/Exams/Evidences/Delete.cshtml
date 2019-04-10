@@ -1,0 +1,58 @@
+﻿@page
+@model EsecureWebApp.Pages.Exams.Evidences.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Eliminar registro</h2>
+
+<h3>¿Está seguro que quiere eliminar el registro?</h3>
+<div>
+    <h4>Evidence</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Evidence.Descripcion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Evidence.Descripcion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Evidence.EvidenceType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Evidence.EvidenceType)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Evidence.FileUp)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Evidence.FileUp.FileUpID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Evidence.TimeStamp)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Evidence.TimeStamp)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Evidence.LastMod)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Evidence.LastMod)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Evidence.PersonaID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Evidence.PersonaID)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Evidence.EvidenceID" />
+        <input type="submit" value="Eliminar" class="btn btn-default" /> |
+        <a asp-page="./Index">Volver</a>
+    </form>
+</div>

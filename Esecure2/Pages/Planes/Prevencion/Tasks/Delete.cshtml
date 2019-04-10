@@ -1,0 +1,88 @@
+﻿@page
+@model EsecureWebApp.Pages.Planes.Prevencion.Tasks.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Eliminar registro</h2>
+
+<h3>¿Está seguro que quiere eliminar el registro?</h3>
+<div>
+    <h4>Tarea</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Tarea.PlanID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Tarea.PlanID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Tarea.EmpresaID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Tarea.EmpresaID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Tarea.NombreTarea)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Tarea.NombreTarea)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Tarea.FaenaID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Tarea.FaenaID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Tarea.FechaPlanificada)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Tarea.FechaPlanificada)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Tarea.FechaFinPlanificada)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Tarea.FechaFinPlanificada)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Tarea.FechaEjecucionReal)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Tarea.FechaEjecucionReal)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Tarea.FechaUltimaModificacion)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Tarea.FechaUltimaModificacion)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Tarea.FechaFinEjecucionReal)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Tarea.FechaFinEjecucionReal)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Tarea.EstadoID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Tarea.EstadoID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Tarea.TestID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Tarea.TestID)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Tarea.TareaID" />
+        <input type="submit" value="Eliminar" class="btn btn-default" /> |
+        <a asp-page="./Index">Volver</a>
+    </form>
+</div>

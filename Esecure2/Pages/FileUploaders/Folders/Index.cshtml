@@ -1,0 +1,209 @@
+﻿@page
+@model EsecureWebApp.Pages.FileUploaders.Folders.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Buscador</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <label> Buscar en Directorios:</label>
+        <!----------------------Lista de archivos--------------------------------->
+        <input class="form-control" id="myFolder" type="text" placeholder="Search..">
+    </div>
+    <div class="col-md-2">
+        <label>Buscar en Archivos:</label>
+        <!----------------------Lista de archivos--------------------------------->
+        <input class="form-control" id="myFile" type="text" placeholder="Search..">
+    </div>
+</div>
+<br />
+<h2>Directorios:</h2>
+<div class="bg-secondary text-dark">
+    @*<table class="table table-bordered table-striped table-hover" id="datata">*@
+        <table class="table table-bordered table-striped table-hover text-dark table-responsive-md" style="width:100%" id="datata">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FolderUp[0].FolderUpID)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FolderUp[0].FolderUpName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FolderUp[0].FolderUpParent)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FolderUp[0].TimeStamp)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.FolderUp[0].LastMod)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="foTable">
+                @foreach (var item in Model.FolderUp)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FolderUpID)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FolderUpName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FolderUpParent)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TimeStamp)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LastMod)
+                        </td>
+                        <td>
+                            <div class="btn-group">
+                                <a asp-page="./Edit" asp-route-id="@item.FolderUpID" class="btn btn-info btn-sm" role="button">Editar</a>
+                                <a asp-page="./Details" asp-route-id="@item.FolderUpID" class="btn btn-info btn-sm" role="button">Detalles</a>
+                                <a asp-page="./Delete" asp-route-id="@item.FolderUpID" class="btn btn-info btn-sm" role="button">Eliminar</a>
+                                </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>
+                    </th>
+                    <th>
+                    </th>
+                    <th>
+                    </th>
+                    <th>
+                    </th>
+                    <th>
+                    </th>
+                    <th>
+                    </th>
+                </tr>
+            </tfoot>
+        </table>
+</div>
+<br />
+<h2>Archivos:</h2>
+<div class="bg-secondary text-dark">
+    <table class="table table-bordered table-striped table-hover text-dark table-responsive-md" style="width:100%" id="datata">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.FileUpList[0].FileName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FileUpList[0].PersonaID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FileUpList[0].FolderUpID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FileUpList[0].FileTypeID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FileUpList[0].FileSize)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FileUpList[0].TimeStamp)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.FileUpList[0].LastMod)
+                </th>
+                <th>
+                    Acciones
+                </th>
+            </tr>
+        </thead>
+        <tbody id="fiTable">
+            @foreach (var item in Model.FileUpList)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FileName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PersonaID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FolderUpID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FileTypeID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FileSize)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TimeStamp)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LastMod)
+                    </td>
+                    <td>
+                        <div class="btn-group">
+                            <a asp-page="/FileUploaders/Folders/Create" class="btn btn-info btn-sm" role="button"><i class="fa fa-plus"></i></a>
+                            <a asp-page="/Planes/Prevencion/Tareas/Edit" class="btn btn-info btn-sm" role="button" title="Tooltip"><i class="fa fa-edit"></i></a>
+                            <a class="btn btn-sm btn-info"><i class="fa fa-file-download"></i></a>
+                            <a class="btn btn-sm btn-warning"><i class="fa fa-edit"></i></a>
+                            <a class="btn btn-sm"><i class="fa fa-arrow-right"></i></a>
+                            <a class="btn btn-sm btn-danger"><i class="fas fa-times"></i></a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>
+                </th>
+                <th>
+                </th>
+                <th>
+                </th>
+                <th>
+                </th>
+                <th>
+                </th>
+                <th>
+                </th>
+                <th>
+                </th>
+                <th>
+                </th>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+@section Scripts
+    {
+    <script>
+        $(document).ready(function () {
+            $("#myFolder").on("keyup", function () {
+                //alert("asdas");
+                var value = $(this).val().toLowerCase();
+                $("#foTable tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+                $("#fiTable tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+            $("#myFile").on("keyup", function () {
+                //alert("asdas");
+                var value = $(this).val().toLowerCase();
+                $("#fiTable tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+}

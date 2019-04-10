@@ -1,0 +1,54 @@
+﻿@page
+@model Bbs.Pages.Params.Configurations.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Configuration[0].ConfigurationIndex)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Configuration[0].ConfigurationGroup)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Configuration[0].ConfigurationName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Configuration[0].ConfigurationValue)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Configuration) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ConfigurationIndex)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ConfigurationGroup)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ConfigurationName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ConfigurationValue)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ConfigurationID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ConfigurationID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ConfigurationID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,767 @@
+﻿@page
+@model EsecureWebApp.Pages.Exams.Examinations.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+@* *************************************************************************** *@
+<!-- Breadcrumbs-->
+<ol class="breadcrumb">
+    @* *************************************************************************** *@
+    <li class="breadcrumb-item">
+        <a asp-page="/Mantenedores/Empresas/Index" asp-route-emid="@Model.AppUser.EmpresaID">Empresa</a>
+        @*<a href="#">Empresa</a>*@
+    </li>
+    <li class="breadcrumb-item">
+        <a href="#">Planificaciones</a>
+    </li>
+    <li class="breadcrumb-item active">
+        Planes de Prevención
+    </li>
+    @* *************************************************************************** *@
+</ol>
+<div class="container-fluid">
+    <div class="card card-body bg-primary text-light">
+        @* *************************************************************************** *@
+        <div class="row">
+            <div class="col">
+                <h3>Inspección @Model.Examination.ExaminationID</h3>
+            </div>
+            <div class="col">
+                <h3>Plan de prevención - @Html.DisplayFor(model => model.MyPlan.NombrePlan)</h3>
+            </div>
+            <div class="col">
+                <h4>Empresa: @Model.MyEmpresa.NombreFantasia </h4>
+            </div>
+        </div>
+        @* *************************************************************************** *@
+    </div>
+    <hr />
+    <div class="card card-body">
+        <h5 class="card card-body bg-primary text-light">
+            Detalle del plan / Tarea:
+        </h5>
+        <div class="card card-footer">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-2 col-xl-1">
+                    <label asp-for="MyPlan.PlanID" type="text" class="control-label"></label>:
+                    <input type="text" value="@Model.MyPlan.PlanID" class="form-control" readonly />
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                    <label asp-for="MyPlan.NombrePlan" type="text" class="control-label"></label>:
+                    <input type="text" value="@Model.MyPlan.NombrePlan" class="form-control" readonly />
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                    <label asp-for="MyPlan.Descripcion" type="text" class="control-label"></label>:
+                    @if (!string.IsNullOrEmpty(Model.MyPlan.Descripcion))
+                    {
+                        <input type="text" value="@Model.MyPlan.Descripcion" class="form-control" readonly />
+                    }
+                    else
+                    {
+                        <input type="text" value="Sin descripción" class="form-control" readonly />
+                    }
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-5 col-xl-4">
+                    <label type="text" class="control-label">Creado por:</label>
+                    <input type="text" value="@Model.MyPlan.Persona.FullName()" class="form-control" readonly />
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-2 col-xl-1">
+                    <label>Editar:</label>
+                    <a class="btn btn-warning btn-sm" asp-page="/Planes/Prevencion/Planificaciones/Edit" asp-route-emid="@Model.MyPlan.EmpresaID" asp-route-plid="@Model.MyPlan.PlanID"><i class="fa fa-edit"></i></a>
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                    <label asp-for="@Model.Examinador" type="text" class="control-label"></label>:
+                    <input type="text" value="@Model.Examinador.FullName()" class="form-control" readonly />
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                    <label>Responsable faena: </label>
+                    <input type="text" value="@Model.Examinado.FullName()" class="form-control" readonly />
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                    <div class="form-group has-danger">
+
+                        @if (Model.MyTask.FechaPlanificada > DateTime.Now)
+                        {
+                            <label asp-for="@Model.MyTask.FechaPlanificada" type="text" class="control-label"></label>
+                            <input type="text" value="@Model.MyTask.FechaPlanificada" class="form-control" readonly />
+                        }
+                        else
+                        {
+                            <label asp-for="@Model.MyTask.FechaPlanificada" type="text" class="control-label"></label>
+                            <span class="badge badge-pill badge-danger">Atrasada</span>
+                            <input type="text" value="@Model.MyTask.FechaPlanificada" class="form-control is-invalid" readonly />
+                        }
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                    <label asp-for="@Model.MyTask.EstadoID" type="text" class="control-label"></label>:
+                    <input type="text" value="@Model.MyTask.EstadoID" class="form-control" readonly />
+                </div>
+            </div>
+            <hr />
+            <div class=" row" hidden>
+                <div class="bg-light text-dark">
+                    <div class="table">
+                        <div class="row" style="text-align:left">
+                            <div class="col-sm-2">
+                                <strong>@Html.DisplayNameFor(model => model.MyPlan.PlanID) </strong>
+                            </div>
+                            <div class="col-sm-2">
+                                @Html.DisplayFor(model => model.MyPlan.PlanID)
+                            </div>
+                            <div class="col-sm-2">
+                                <strong> @Html.DisplayNameFor(model => model.MyPlan.Persona.PrimerNombre) </strong>
+                            </div>
+                            <div class="col-sm-2">
+                                @Model.MyPlan.Persona.FullName()
+                            </div>
+                            <div class="col-sm-2">
+                                <button type="button" class="btn btn-success" data-toggle="collapse" data-target="#nvaTarea">
+                                    Nueva Tarea <i class="fa fa-tasks"></i>
+                                </button>
+                            </div>
+                            <div class="col-sm-2">
+                                <button type="button" class="btn btn-xs btn-warning" data-toggle="collapse" data-target="#nvaTarea">
+                                    Responsable Plan: <i class="fa fa-user-check"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-2">
+                                <strong> @Html.DisplayNameFor(model => model.MyPlan.NombrePlan) </strong>
+                            </div>
+                            <div class="col-sm-2">
+                                @Html.DisplayFor(model => model.MyPlan.NombrePlan)
+                            </div>
+                            <div class="col-sm-2">
+                                <strong> @Html.DisplayNameFor(model => model.MyPlan.EmpresaID) </strong>
+                            </div>
+                            <div class="col-sm-2">
+                                @Html.DisplayFor(model => model.MyPlan.Empresa.NombreFantasia)
+                            </div>
+                            <div class="col-sm-2">
+                                <strong> @Html.DisplayNameFor(model => model.MyPlan.TimeStamp) </strong>
+                            </div>
+                            <div class="col-sm-2">
+                                @Html.DisplayFor(model => model.MyPlan.TimeStamp)
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-2">
+                            <dl class="dl-horizontal">
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.Examination.TimeStamp)
+                                </dt>
+                                <dd>
+                                    @Html.DisplayFor(model => model.Examination.TimeStamp)
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="col-md-2">
+                            <dl class="dl-horizontal">
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.Examination.PersonaID1)
+                                </dt>
+                                <dd>
+                                    @Html.DisplayFor(model => model.Examination.PersonaID1)
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="col-md-2">
+                            <dl class="dl-horizontal">
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.Examination.PersonaID2)
+                                </dt>
+                                <dd>
+                                    @Html.DisplayFor(model => model.Examination.PersonaID2)
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="col-md-2">
+                            <dl class="dl-horizontal">
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.Examination.Prueba)
+                                </dt>
+                                <dd>
+                                    @Html.DisplayFor(model => model.Examination.TestID)
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="col-md-2">
+                            <dl class="dl-horizontal">
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.Examination.FaenaID)
+                                </dt>
+                                <dd>
+                                    @Html.DisplayFor(model => model.Examination.FaenaID)
+                                </dd>
+                            </dl>
+
+                        </div>
+                        <div class="col-md-2">
+                            <dl class="dl-horizontal">
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.Examination.TotalRespuestas)
+                                </dt>
+                                <dd id="cienp">
+                                    @Html.DisplayFor(model => model.Examination.TotalRespuestas)
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="col-md-2">
+                            <dl class="dl-horizontal">
+                                <dt>
+                                    @Html.DisplayNameFor(model => model.Examination.RespuestasCompletadas)
+                                </dt>
+                                <dd id="actualp">
+                                    @Html.DisplayFor(model => model.Examination.RespuestasCompletadas)
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr />
+
+        </div>
+        <hr />
+        <h4 class="card card-body bg-primary text-light">
+            Resumen:
+        </h4>
+        <div class="card card-footer">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                    <div class="card mb-3">
+                        <div class="card-header">
+                            <strong>
+                                Pendientes:
+                            </strong> 
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title text-center">
+                                @{
+                                    var pend = Model.Examination.TotalRespuestas - Model.Examination.RespuestasCompletadas;
+                                }
+                                @pend.ToString()
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                    <div class="card mb-3">
+                        <div class="card-header">
+                            <strong>
+                                Evaluadas:
+                            </strong>
+                        </div>
+                        <div class="card-body">
+                            <h4 class="card-title text-center">
+                                @Html.DisplayFor(model => model.Examination.RespuestasCompletadas)
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                    <div class="card mb-3">
+                        <div class="card-header"><strong>Total Items:</strong></div>
+                        <div class="card-body">
+                            <h4 class="card-title text-center">
+                                @Html.DisplayFor(model => model.Examination.TotalRespuestas)
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+                @*<div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                    <div class="chartjs-wrapper" style="{margin: 0 auto;width: 32vw;height: auto;padding: 20px;}">
+                        <canvas class="chartjs-gauge"></canvas>
+                    </div>
+                </div>*@
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                    @{
+                        var perk = (int)((double)(Model.Examination.RespuestasCompletadas / (double)Model.Examination.TotalRespuestas) * 100);
+                        if (perk > 95)
+                        {
+                            <div class="card  mb-3" style="max-width: 20rem;">
+                                <div class="card-header"><strong>Avance:</strong></div>
+                                <div class="card-body text-white bg-success  ">
+                                    <h4 class="card-title text-center">
+                                        @String.Concat(perk, "%").ToString()
+                                    </h4>
+                                </div>
+                            </div>
+                        }
+                        else if (perk > 75)
+                        {
+                            <div class="card border-warning mb-3" style="max-width: 20rem;">
+                                <div class="card-header"><strong>Avance:</strong></div>
+                                <div class="card-body text-white bg-warning">
+                                    <h4 class="card-title text-center">
+                                        @String.Concat(perk, "%").ToString()
+                                    </h4>
+                                </div>
+                            </div>
+                        }
+                        else if (perk > 0)
+                        {
+                            <div class="card border-danger mb-3" style="max-width: 20rem;">
+                                <div class="card-header"><strong>Avance:</strong></div>
+                                <div class="card-body text-white bg-danger">
+                                    <h4 class="card-title text-center">
+                                        @String.Concat(perk, "%").ToString()
+                                    </h4>
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+        @* ********** *@
+        <hr />
+        <h4 class="card card-body bg-primary text-light">
+            Listado de Inspección
+        </h4>
+        @* *************************************************************************** *@
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <div class="progress">
+                    @if (perk > 95)
+                    {
+                    <div class="progress-bar progress-bar-striped bg-success" id="myBar2" role="progressbar" style="width: @String.Concat(perk, "%").ToString()" aria-valuenow="@perk" aria-valuemin="0" aria-valuemax="100">@String.Concat(perk, "%").ToString()</div> }
+                    else if (perk > 75)
+                    {
+                        <div class="progress-bar progress-bar-striped bg-warning" id="myBar2" role="progressbar" style="width: @String.Concat(perk, "%").ToString()" aria-valuenow="@perk" aria-valuemin="0" aria-valuemax="100">@String.Concat(perk, "%").ToString()</div>}
+                    else if (perk > 0)
+                    {
+                        <div class="progress-bar progress-bar-striped bg-danger" id="myBar2" role="progressbar" style="width: @String.Concat(perk, "%").ToString()" aria-valuenow="@perk" aria-valuemin="0" aria-valuemax="100">@String.Concat(perk, "%").ToString()</div>
+                    }
+                </div>
+            </div>
+        </div>
+        @* --------------------------------------------------------------------------- *@
+        <hr />
+        <div class="container-fluid card bg-light text-dark">
+            <table class="table table-bordered table-striped table-hover text-dark table-responsive-sm table-responsive-md table-responsive-lg table-responsive-xl" style="width:100%" id="datata">
+                <thead>
+                    <tr>
+                        @*<th>
+                            @Html.DisplayNameFor(model => model.QuestionList[0].TestID)
+                        </th>*@
+                        <th>
+                            @Html.DisplayNameFor(model => model.QuestionList[0].CategoryID)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.QuestionList[0].QuestionID)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.QuestionList[0].QuestionTxt)
+                        </th>
+                        <th>
+                            Respuesta
+                        </th>
+                        <th>
+                            Evidencias
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.QuestionList)
+                    {
+                        var rspt = Model.Examination.ListaRespuestas.Where(rs => rs.QuestionID == item.QuestionID && rs.TestID == Model.Examination.TestID && rs.ExaminationID == Model.Examination.ExaminationID).FirstOrDefault();
+                        if (rspt == null)
+                        {
+                            <tr>
+                                @*<td>
+                                    @Html.DisplayFor(modelItem => item.TestID)
+                                </td>*@
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.CategoryID)
+                                    .-
+                                    @Model.CategoryList.ElementAt(item.CategoryID - 1).Name
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.QuestionID)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.QuestionTxt)
+                                </td>
+                                <td>
+                                    <!-- Form de Respuesta -->
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <form method="post">
+                                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                                <div class="form-group" hidden="hidden">
+                                                    <label asp-for="ResponseItem.ExaminationID" class="control-label"></label>
+                                                    <input asp-for="ResponseItem.ExaminationID" class="form-control" value="@Model.Examination.ExaminationID" />
+                                                    <span asp-validation-for="ResponseItem.ExaminationID" class="text-danger"></span>
+                                                </div>
+                                                <div class="form-group" hidden="hidden">
+                                                    <label asp-for="ResponseItem.TestID" class="control-label"></label>
+                                                    <input asp-for="ResponseItem.TestID" class="form-control" value="@Model.Examination.TestID" />
+                                                    <span asp-validation-for="ResponseItem.TestID" class="text-danger"></span>
+                                                </div>
+                                                <div class="form-group" hidden="hidden">
+                                                    <label asp-for="ResponseItem.QuestionID" class="control-label"></label>
+                                                    <input asp-for="ResponseItem.QuestionID" class="form-control" value="@item.QuestionID" />
+                                                    <span asp-validation-for="ResponseItem.QuestionID" class="text-danger"></span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label asp-for="ResponseItem.ResponseTypeID" class="control-label"></label>
+                                                    <select asp-for="ResponseItem.ResponseTypeID" class="form-control" asp-items="@Model.ResponseTypeList">
+                                                        <option value="">Escoja una Opción</option>
+                                                    </select>
+                                                    <span asp-validation-for="ResponseItem.ResponseTypeID" class="text-danger"></span>
+                                                </div>
+                                                <div class="form-group">
+                                                    <input type="submit" value="Responder" class="btn btn-default" />
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    No hay evidencias.
+                                </td>
+                            </tr>
+                        }
+                        else
+                        {
+                            @switch (rspt.ResponseTypeID)
+                            {
+                                case 1:
+                                    <tr class="table-success">
+                                        @*<td>
+                                            @Html.DisplayFor(modelItem => item.TestID)
+                                        </td>*@
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.CategoryID)
+                                            .-
+                                            @Model.CategoryList.ElementAt(item.CategoryID - 1).Name
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.QuestionID)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.QuestionTxt)
+                                        </td>
+                                        @switch (rspt.ResponseTypeID)
+                                        {
+                                            case 1:
+                                                <td>
+                                                    <strong>Cumple</strong>
+                                                </td>
+                                                break;
+                                            case 2:
+                                                <td>
+                                                    <strong>No cumple</strong> Deseas abrir un Issue?.
+                                                </td>
+                                                break;
+                                            case 3:
+                                                <td>
+                                                    <strong>No Aplica</strong> Deseas agregar un Comentario?
+                                                </td>
+                                                break;
+                                            default:
+                                                <td>
+                                                    Otro
+                                                </td>
+                                                break;
+                                        }
+                                        <td>
+                                            <a asp-page="/Exams/Evidences/Index" class="btn btn-sm btn-warning" 
+                                                asp-route-emid="@Model.Examination.EmpresaID" asp-route-plid="@Model.Examination.PlanID" asp-route-exid="@Model.Examination.ExaminationID" 
+                                                asp-route-taid="@Model.Examination.TareaID" asp-route-reid="@rspt.ResponseTypeID" > Evidencias </a>
+                                        </td>
+                                    </tr>
+                                    break;
+                                case 2:
+                                    <tr class="table-danger">
+                                        @*<td>
+                                            @Html.DisplayFor(modelItem => item.TestID)
+                                        </td>*@
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.CategoryID)
+                                            .-
+                                            @Model.CategoryList.ElementAt(item.CategoryID - 1).Name
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.QuestionID)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.QuestionTxt)
+                                        </td>
+                                        @switch (rspt.ResponseTypeID)
+                                        {
+                                            case 1:
+                                                <td>
+                                                    <strong>Cumple</strong>
+                                                </td>
+                                                break;
+                                            case 2:
+                                                <td>
+                                                    <strong>No cumple</strong> Deseas abrir un Issue?.
+                                                </td>
+                                                break;
+                                            case 3:
+                                                <td>
+                                                    <strong>No Aplica</strong> Debes agregar un Comentario?
+                                                </td>
+                                                break;
+                                            default:
+                                                <td>
+                                                    Otro
+                                                </td>
+                                                break;
+                                        }
+                                        <td>
+                                            <a asp-page="/Exams/Evidences/Index" class="btn btn-sm btn-warning"
+                                               asp-route-emid="@Model.Examination.EmpresaID" asp-route-plid="@Model.Examination.PlanID" asp-route-exid="@Model.Examination.ExaminationID"
+                                               asp-route-taid="@Model.Examination.TareaID" asp-route-reid="@rspt.ResponseTypeID">Evidencias</a>
+                                        </td>
+                                    </tr>
+                                    break;
+                                case 3:
+                                    <tr class="table-info">
+                                        @*<td>
+                                            @Html.DisplayFor(modelItem => item.TestID)
+                                        </td>*@
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.CategoryID)
+                                            .-
+                                            @Model.CategoryList.ElementAt(item.CategoryID - 1).Name
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.QuestionID)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.QuestionTxt)
+                                        </td>
+                                        @switch (rspt.ResponseTypeID)
+                                        {
+                                            case 1:
+                                                <td>
+                                                    <strong>Cumple</strong>
+                                                </td>
+                                                break;
+                                            case 2:
+                                                <td>
+                                                    <strong>No cumple</strong> Deseas abrir un Issue?.
+                                                </td>
+                                                break;
+                                            case 3:
+                                                <td>
+                                                    <strong>No Aplica</strong> Deseas agregar un Comentario?
+                                                </td>
+                                                break;
+                                            default:
+                                                <td>
+                                                    Otro
+                                                </td>
+                                                break;
+                                        }
+                                        <td>
+                                            <a asp-page="/Exams/Evidences/Index" class="btn btn-sm btn-warning"> Evidencias <div class="badge bg-success">3</div> </a>
+                                        </td>
+                                    </tr>
+                                    break;
+                                default:
+                                    <tr>
+                                        @*<td>
+                                            @Html.DisplayFor(modelItem => item.TestID)
+                                        </td>*@
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.CategoryID)
+                                            .-
+                                            @Model.CategoryList.ElementAt(item.CategoryID - 1).Name
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.QuestionID)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.QuestionTxt)
+                                        </td>
+                                        @switch (rspt.ResponseTypeID)
+                                        {
+                                            case 1:
+                                                <td>
+                                                    <div class="alert alert-success">
+                                                        <strong>Cumple</strong>
+                                                    </div>
+                                                </td>
+                                                break;
+                                            case 2:
+                                                <td>
+                                                    <div class="alert alert-danger">
+                                                        <strong>No cumple</strong> Deseas abrir un Issue?.
+                                                    </div>
+                                                </td>
+                                                break;
+                                            case 3:
+                                                <td>
+                                                    <div class="alert alert-info">
+                                                        <strong>No Aplica</strong> Deseas agregar un Comentario?
+                                                    </div>
+                                                </td>
+                                                break;
+                                            default:
+                                                <td>
+                                                    Otro
+                                                </td>
+                                                break;
+                                        }
+                                        <td>
+                                            <a asp-page="/Exams/Evidences/Index" class="btn btn-sm btn-warning"> Evidencias </a>
+                                        </td>
+                                    </tr>
+                                    break;
+                            }
+                        }
+                    }
+                </tbody>
+                <tfoot>
+                    <tr>
+                        @*<th>
+                        </th>*@
+                        <th>
+                        </th>
+                        <th>
+                        </th>
+                        <th>
+                        </th>
+                        <th>
+                        </th>
+                        <th>
+                        </th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        @* --------------------------------------------------------------------------- *@
+
+        @* *************************************************************************** *@
+        <br />
+        <p>
+            <div>
+                <a asp-page="/Planes/Prevencion/Planificaciones/Details" asp-route-emid="@Model.MyPlan.EmpresaID" asp-route-plid="@Model.MyPlan.PlanID" class="btn btn-primary btn-sm" role="button">Volver</a>
+
+                <button onclick="$('#myModal').modal('show');" class="btn btn-success btn-sm">Nueva Tarea</button>
+                <br />
+            </div>
+        </p>
+        <a asp-page="./Edit" asp-route-id="@Model.Examination.ExaminationID">Editar</a> |
+        <a asp-page="./Index" asp-route-emid="@Model.Examination.EmpresaID" asp-route-plid="@Model.Examination.PlanID">Lista de Inspecciones</a>
+        @*https://localhost:44371/api/Tareas/GetCambiaEstado2?emid=3&plid=16&taid=66&esid=4*@
+        <a asp-page="/api/Tareas/GetCambiaEstado2" asp-route-emid="@Model.Examination.EmpresaID " asp-route-plid="@Model.Examination.PlanID" asp-route-taid="@Model.Examination.TareaID" asp-route-esid="@EsecureModel.Planificacion.EstadoTarea.Realizada">
+            <i class="fa fa-close">
+            </i>
+        </a>
+    </div>
+
+    @* ********** *@
+
+
+</div>
+<hr />
+@* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ *@
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //var cienPorciento = document.getElementById("cienp");
+            //var actualPorciento = document.getElementById("actualp");
+            //var esPor = Math.floor(100 * actualPorciento.innerText / cienPorciento.innerText);
+            //moveBar();
+        });
+        //function move() {
+        //    var elem = document.getElementById("myBar");
+        //    var width = 10;
+        //    var id = setInterval(frame, 10);
+        //    function frame() {
+        //        if (width >= 100) {
+        //            clearInterval(id);
+        //        } else {
+        //            width++;
+        //            elem.style.width = width + '%';
+        //            elem.innerHTML = width * 1 + '%';
+        //        }
+        //    }
+        //}
+        //function moveBar() {
+        //    var elem = document.getElementById("myBar");
+        //    var cienPorciento = document.getElementById("cienp");
+        //    var actualPorciento = document.getElementById("actualp");
+        //    var toValue = Math.floor(100 * actualPorciento.innerText / cienPorciento.innerText);
+        //    var width = 10;
+        //    var id = setInterval(frame, 10);
+        //    function frame() {
+        //        if (width >= 100) {
+        //            clearInterval(id);
+        //        }
+        //        else {
+        //            while (width < toValue) {
+        //                width++;
+        //                elem.style.width = width + '%';
+        //                if (toValue < 75) {
+        //                    // rojo
+        //                    elem.style.backgroundColor = "#FF0000";
+        //                } else {
+        //                    if (toValue < 80) {
+        //                        // rojo
+        //                        elem.style.backgroundColor = "#FF8000";
+        //                    } else {
+        //                        if (toValue < 85) {
+        //                            // rojo
+        //                            elem.style.backgroundColor = "#FFFF00";
+        //                        } else {
+        //                            if (toValue < 90) {
+        //                                // rojo
+        //                                elem.style.backgroundColor = "#FFFF66";
+        //                            } else {
+        //                                if (toValue < 95) {
+        //                                    // rojo
+        //                                    elem.style.backgroundColor = "#99FF33";
+        //                                } else {
+        //                                    // rojo
+        //                                    elem.style.backgroundColor = "#00CC00";
+        //                                }
+        //                            }
+        //                        }
+        //                    }
+        //                }
+        //            }
+        //            elem.innerHTML = width * 1 + '%';
+        //        }
+        //    }
+        //}
+        //function moveTo(toValue) {
+        //    var elem = document.getElementById("myBar");
+        //    var width = elem.style.width;
+        //    var id = setInterval(frame, 1);
+        //    function frame() {
+        //        if (width >= 100) {
+        //            clearInterval(id);
+        //        }
+        //        else {
+        //            while (width < toValue) {
+        //                width++;
+        //                elem.style.width = width + '%';
+        //                elem.innerHTML = width * 1 + '%';
+        //            }
+        //        }
+        //    }
+        //}
+       </script>
+}

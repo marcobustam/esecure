@@ -1,0 +1,46 @@
+﻿@page
+@model EsecureWebApp.Pages.Exams.Responses.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Eliminar registro</h2>
+
+<h3>¿Está seguro que quiere eliminar el registro?</h3>
+<div>
+    <h4>Response</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.EstaResponse.ExaminationID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EstaResponse.ExaminationID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EstaResponse.TestID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EstaResponse.TestID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EstaResponse.QuestionID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EstaResponse.QuestionID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.EstaResponse.TimeStamp)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EstaResponse.TimeStamp)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="EstaResponse.ResponseID" />
+        <input type="submit" value="Eliminar" class="btn btn-default" /> |
+        <a asp-page="./Index">Volver</a>
+    </form>
+</div>

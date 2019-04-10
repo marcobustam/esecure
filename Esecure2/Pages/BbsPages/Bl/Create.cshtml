@@ -1,0 +1,457 @@
+﻿@page
+@model Bbs.Pages.Bl.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+<h4 class="card card-body bg-primary text-light">Inspección BBS</h4>
+<hr />
+<form method="post" id="formToPost">
+    <div class="container container-fluid">
+        <div class="row">
+            @* ************************************************************************************************************************************** *@
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <h5 class="card-header bg-primary text-light">Ubicación:</h5>
+                    <div class="card-body container container-fluid">
+                        <div class="form-group">
+                            <div class="col-12">
+                                <label asp-for="Inspection.DivisionID" class="control-label"></label>
+                            </div>
+                            <div class="col-12">
+                                <select class="selectpicker" data-show-subtext="true" data-live-search="true" id="spDivision">
+                                    <option data-subtext="" id="0"> Seleccione  </option>
+                                    @foreach (var item in Model.SlDivisions)
+                                    {
+                                        <option data-subtext="Division" id="@item.Value">@item.Text </option>
+                                    }
+                                </select>
+                                <input type="number" class="form-control" asp-for="Inspection.DivisionID" id="inpDivision" hidden="hidden" />
+                                <span asp-validation-for="Inspection.DivisionID" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-12">
+                                <label asp-for="Inspection.SiteID" class="control-label"></label>
+                            </div>
+                            <div class="col-12">
+                                <select class="selectpicker" data-show-subtext="true" data-live-search="true" id="spSites">
+                                    <option data-subtext="" id="0"> Seleccione  </option>
+                                    @foreach (var item in Model.SlSites)
+                                    {
+                                        <option data-subtext="Instalación" id="@item.Value"> @item.Text </option>
+                                    }
+                                </select>
+                                <input type="number" class="form-control" asp-for="Inspection.SiteID" id="inpSite" hidden="hidden" />
+                                <span asp-validation-for="Inspection.SiteID" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-12">
+                                <label asp-for="Inspection.WorkSiteID" class="control-label"></label>
+                            </div>
+                            <div class="col-12">
+                                <select class="selectpicker" id="spWorkSites" data-show-subtext="true" data-live-search="true" disabled="disabled" >
+                                    <option data-subtext="" id="0"> Seleccione  </option>
+                                    @*@foreach (var item in Model.SlWorkSites)
+                                        {
+                                            <option data-subtext="Área" id="@item.Value">@item.Text </option>
+                                        }*@
+                                </select>
+                                <input type="number" class="form-control" asp-for="Inspection.WorkSiteID" id="inpWorkSite" hidden="hidden" />
+                                <span asp-validation-for="Inspection.WorkSiteID" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @* ************************************************************************************************************************************** *@
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <h5 class="card-header bg-primary text-light">Personal Involucrado:</h5>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <div class="col-12">
+                                <label asp-for="Inspection.PersonID1" class="control-label"></label>
+                            </div>
+                            <div class="col-12">
+                                <select class="selectpicker" data-show-subtext="true" data-live-search="true" id="spObserved">
+                                    <option data-subtext="" id="0"> Seleccione  </option>
+                                </select>
+                                <input type="number" class="form-control" asp-for="Inspection.PersonID1" id="inpObserved" hidden="hidden" />
+                                <span asp-validation-for="Inspection.PersonID1" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-12">
+                                <label asp-for="Inspection.PersonID2" class="control-label"></label>
+                            </div>
+                            <div class="col-12">
+                                <select class="selectpicker" data-show-subtext="true" data-live-search="true" id="spObserver">
+                                    <option data-subtext="" id="0"> Seleccione  </option>
+                                    @foreach (var item in Model.SlPersonObservers)
+                                    {
+                                        <option data-subtext="Observador" id="@item.Value">@item.Text </option>
+                                    }
+                                </select>
+                                <input type="number" class="form-control" asp-for="Inspection.PersonID2" id="inpObserver" hidden="hidden" />
+                                <span asp-validation-for="Inspection.PersonID2" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-12">
+                                <label asp-for="Inspection.PersonID3" class="control-label"></label>
+                            </div>
+                            <div class="col-12">
+                                <select class="selectpicker" data-show-subtext="true" data-live-search="true" id="spDirector">
+                                    <option data-subtext="" id="0"> Seleccione  </option>
+                                    @foreach (var item in Model.SlPersonDirector)
+                                    {
+                                        <option data-subtext="Responsable Site" id="@item.Value">@item.Text </option>
+                                    }
+                                </select>
+                                <input type="number" class="form-control" asp-for="Inspection.PersonID3" id="inpDirector" hidden="hidden" />
+                                <span asp-validation-for="Inspection.PersonID3" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @* ************************************************************************************************************************************** *@
+        </div>
+        <hr />
+        <div class="row">
+            @* ************************************************************************************************************************************** *@
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <h5 class="card-header bg-primary text-light">Fecha de Inspección:</h5>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <div class="col-12">
+                                <label asp-for="Inspection.Timestamp" class="control-label"></label>
+                                <input type="text" asp-for="Inspection.Timestamp" value="@DateTime.Now" class="form-control" disabled />
+                                <span asp-validation-for="Inspection.Timestamp" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col">
+                                <label asp-for="Inspection.InspectionDate" class="control-label"></label>
+                                <div class="form-group">
+                                    <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+                                        <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1" asp-for="Inspection.InspectionDate"/>
+                                        <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span asp-validation-for="Inspection.InspectionDate" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @* ************************************************************************************************************************************** *@
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <h5 class="card-header bg-primary text-light">Comportamiento Observado:</h5>
+                    <div class="card-body">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <div class="col-12">
+                                <label asp-for="Inspection.ObsCategoryID" class="control-label"></label>
+                            </div>
+                            <div class="col-12">
+                                <select class="selectpicker" data-show-subtext="true" id="spCateg" data-live-search="true">
+                                    <option data-subtext="" id="0"> Seleccione  </option>
+                                    @foreach (var item in Model.SlCategories)
+                                    {
+                                        <option data-subtext="Categoría" id="@item.Value">@item.Text </option>
+                                    }
+                                </select>
+                                <input type="number" class="form-control  form-control-sm form-control-lg " asp-for="Inspection.ObsCategoryID" id="inpCate" hidden="hidden" />
+                                <span asp-validation-for="Inspection.ObsCategoryID" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-12">
+                                <label asp-for="Inspection.ObsItemID" class="control-label"></label>
+                            </div>
+                            <div class="col-12">
+                                <select class="selectpicker" data-show-subtext="true" data-live-search="true" id="spIt" disabled >
+                                    <option data-subtext="" id="0"> Seleccione  </option>
+                                </select>
+                                <input type="number" class="form-control  form-control-sm form-control-lg " asp-for="Inspection.ObsItemID" id="inpItem" hidden="hidden" />
+                                <span asp-validation-for="Inspection.ObsItemID" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-12 card card-body">
+                                <div class="custom-control custom-switch ">
+                                    <input type="checkbox" class="custom-control-input" id="customSwitch1" checked="" asp-for="Inspection.IsSafeAction">
+                                    <label class="custom-control-label text-success checked" for="customSwitch1" id="unlabel">  @Html.DisplayNameFor(model => model.Inspection.IsSafeAction)  </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="form-group">
+            @*<input type="submit" id="boton" value="Enviar Informe" class="btn btn-success" />*@
+            <input type="button" id="botonSubmit" value="Enviar Informe" class="btn btn-success" />
+            <a class="btn btn-info" asp-page="/Indicators">Estadísticas</a>
+        </div>
+        @* ************************************************************************************************************************************** *@
+        <hr />
+    </div>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script type="text/javascript">
+        $('#botonSubmit').click(function () {
+            alert($('#dateContainer').val());
+            $('#formToPost').submit();
+        });
+    </script>
+
+    <script type="text/javascript">
+        $('#datetimepicker1').datetimepicker({
+            //format: 'dd/mm/yyyy',
+            // format: 'L',
+            //format: 'L', // or 'l' (lowercase L) for non-zero-padded
+            // date: moment(),
+            inline: false,
+            sideBySide: true,
+            locale: 'es'
+        });
+        /************************************************************/
+        $('#customSwitch1').change(function () {
+            // alert("Handler for .click() called.");
+            if ($('#unlabel').hasClass("checked")) {
+                $('#unlabel').html("Acción Insegura");
+                $('#unlabel').removeClass("text-success");
+                $('#unlabel').addClass("text-danger");
+                $('#unlabel').removeClass("checked");
+                $('#boton').removeClass("btn-success");
+                $('#boton').addClass("btn-warning");
+            }
+            else {
+                $('#unlabel').html("Acción Segura");
+                $('#unlabel').removeClass("text-danger");
+                $('#unlabel').addClass("text-success");
+                $('#unlabel').addClass("checked");
+                $('#boton').removeClass("btn-warning");
+                $('#boton').addClass("btn-success");
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        $('#spSites').change(function () {
+            var selectedSite = $(this).children("option:selected").val();
+            var id = $(this).children(":selected").attr("id");
+            //alert(id + '-' + selectedSite);
+            $('#inpSite').val(id);
+            $('#inpObserved').val('');
+            ajaxcall(id);
+            ajaxcallPerson(id);
+
+        });
+        //$('#spSites').change();
+        function ajaxcall(siteId) {
+            // alert(siteId);
+            $.ajax({
+                type: "GET",
+                url: "/API/WorkSites/" + siteId,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    //alert(JSON.stringify(data));
+                    $("#worksites").html('');
+                    $('#spWorkSites').html('');
+                    $('#spWorkSites')
+                        .append($("<option></option>")
+                            .text("Seleccione"));
+                    var DIV = '';
+                    $.each(data, function (i, item) {
+                        var sitid = item.siteID;
+                        var sitename = item.siteName;
+                        $.each(item.workSiteList, function (i, sitem) {
+                            /************************************************************************************/
+                            var textValues = sitem.workSiteName.split('-');
+                            // alert(textValues);
+                            if (textValues.length > 1) {
+                                $('#spWorkSites')
+                                    .append($("<option></option>")
+                                        .attr("id", sitem.workSiteID)
+                                        .attr("data-subtext", textValues[0])
+                                        ///.id(sitem.workSiteID)
+                                        .text(textValues[1]));
+                            }
+                            else {
+                                $('#spWorkSites')
+                                    .append($("<option></option>")
+                                        .attr("id", sitem.workSiteID)
+                                        .attr("data-subtext", "Área de trabajo")
+                                        ///.id(sitem.workSiteID)
+                                        .text(textValues[0]));
+                            }
+                            /************************************************************************************/
+                        }); //End of foreach Loop
+                        $('#spWorkSites').selectpicker('refresh');
+                        $('#spWorkSites').removeAttr("disabled");
+                    });
+                }, //End of AJAX Success function
+
+                failure: function (data) {
+                    alert(data.responseText);
+                }, //End of AJAX failure function
+                error: function (data) {
+                    alert(data.responseText);
+                } //End of AJAX error function
+
+            });
+        }
+        /***************************************************/
+        function ajaxcallPerson(siteId) {
+            // alert(siteId);
+            $.ajax({
+                type: "GET",
+                url: "/API/People/" + siteId,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    //alert(JSON.stringify(data));
+
+                    $('#spObserved').html('');
+                    $('#spObserved')
+                        .append($("<option></option>")
+                            .text("Seleccione"));
+                    var DIV = '';
+                    $.each(data, function (i, item) {
+                        /************************************************************************************/
+                        $('#spObserved')
+                            .append($("<option></option>")
+                                .attr("id", item.value)
+                                .attr("data-subtext", "Trabajador")
+                                ///.id(sitem.workSiteID)
+                                .text(item.nombre));
+
+                        $('#spObserved').selectpicker('refresh');
+                    });
+
+                    //console.log("Success:" + data);
+                }, //End of AJAX Success function
+
+                failure: function (data) {
+                    alert(data.responseText);
+                }, //End of AJAX failure function
+                error: function (data) {
+                    alert(data.responseText);
+                } //End of AJAX error function
+
+            });
+        }
+        /***************************************************/
+    </script>
+    <script type="text/javascript">
+        /*************    Comportamiento    ****************/
+        /***************************************************/
+        $('#spCateg').change(function () {
+            var selectedCate = $(this).children("option:selected").val();
+            var id = $(this).children(":selected").attr("id");
+            //alert(id + '-' + selectedCate);
+            $('#inpCate').val(id);
+            ajaxcallItem(id);
+        });
+
+        function ajaxcallItem(catId) {
+            // alert(siteId);
+            $.ajax({
+                type: "GET",
+                url: "/API/ObsItems/" + catId,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    // alert(JSON.stringify(data));
+                    //$("#spIt").html('');
+                    $('#spIt').html('');
+                    $('#spIt')
+                        .append($("<option></option>")
+                            .text("Seleccione"));
+                    var DIV = '';
+                    $.each(data, function (i, item) {
+                        var categId = item.obsCategoryID;
+                        var catename = item.obsCategoryDescription;
+                        $.each(item.itemList, function (i, iteml) {
+                            /************************************************************************************/
+                            $('#spIt')
+                                .append($("<option></option>")
+                                    .attr("id", iteml.obsItemID)
+                                    .attr("data-subtext", "Conducta")
+                                    ///.id(sitem.workSiteID)
+                                    .text(iteml.obsItemDescription));
+                            /************************************************************************************/
+                        }); //End of foreach Loop
+                        $('#spIt').selectpicker('refresh');
+                        $('#spIt').removeAttr('disabled');
+                    });
+                }, //End of AJAX Success function
+
+                failure: function (data) {
+                    alert(data.responseText);
+                }, //End of AJAX failure function
+                error: function (data) {
+                    alert(data.responseText);
+                } //End of AJAX error function
+
+            });
+        }
+        /***************************************************/
+    </script>
+    <script>
+        $('#spIt').change(function () {
+            var id = $(this).children(":selected").attr("id");
+            $('#inpItem').val(id);
+        });
+    </script>
+    <script>
+        $('#spObserved').change(function () {
+            var id = $(this).children(":selected").attr("id");
+            $('#inpObserved').val(id);
+        });
+    </script>
+    <script>
+        $('#spObserver').change(function () {
+            var id = $(this).children(":selected").attr("id");
+            $('#inpObserver').val(id);
+        });
+    </script>
+    <script>
+        $('#spDirector').change(function () {
+            var id = $(this).children(":selected").attr("id");
+            $('#inpDirector').val(id);
+        });
+    </script>
+    <script>
+        $('#spDivision').change(function () {
+            var id = $(this).children(":selected").attr("id");
+            $('#inpDivision').val(id);
+        });
+    </script>
+    <script>
+        $('#spWorkSites').change(function () {
+            var id = $(this).children(":selected").attr("id");
+            $('#inpWorkSite').val(id);
+        });
+    </script>
+
+}

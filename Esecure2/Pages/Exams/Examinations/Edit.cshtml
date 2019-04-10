@@ -1,0 +1,70 @@
+﻿@page
+@model EsecureWebApp.Pages.Exams.Examinations.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Editar</h2>
+
+<h4>Examination</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Examination.ExaminationID" />
+            <div class="form-group">
+                <label asp-for="Examination.TimeStamp" class="control-label"></label>
+                <input asp-for="Examination.TimeStamp" class="form-control" />
+                <span asp-validation-for="Examination.TimeStamp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Examination.PersonaID1" class="control-label"></label>
+                <input asp-for="Examination.PersonaID1" class="form-control" />
+                <span asp-validation-for="Examination.PersonaID1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Examination.PersonaID2" class="control-label"></label>
+                <input asp-for="Examination.PersonaID2" class="form-control" />
+                <span asp-validation-for="Examination.PersonaID2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Examination.TestID" class="control-label"></label>
+                <select asp-for="Examination.TestID" class="form-control" asp-items="ViewBag.TestID"></select>
+                <span asp-validation-for="Examination.TestID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Examination.EmpresaID" class="control-label"></label>
+                <input asp-for="Examination.EmpresaID" class="form-control" />
+                <span asp-validation-for="Examination.EmpresaID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Examination.FaenaID" class="control-label"></label>
+                <input asp-for="Examination.FaenaID" class="form-control" />
+                <span asp-validation-for="Examination.FaenaID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Examination.TotalRespuestas" class="control-label"></label>
+                <input asp-for="Examination.TotalRespuestas" class="form-control" />
+                <span asp-validation-for="Examination.TotalRespuestas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Examination.RespuestasCompletadas" class="control-label"></label>
+                <input asp-for="Examination.RespuestasCompletadas" class="form-control" />
+                <span asp-validation-for="Examination.RespuestasCompletadas" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Volver</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,358 @@
+﻿@page
+@model EsecureWebApp.Pages.FileUploaders.FileUploadingModel
+@{
+    ViewData["Title"] = "FileUploading";
+}
+
+@* ******************************************* *@
+@* ******************************************* *@
+
+<ol class="breadcrumb">
+    @* *************************************************************************** *@
+    <li class="breadcrumb-item">
+        <a href="#">Empresa</a>
+    </li>
+    <li class="breadcrumb-item">
+        <a href="#">Gestión Documental</a>
+    </li>
+    <li class="breadcrumb-item">
+        <a href="#">Subir Archivos</a>
+    </li>
+    @* *************************************************************************** *@
+</ol>
+<div id="content-wrapper">
+    <div class="container-fluid">
+        <!-- Breadcrumbs-->
+
+        <div class="card card-body bg-primary text-light">
+            @* *************************************************************************** *@
+            <h2>Gestión Documental</h2>
+            @*<h4>Empresa: @Model.MyEmpresa.NombreFantasia </h4>*@
+            @* *************************************************************************** *@
+        </div>
+        <hr />
+
+        <div class="card">
+            <div class="col-md-12">
+                <br />
+                @* *************************************************************************** *@
+                <h4 class="card card-body bg-primary text-light">
+                    Subir archivos:
+                </h4>
+                @* --------------------------------------------------------------------------- *@
+                <div class="container-fluid card card-body bg-light text-dark">
+                    <br />
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 card card-body" id="hdndiv">
+                            <link rel="stylesheet" href="~/lib/jstree/themes/default/style.min.css" />
+                            <!--agregar hidden-->
+                            <div id="jstree" hidden="hidden" style="height:700px;width:100%">
+                                <ul>
+                                    @Html.Raw(Model.htmlTree)
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-8  col-lg-8 col-xl-8">
+
+                            <div class=" card card-body ">
+                                <h6 class="card card-body bg-primary text-light">
+                                    Ruta de destino:
+                                </h6>
+                                <div class="alert alert-warning"><strong id="alertPath">No hay una ruta seleccionada.</strong></div>
+                                <div class="alert alert-info"></div>
+                                <h6 class="card card-body bg-primary text-light">
+                                    Archivo:
+                                </h6>
+                                <form method="post" enctype="multipart/form-data" id="js-upload-form">
+                                    <div class="row">
+
+                                        <div class="col-6">
+                                            <input id="FileUpFile" hidden="hidden" onchange="(function () { document.getElementById('infoFile').innerText=document.getElementById('FileUpFile').value; })();return false;" asp-for="Upload" class="form-control" />
+
+                                            <div class="alert alert-info toggled" id="infoFile">
+                                                Sin archivo seleccionado.
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <button id="fileSelect" type="button" class="btn btn-sm btn-info" onclick="(function () { document.getElementById('FileUpFile').click(); })();return false;">Seleccionar Archivo </button>
+                                            <button type="button" class="btn btn-sm btn-success" data-toggle="infoFile" id="uploadFile">Subir <i class="fa fa-cloud-upload">!</i> </button>
+                                        </div>
+
+                                    </div>
+
+
+                                    <!-- Standar Form -->
+                                    @*<label>Seleccione un archivo</label>*@
+
+
+                                    <div class="row">
+                                        <div class="col">
+                                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                            <span asp-validation-for="NewFileUp.FileName" class="text-danger"></span>
+                                            <span asp-validation-for="NewFileUp.FolderUpID" class="text-danger"></span>
+                                            <span asp-validation-for="NewFileUp.FileTypeID" class="text-danger"></span>
+                                            <span asp-validation-for="NewFileUp.FileSize" class="text-danger"></span>
+                                            <span asp-validation-for="Upload" class="text-danger"></span>
+                                            <div class="form-group">
+                                                <div class="input-group mb-3">
+                                                    <div class="custom-file">
+                                                        <input type="file" class="custom-file-input" id="inputGroupFile02">
+                                                        <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
+                                                    </div>
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text" id="">Upload</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group" hidden="hidden">
+                                                <label asp-for="NewFileUp.FileName" class="control-label"></label>
+                                                <input id="FileUpFileName" asp-for="NewFileUp.FileName" class="form-control" value="" />
+
+                                            </div>
+                                            <div class="form-group" hidden="hidden">
+                                                <label asp-for="NewFileUp.FolderUpID" class="control-label"></label>
+                                                <input id="NewFileUpFolderUpID" asp-for="NewFileUp.FolderUpID" class="form-control" value="" />
+
+                                            </div>
+                                            <div class="form-group" hidden="hidden">
+                                                <label asp-for="NewFileUp.FileTypeID" class="control-label"></label>
+                                                <input id="FileUpTypeID" asp-for="NewFileUp.FileTypeID" class="form-control" value="" />
+
+                                            </div>
+                                            <div class="form-group" hidden="hidden">
+                                                <label asp-for="NewFileUp.FileSize" class="control-label"></label>
+                                                <input id="FileUpFileSize" asp-for="NewFileUp.FileSize" class="form-control" value="" />
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+
+                                    </div>
+                                </form>
+                                <!-- Drop Zone -->
+                                @*<h4>O deposite los archivos en el cuadro</h4>
+        <div class="upload-drop-zone" id="drop-zone">
+            Arrastre los archivos aquí
+        </div>*@
+                                <!-- Progress Bar -->
+                                @*<div class="progress">
+            <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                <span class="sr-only">60% Complete</span>
+            </div>
+        </div>*@
+                                <!-- Upload Finished -->
+                                @*<div class="js-upload-finished">
+            <h3>Processed files</h3>
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-success"><span class="badge alert-success pull-right">Success</span>image-01.jpg</a>
+                <a href="#" class="list-group-item list-group-item-success"><span class="badge alert-success pull-right">Success</span>image-02.jpg</a>
+            </div>
+        </div>*@
+                            </div>
+                            
+
+                        </div>
+                    </div>
+
+                </div>
+                @* *************************************************************************** *@
+            </div>
+            <br />
+            <p>
+                <div>
+                    @*<a asp-page="./Create" class="btn btn-info btn-sm float-md-right" role="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Agregar Item">Agregar Categoría <i class="fa fa-plus-circle"></i></a>*@
+                    <br />
+                </div>
+            </p>
+        </div>
+        <br />
+    </div>
+</div>
+@* *************************************************************************** *@
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script type="text/javascript" src="~/lib/jstree/jstree.min.js"></script>
+    <script>
+        $(function () {
+            // alert("ready to show");
+            $('#jstree').jstree({
+                "plugins": [
+                    "wholerow",
+                    "search"
+                ],
+                "core": {
+                    "multiple": false
+                }
+            });
+            $('#jstree').removeAttr('hidden');
+
+            // 7 bind to events triggered on the tree
+            $('#jstree').on("select_node.jstree", function (e, data) {
+                // alert(data.node.id);
+                putPath(e, data.node);
+                var alrt = document.getElementById('alertPath');
+                var alrt2 = document.getElementById('NewFileUpFolderUpID');
+                alrt.innerText = '';
+                //alert(e.getAttribute("id"));
+                var dirty = $('#jstree').jstree().get_path($('#jstree').jstree("get_selected", true)[0], '/');
+                var cleanPath = $.map(dirty.split("/"), $.trim);
+                alrt.innerText = '/' + cleanPath.join('/');
+                alrt2.innerText = alrt.innerText;
+                alrt2.value = data.node.id;
+                return;
+            });
+            // 8 interact with the tree - either way is OK
+            $('button').on('click', function () {
+                /*
+                $('#jstree').jstree(true).select_node('child_node_1');
+                $('#jstree').jstree('select_node', 'child_node_1');
+                $.jstree.reference('#jstree').select_node('child_node_1');
+                */
+            });
+            function putPath(e) {
+                var alrt = document.getElementById('alertPath');
+
+                alrt.innerText = '';
+                alrt.innerText = e;
+                //var caller = document.getElementById(e.getAttribute('id'));
+
+                //var inrTxt = e.innerText;
+                //inrTxt = e.innerText + '<span class="label label-warning">(Seleccionado)</span>';
+                // e.prepend("<i class='indicator glyphicon " + "glyphicons-ok-circle" + "'></i>");
+                //var mySpans = document.getElementsByTagName(i);
+
+                //$(e).append("<i class='indicator glyphicon glyphicon-ok'></i>");
+                //alert(e.innerHTML)
+                // alert(caller.innerHTML + '\n' + caller.innerText);
+
+                // e.addClass('indicator');
+                //e.innerHtml = inrTxt;
+                //e.style.backgroundColor = "yelow";
+                //e.addClass('');
+                return;
+            }
+        });
+
+        'use strict';
+
+        // UPLOAD CLASS DEFINITION
+        // ======================
+
+        //var dropZone = document.getElementById('drop-zone');
+        //var uploadForm = document.getElementById('js-upload-form');
+
+        //var startUpload = function (files) {
+        //    console.log(files);
+        //}
+
+        //uploadForm.addEventListener('submit', function (e) {
+        //    var uploadFiles = document.getElementById('js-upload-files').files;
+        //    e.preventDefault();
+
+        //    startUpload(uploadFiles);
+        //})
+
+        //dropZone.ondrop = function (e) {
+        //    e.preventDefault();
+        //    this.className = 'upload-drop-zone';
+
+        //    startUpload(e.dataTransfer.files)
+        //}
+
+        //dropZone.ondragover = function () {
+        //    this.className = 'upload-drop-zone drop';
+        //    return false;
+        //}
+
+        //dropZone.ondragleave = function () {
+        //    this.className = 'upload-drop-zone';
+        //    return false;
+        //}
+
+        /*************  Acción de subir archivo *****************/
+        $('#uploadFile').on('click', function () {
+            //alert("procesando archivo");
+            var msgtxt;
+            var input, file;
+            if (!window.FileReader) {
+
+                msgtxt = "File API no soportada.";
+                return;
+            }
+
+            input = document.getElementById('FileUpFile');
+            if (!input) {
+                msgtxt = "No se encuentra el archivo.";
+            }
+            else if (!input.files) {
+                msgtxt = "El navegador no soporta la propiedad 'files'.";
+            }
+            else if (!input.files[0]) {
+                msgtxt = "Selecciona un archivo antes de presionar el botón 'Load'";
+            }
+            else {
+
+                file = input.files[0];
+
+                // alert(file.name + "-" + file.size);
+                var exten = document.getElementById('FileUpTypeID');
+                var dirtyName = file.name.split(".");
+                // TODO: hacer la conversion de tipo de archivo a codigo
+                var extension = dirtyName.pop();
+
+                exten.value = 1;
+                var size = document.getElementById('FileUpFileSize');
+                size.value = file.size;
+                var name = document.getElementById('FileUpFileName');
+                name.value = file.name;
+                //bodyAppend("p", "File " + file.name + " is " + file.size + " bytes in size");
+                msgtxt = "OK";
+            }
+            var msg = document.getElementById("infoFile");
+            msg.innerText = msgtxt;
+            $('#js-upload-form').submit();
+            //$('#fileupload').click(); return false;
+        });
+        $(document).on({
+            ajaxStart: function () {
+                //alert("adding class loading");
+                $body.addClass("loading");
+            },
+            ajaxStop: function () {
+                $body.removeClass("loading");
+                //alert("class loading removed");
+            }
+        });
+                /*
+                function showFileSize() {
+                    var input, file;
+                    if (!window.FileReader) {
+                        bodyAppend("p", "File API no soportada.");
+                        return;
+                    }
+
+                    input = document.getElementById('fileinput');
+                    if (!input) {
+                        bodyAppend("p", "No se encuentra el archivo.");
+                    }
+                    else if (!input.files) {
+                        bodyAppend("p", "El navegador no soporta la propiedad 'files'.");
+                    }
+                    else if (!input.files[0]) {
+                        bodyAppend("p", "Selecciona un archivo antes de presionar el botón 'Load'");
+                    }
+                    else {
+                        file = input.files[0];
+
+                        elementUpdate("FileUpFileSize", file.size);
+                        elementUpdate("FileUpFileName", file.name);
+                        bodyAppend("p", "File " + file.name + " is " + file.size + " bytes in size");
+                    }
+                }*/
+    </script>
+}

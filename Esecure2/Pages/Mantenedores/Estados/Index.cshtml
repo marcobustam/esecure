@@ -1,0 +1,47 @@
+﻿@page
+@model EsecureWebApp.Pages.Mantenedores.Estados.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Listado</h2>
+
+<p>
+    <a asp-page="Create">Nuevo</a>
+</p>
+<div class="bg-secondary">
+    <table class="table table-bordered table-striped table-hover text-dark table-responsive-md" style="width:100%" id="datata">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Estado[0].DescripcionEstado)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Estado)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DescripcionEstado)
+                    </td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.EstadoID" class="btn btn-info btn-sm" role="button">Editar</a> |
+                        <a asp-page="./Details" asp-route-id="@item.EstadoID" class="btn btn-info btn-sm" role="button">Detalles</a> |
+                        <a asp-page="./Delete" asp-route-id="@item.EstadoID" class="btn btn-info btn-sm" role="button">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>
+                </th>
+                <th>
+                </th>
+            </tr>
+        </tfoot>
+    </table>
+</div>

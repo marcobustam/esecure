@@ -1,0 +1,126 @@
+﻿@page
+@model EsecureWebApp.Pages.Exams.Evidences.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+@* *************************************************************************** *@
+<!-- Breadcrumbs-->
+<ol class="breadcrumb">
+    @* *************************************************************************** *@
+    <li class="breadcrumb-item">
+        <a asp-page="/Mantenedores/Empresas/Index">Empresa</a>
+        @*<a href="#">Empresa</a>*@
+    </li>
+    <li class="breadcrumb-item">
+        <a href="#">Prevención</a>
+    </li>
+    <li class="breadcrumb-item">
+        <a href="#">Inspecciones</a>
+    </li>
+    <li class="breadcrumb-item active">
+        Evidencias
+    </li>
+    @* *************************************************************************** *@
+</ol>
+
+<div class="container-fluid">
+    <div class="card card-body bg-primary text-light">
+        @* *************************************************************************** *@
+        <h3>Plan de prevención - @Html.DisplayFor(model => model.MyPlan.NombrePlan)</h3>
+        <h4>Empresa: @Model.MyEmpresa.NombreFantasia </h4>
+        @* *************************************************************************** *@
+    </div>
+    <hr />
+    <div class="card card-footer">
+        <h4 class="card card-body bg-primary text-light">
+            Detalle del plan:
+        </h4>
+        @*<hr />*@
+        <div class=" card card-body">
+
+        </div>
+    </div>
+
+    </div>
+
+    <h2>Listado</h2>
+
+    <p>
+        <a asp-page="Create">Nuevo</a>
+    </p>
+    <div class="bg-secondary">
+        <table class="table table-bordered table-striped table-hover text-dark table-responsive-md" style="width:100%" id="datata">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EvidenceList[0].Descripcion)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EvidenceList[0].EvidenceType)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EvidenceList[0].FileUp)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EvidenceList[0].TimeStamp)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EvidenceList[0].LastMod)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EvidenceList[0].PersonaID)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.EvidenceList)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Descripcion)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.EvidenceType)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FileUp.FileUpID)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.TimeStamp)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.LastMod)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PersonaID)
+                        </td>
+                        <td>
+                            <a asp-page="./Edit" asp-route-id="@item.EvidenceID">Editar</a> |
+                            <a asp-page="./Details" asp-route-id="@item.EvidenceID">Detalles</a> |
+                            <a asp-page="./Delete" asp-route-id="@item.EvidenceID">Eliminar</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th>
+                    </th>
+                    <th>
+                    </th>
+                    <th>
+                    </th>
+                    <th>
+                    </th>
+                    <th>
+                    </th>
+                    <th>
+                    </th>
+                    <th>
+                    </th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>

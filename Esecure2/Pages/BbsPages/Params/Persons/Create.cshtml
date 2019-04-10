@@ -1,0 +1,99 @@
+﻿@page
+@model Bbs.Pages.Params.Persons.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>Person</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ThisPerson.RutChile" class="control-label"></label>
+                <input asp-for="ThisPerson.RutChile" class="form-control" />
+                <span asp-validation-for="ThisPerson.RutChile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ThisPerson.Names" class="control-label"></label>
+                <input asp-for="ThisPerson.Names" class="form-control" />
+                <span asp-validation-for="ThisPerson.Names" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ThisPerson.LastName1" class="control-label"></label>
+                <input asp-for="ThisPerson.LastName1" class="form-control" />
+                <span asp-validation-for="ThisPerson.LastName1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ThisPerson.LastName2" class="control-label"></label>
+                <input asp-for="ThisPerson.LastName2" class="form-control" />
+                <span asp-validation-for="ThisPerson.LastName2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ThisPerson.GenderID" class="control-label"></label>
+                <input asp-for="ThisPerson.GenderID" class="form-control" />
+                <span asp-validation-for="ThisPerson.GenderID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ThisPerson.BirthDate" class="control-label"></label>
+                @*<input class="form-control" />*@
+                <div class="form-group">
+                    <div class="input-group date" id="datepicker" data-target-input="nearest">
+                        <input type="text" class="form-control datepicker-input" data-target="#datepicker" asp-for="ThisPerson.BirthDate" />
+                        <div class="input-group-append" data-target="#datepicker" data-toggle="datepicker">
+                            <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <span asp-validation-for="ThisPerson.BirthDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="ThisPerson.IsObserved" /> @Html.DisplayNameFor(model => model.ThisPerson.IsObserved))
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="ThisPerson.IsObserver" /> @Html.DisplayNameFor(model => model.ThisPerson.IsObserver))
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="ThisPerson.IsDirector" /> @Html.DisplayNameFor(model => model.ThisPerson.IsDirector))
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker13').datetimepicker({
+                format: 'LT',
+                inline: true,
+                sideBySide: false,
+                locale: 'es'
+            });
+        });
+    </script>
+}

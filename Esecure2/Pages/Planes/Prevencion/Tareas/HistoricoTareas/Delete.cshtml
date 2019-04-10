@@ -1,0 +1,46 @@
+﻿@page
+@model EsecureWebApp.Pages.Planes.Prevencion.Tareas.HistoricoTareas.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Eliminar registro</h2>
+
+<h3>¿Está seguro que quiere eliminar el registro?</h3>
+<div>
+    <h4>HistoricoTarea</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.HistoricoTarea.TareaID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HistoricoTarea.TareaID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HistoricoTarea.EstadoAnterior)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HistoricoTarea.EstadoAnterior)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HistoricoTarea.NuevoEstado)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HistoricoTarea.NuevoEstado)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HistoricoTarea.TimeStamp)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HistoricoTarea.TimeStamp)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="HistoricoTarea.HistoricoTareaID" />
+        <input type="submit" value="Eliminar" class="btn btn-default" /> |
+        <a asp-page="./Index">Volver</a>
+    </form>
+</div>
