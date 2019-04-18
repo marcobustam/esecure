@@ -72,7 +72,7 @@ namespace EsecureWebApp.Pages.API
             await _context.SaveChangesAsync();
             return Ok(tarea);
         }
-
+        [HttpGet("emid={emid}&plid={plid}&taid={taid}&esid={esid}")]
         [ActionName("GetCambiaEstado")]
         public async Task<IActionResult> GetCambiaEstado(int emid, int plid, int taid, EstadoTarea esid )
         {
@@ -123,57 +123,57 @@ namespace EsecureWebApp.Pages.API
             }
             
         }
-        [HttpGet]
-        [ActionName("GetCambiaEstado2")]
-        public async Task<IActionResult> GetCambiaEstado2(int emid, int plid, int taid, EstadoTarea esid )
-        {
-            try
-            {
-                if (!ModelState.IsValid)
-                {
-                    return BadRequest(ModelState);
-                }
+        //[HttpGet]
+        //[ActionName("GetCambiaEstado2")]
+        //public async Task<IActionResult> GetCambiaEstado2(int emid, int plid, int taid, EstadoTarea esid )
+        //{
+        //    try
+        //    {
+        //        if (!ModelState.IsValid)
+        //        {
+        //            return BadRequest(ModelState);
+        //        }
 
-                //var tarea = await _context.Tarea.Include(ta=>ta.Checklist).Where(ta=>ta.TareaID==taid).ToListAsync();
-                var tarea = await _context.Tarea.Where(ta => ta.TareaID == taid).FirstAsync();
+        //        //var tarea = await _context.Tarea.Include(ta=>ta.Checklist).Where(ta=>ta.TareaID==taid).ToListAsync();
+        //        var tarea = await _context.Tarea.Where(ta => ta.TareaID == taid).FirstAsync();
 
-                if (tarea == null)
-                {
-                    return NotFound();
-                }
-                switch (esid) {
-                    case EstadoTarea.Nueva:
-                        break;
-                    case EstadoTarea.Planificada:
-                        break;
-                    case EstadoTarea.Iniciada:
-                        tarea.FechaEjecucionReal = DateTime.Now;
-                        break;
-                    case EstadoTarea.Realizada:
-                        tarea.FechaFinEjecucionReal = DateTime.Now;
-                        break;
-                    default:
-                        break;
-                }
-                tarea.FechaUltimaModificacion = DateTime.Now;
-                var historicotarea = new HistoricoTarea(tarea, esid);
-                await _context.HistoricoTarea.AddAsync(historicotarea);
-                tarea.EstadoID = esid;
-                /****/
-                /*
-                var exam = new Examination(tarea[0]);
-                // exam.Prueba = await _context.Test.FindAsync(tarea.ActividadVerificacionID);
-                await _context.Examination.AddAsync(exam);
-                /****/
-                await _context.SaveChangesAsync();
-                return RedirectToPage("/Planes/Prevencion/Planificaciones/Details", new { emid, plid, taid });
-            }
-            catch (Exception)
-            {
-                return RedirectToPage("/Planes/Prevencion/Planificaciones/Details", new { emid, plid, taid });
-            }
+        //        if (tarea == null)
+        //        {
+        //            return NotFound();
+        //        }
+        //        switch (esid) {
+        //            case EstadoTarea.Nueva:
+        //                break;
+        //            case EstadoTarea.Planificada:
+        //                break;
+        //            case EstadoTarea.Iniciada:
+        //                tarea.FechaEjecucionReal = DateTime.Now;
+        //                break;
+        //            case EstadoTarea.Realizada:
+        //                tarea.FechaFinEjecucionReal = DateTime.Now;
+        //                break;
+        //            default:
+        //                break;
+        //        }
+        //        tarea.FechaUltimaModificacion = DateTime.Now;
+        //        var historicotarea = new HistoricoTarea(tarea, esid);
+        //        await _context.HistoricoTarea.AddAsync(historicotarea);
+        //        tarea.EstadoID = esid;
+        //        /****/
+        //        /*
+        //        var exam = new Examination(tarea[0]);
+        //        // exam.Prueba = await _context.Test.FindAsync(tarea.ActividadVerificacionID);
+        //        await _context.Examination.AddAsync(exam);
+        //        /****/
+        //        await _context.SaveChangesAsync();
+        //        return RedirectToPage("/Planes/Prevencion/Planificaciones/Details", new { emid, plid, taid });
+        //    }
+        //    catch (Exception)
+        //    {
+        //        return RedirectToPage("/Planes/Prevencion/Planificaciones/Details", new { emid, plid, taid });
+        //    }
             
-        }
+        //}
 
         // PUT: api/Tareas/5
         [HttpPut("{id}")]

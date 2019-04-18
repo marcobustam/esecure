@@ -37,7 +37,7 @@ namespace EsecureWebApp.Pages.Exams.Examinations
         public IList<Evidence> MyEvidenceList { get; set; }
         public SelectList ResponseTypeList { get; set; }
         public List<Category> CategoryList { get; set; }
-        public Empresa MyEmpresa { get; set; }
+        // public Empresa MyEmpresa { get; set; }
         public Plan MyPlan { get; set; }
         public Tarea MyTask { get; set; }
         public Persona Examinador { get; private set; }

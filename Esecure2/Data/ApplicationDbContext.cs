@@ -61,33 +61,33 @@ namespace Esecure2.Data
         public DbSet<EsecureModel.Config.WebConfiguration> WebConfiguration { get; set; }
         public DbSet<EsecureModel.Mailer.MailSender> MailSender { get; set; }
     }
-    public class BbsContext : DbContext
-    {
-        public BbsContext(DbContextOptions<BbsContext> options)
-            : base(options)
-        {
-        }
+    //public class BbsContext : DbContext
+    //{
+    //    public BbsContext(DbContextOptions<BbsContext> options)
+    //        : base(options)
+    //    {
+    //    }
 
-        public DbSet<Gender> Gender { get; set; }
+    //    public DbSet<Gender> Gender { get; set; }
 
-        public DbSet<ObsCategory> ObsCategory { get; set; }
+    //    public DbSet<ObsCategory> ObsCategory { get; set; }
 
-        public DbSet<Configuration> Configuration { get; set; }
+    //    public DbSet<Configuration> Configuration { get; set; }
 
-        public DbSet<Division> Division { get; set; }
+    //    public DbSet<Division> Division { get; set; }
 
-        public DbSet<ObsItem> ObsItem { get; set; }
+    //    public DbSet<ObsItem> ObsItem { get; set; }
 
-        public DbSet<Person> Person { get; set; }
+    //    public DbSet<Person> Person { get; set; }
 
-        public DbSet<RespType> RespType { get; set; }
+    //    public DbSet<RespType> RespType { get; set; }
 
-        public DbSet<WorkSite> WorkSite { get; set; }
+    //    public DbSet<WorkSite> WorkSite { get; set; }
 
-        public DbSet<Site> Site { get; set; }
+    //    public DbSet<Site> Site { get; set; }
 
-        public DbSet<Inspection> Inspection { get; set; }
+    //    public DbSet<Inspection> Inspection { get; set; }
 
-        public DbSet<WebConfiguration> WebConfiguration { get; set; }
-    }
+    //    public DbSet<WebConfiguration> WebConfiguration { get; set; }
+    //}
 }

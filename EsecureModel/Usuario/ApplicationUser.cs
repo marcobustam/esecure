@@ -27,6 +27,8 @@ namespace EsecureModel.Usuario
         public string PostalCode { get; set; }
         [DisplayName("País")]
         public string Country { get; set; }
+        [DisplayName("Cargo")]
+        public string Cargo { get; set; }
         [DisplayName("Empresa")]
         public int EmpresaID { get; set; }
 

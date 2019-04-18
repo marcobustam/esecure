@@ -18,7 +18,7 @@ namespace EsecureWebApp.Pages.Planes.Mitigacion.Issues
     [BindProperties]
     public class IndexModel : BaseCodeModel
     {
-        private readonly Esecure2.Data.ApplicationDbContext _context;
+        // private readonly Esecure2.Data.ApplicationDbContext _context;
 
         public IndexModel(IConfiguration configuration, ApplicationDbContext context, SignInManager<ApplicationUser> SignInManager, UserManager<ApplicationUser> UserManager, RoleManager<IdentityRole> RoleManager) : base(configuration, context, SignInManager, UserManager, RoleManager)
         {
@@ -29,7 +29,7 @@ namespace EsecureWebApp.Pages.Planes.Mitigacion.Issues
         }
 
         public IList<IssueItem> ListaIssueItem { get;set; }
-        public Empresa MyEmpresa { get; private set; }
+        // public Empresa MyEmpresa { get; private set; }
         public List<IssueList> IssueList { get; private set; }
         public Plan MyPlan { get; private set; }
 

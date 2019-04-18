@@ -19,7 +19,7 @@ namespace EsecureWebApp.Pages.Planes.Prevencion.Tareas
 {
     public class CreateModel : BaseCodeModel
     {
-        private readonly Esecure2.Data.ApplicationDbContext _context;
+        // private readonly Esecure2.Data.ApplicationDbContext _context;
 
         public CreateModel(IConfiguration configuration, ApplicationDbContext context, SignInManager<ApplicationUser> SignInManager, UserManager<ApplicationUser> UserManager, RoleManager<IdentityRole> RoleManager) : base(configuration, context, SignInManager, UserManager, RoleManager)
         {
@@ -71,8 +71,8 @@ namespace EsecureWebApp.Pages.Planes.Prevencion.Tareas
         [BindProperty]
         public Tarea EstaTarea { get; set; }
         public Tarea NuevaTarea { get; set; }
-        [BindProperty]
-        public Empresa MyEmpresa { get; set; }
+        // [BindProperty]
+        // public Empresa MyEmpresa { get; set; }
         [BindProperty]
         public Plan MyPlan { get; set; }
         [BindProperty]

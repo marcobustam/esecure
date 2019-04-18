@@ -1,0 +1,327 @@
+﻿@page
+@model EsecureWebApp.Pages.Users.UserProfiles.UserProfileModel
+@{
+    ViewData["Title"] = "UserProfile";
+}
+
+@*<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>*@
+<!------ Include the above in your HEAD tag ---------->
+@*<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>*@
+<!------ Include the above in your HEAD tag ---------->
+@*<title>Bootstrap Example</title>
+    <meta charset="utf-8">*@
+@*<meta name="viewport" content="width=device-width, initial-scale=1">*@
+@*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>*@
+@* ++++++++++++++++++++++++++++++++++++++++++ *@
+<ol class="breadcrumb">
+    @* *************************************************************************** *@
+    <li class="breadcrumb-item">
+        <a asp-page="/Mantenedores/Empresas/Index" asp-route-emid="@Model.MyEmpresa.EmpresaID">Empresa</a>
+        @*<a href="#">Empresa</a>*@
+    </li>
+    <li class="breadcrumb-item">
+        <a href="#">Usuario</a>
+    </li>
+    <li class="breadcrumb-item active">
+        Perfil de usuario
+    </li>
+    @* *************************************************************************** *@
+</ol>
+<div id="content-wrapper">
+    <div class="container-fluid">
+        <!-- Breadcrumbs-->
+        <div class="card card-body bg-primary text-light">
+            @* *************************************************************************** *@
+            <h3>Perfil de usuario </h3>
+            <h4>Empresa:  </h4>
+            @* *************************************************************************** *@
+        </div>
+        <hr />
+        <div class="card">
+            <div class="col-sm-12">
+                <br />
+                @* *************************************************************************** *@
+                <h4 class="card card-body bg-primary text-light">
+                    Nombre: @Model.AppUser.GetUserFullName()
+                </h4>
+                <hr />
+                @* --------------------------------------------------------------------------- *@
+                <div class="container-fluid card bg-light text-dark">
+                    <div class="container bootstrap snippet">
+                        <br />
+                        @*<div class="row">
+                                <div class="col-sm-10"><h1>User name</h1></div>
+                                <div class="col-sm-2"><a href="/users" class="pull-right"><img title="profile image" class="img-circle img-responsive" src="http://www.gravatar.com/avatar/28fd20ccec6865e2d5f0e1f4446eb7bf?s=100"></a></div>
+                            </div>*@
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <!--left col-->
+
+                                <div class="text-center h5-responsive">
+                                    <img src="~/images/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar">
+                                    <h6>Cambiar imagen</h6>
+                                    <input type="file" class="text-center center-block file-upload">
+                                </div>
+                                <hr />
+                                <br />
+
+                                @*<div class="panel panel-default">
+                                        <div class="panel-heading">Website <i class="fa fa-link fa-1x"></i></div>
+                                        <div class="panel-body"><a href="http://bootnipets.com">bootnipets.com</a></div>
+                                    </div>*@
+                                <ul class="list-group text-left">
+                                    <li class="list-group-item text-muted bg-primary text-light">
+                                        <h4 class="text-light">
+                                            Actividad
+                                        </h4>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-8">
+                                                <span class="pull-left">
+                                                    <strong>
+                                                        Planes
+                                                    </strong>
+                                                </span>
+                                                <span class="badge badge-pill badge-info">
+                                                    2
+                                                </span>
+                                            </div>
+                                            <div class="col-4 text-right">
+                                                <a asp-page="/Planes/Prevencion/Planificaciones/Index" asp-route-emid="@Model.MyEmpresa.EmpresaID" asp-route-peid="@Model.AppUser.ApplicationUserID">Ver</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    @* *********************************** *@
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-8">
+                                                <span class="pull-left">
+                                                    <strong>
+                                                        Tareas
+                                                    </strong>
+                                                </span>
+                                                <span class="badge badge-pill badge-info">
+                                                    13
+                                                </span>
+                                            </div>
+                                            <div class="col-4 text-right">
+                                                <a asp-page="/Planes/Prevencion/Planificaciones/Tareas/Index" asp-route-emid="@Model.MyEmpresa.EmpresaID" asp-route-peid="@Model.AppUser.ApplicationUserID">Ver</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    @* *********************************** *@
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-8">
+                                                <span class="pull-left">
+                                                    <strong>
+                                                        Incidentes
+                                                    </strong>
+                                                </span>
+                                                <span class="badge badge-pill badge-info">
+                                                    5
+                                                </span>
+                                            </div>
+                                            <div class="col-4 text-right">
+                                                <a asp-page="/Planes/Mitigacion/IssueLists/Index" asp-route-emid="@Model.MyEmpresa.EmpresaID" asp-route-peid="@Model.AppUser.ApplicationUserID">Ver</a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    @* *********************************** *@
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-8">
+                                                <span class="pull-left">
+                                                    <strong>
+                                                        EPP
+                                                    </strong>
+                                                </span>
+                                                <span class="badge badge-pill badge-info">
+                                                    4
+                                                </span>
+                                            </div>
+                                            <div class="col-4 text-right">
+                                                <button >Ver</button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    @* *********************************** *@
+                                    <li class="list-group-item bg-primary">
+
+                                    </li>
+                                </ul>
+                                @*<div class="panel panel-default">
+                                        <div class="panel-heading">Social Media</div>
+                                        <div class="panel-body">
+                                            <i class="fa fa-facebook fa-2x"></i> <i class="fa fa-github fa-2x"></i> <i class="fa fa-twitter fa-2x"></i> <i class="fa fa-pinterest fa-2x"></i> <i class="fa fa-google-plus fa-2x"></i>
+                                        </div>
+                                    </div>*@
+
+                            </div><!--/col-3-->
+                            <div class="col-sm-9">
+                                @*<ul class="nav nav-tabs">
+                                    <li class="active">
+                                        <a data-toggle="tab" href="#home">
+                                            Home
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a data-toggle="tab" href="#messages">
+                                            Menu 1
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a data-toggle="tab" href="#settings">
+                                            Menu 2
+                                        </a>
+                                    </li>
+                                </ul>*@
+
+                                <div class="tab-content card card-body">
+                                    <div class="tab-pane active" id="home">
+                                        <hr>
+                                        <form class="form" action="##" method="post" id="registrationForm">
+                                            <div class="form-group">
+
+                                                <div class="col-xs-6">
+                                                    <label for="first_name"><h4>Nombre</h4></label>
+                                                    <input type="text" class="form-control" name="first_name" asp-for="@Model.AppUser.FirstName" id="first_name" placeholder="Primer Nombre" title="Primer Nombre">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+
+                                                <div class="col-xs-6">
+                                                    <label for="last_name"><h4>Apellidos</h4></label>
+                                                    <input type="text" class="form-control" name="last_name" id="last_name" placeholder="Apellido" title="Ingrese Apellido" asp-for="@Model.AppUser.LastName">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+
+                                                <div class="col-xs-6">
+                                                    <label for="cargo"><h4>Cargo</h4></label>
+                                                    <input type="text" class="form-control" name="cargo" id="cargo" placeholder="Ingrese Cargo" title="Ingrese Cargo">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <div class="col-xs-6">
+                                                    <label for="mobile"><h4>Teléfono móvil</h4></label>
+                                                    <div class="input-group mb-3">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text"><i class="fa fa-phone"></i></span>
+                                                        </div>
+                                                        <input type="text" class="form-control" name="mobile" id="mobile" placeholder="Ingrese número móvil" title="Ingrese número móvil">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+
+                                                <div class="col-xs-6">
+                                                    <label for="email"><h4>Email</h4></label>
+                                                    <div class="input-group mb-3">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                                                        </div>
+                                                        <input type="text" class="form-control" name="email" id="email" placeholder="you@email.com" title="Ingrese un correo">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+
+                                                <div class="col-xs-6">
+                                                    <label for="email"><h4>Ubicación</h4></label>
+                                                    <div class="input-group mb-3">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text"><i class="fa fa-map-marker"></i></span>
+                                                        </div>
+                                                        <input type="text" class="form-control" id="location" placeholder="faena" title="Selecciona una faena">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+
+                                                <div class="col-xs-6">
+                                                    <label for="password"><h4>Password</h4></label>
+                                                    <input type="password" class="form-control" name="password" id="password" placeholder="password" title="Ingresa tu clave">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+
+                                                <div class="col-xs-6">
+                                                    <label for="password2"><h4>Repetir Password</h4></label>
+                                                    <input type="password" class="form-control" name="password2" id="password2" placeholder="Repetir" title="Reingresa la clave">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="col-xs-12">
+                                                    <br>
+                                                    <button class="btn btn-sm btn-success" type="submit"><i class="fa fa-save"></i> Guardar</button>
+                                                    <button class="btn btn-sm btn-warning" type="reset"><i class="fa fa-backward"></i> Volver </button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <hr />
+                                    </div><!--/tab-pane-->
+
+                                    <div class="tab-pane" id="messages">
+
+                                    </div><!--/tab-pane-->
+                                    <div class="tab-pane" id="settings">
+
+                                    </div>
+
+                                </div><!--/tab-pane-->
+                                <br />
+                            </div><!--/tab-content-->
+                        </div><!--/col-9-->
+                    </div><!--/row-->
+                </div>
+                <p>
+                    <div>
+                        <a asp-page="./Create" asp-route-emid="" class="btn btn-primary btn-sm" role="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Nuevo Plan">Agregar Plan <span class="glyphicon glyphicon-plus-sign"></span>   </a>
+                        <br />
+                    </div>
+                </p>
+                @* --------------------------------------------------------------------------- *@
+                @* *************************************************************************** *@
+
+            </div>
+        </div>
+    </div>
+</div>
+@* *************************************************************************** *@
+<hr />
+@* ++++++++++++++++++++++++++++++++++++++++++ *@
+
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+
+            var readURL = function (input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('.avatar').attr('src', e.target.result);
+                    }
+
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+
+
+            $(".file-upload").on('change', function () {
+                readURL(this);
+            });
+        });
+    </script>
+}

@@ -1,5 +1,5 @@
 ﻿@page
-@model Bbs.Pages.Params.Genders.DeleteModel
+@*@model Bbs.Pages.Params.Genders.DeleteModel*@
 
 @{
     ViewData["Title"] = "Delete";
@@ -11,18 +11,18 @@
 <div>
     <h4>Gender</h4>
     <hr />
-    <dl class="dl-horizontal">
+    @*<dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Gender.GenderName)
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Gender.GenderName)
         </dd>
-    </dl>
+    </dl>*@
     
-    <form method="post">
+    @*<form method="post">
         <input type="hidden" asp-for="Gender.GenderId" />
         <input type="submit" value="Delete" class="btn btn-default" /> |
         <a asp-page="./Index">Back to List</a>
-    </form>
+    </form>*@
 </div>

@@ -1,60 +1,60 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
-using bbs.Models;
-using bbs.Models.Params;
-using Esecure2.Data;
+﻿//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Threading.Tasks;
+//using Microsoft.AspNetCore.Mvc;
+//using Microsoft.AspNetCore.Mvc.RazorPages;
+//using Microsoft.EntityFrameworkCore;
+//using bbs.Models;
+//using bbs.Models.Params;
+//using Esecure2.Data;
 
-namespace Bbs.Pages.Params.Persons
-{
-    public class DeleteModel : PageModel
-    {
-        private readonly BbsContext _context;
+//namespace Bbs.Pages.Params.Persons
+//{
+//    public class DeleteModel : PageModel
+//    {
+//        private readonly BbsContext _context;
 
-        public DeleteModel(BbsContext context)
-        {
-            _context = context;
-        }
+//        public DeleteModel(BbsContext context)
+//        {
+//            _context = context;
+//        }
 
-        [BindProperty]
-        public Person Person { get; set; }
+//        [BindProperty]
+//        public Person Person { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
+//        public async Task<IActionResult> OnGetAsync(int? id)
+//        {
+//            if (id == null)
+//            {
+//                return NotFound();
+//            }
 
-            Person = await _context.Person.FirstOrDefaultAsync(m => m.PersonID == id);
+//            Person = await _context.Person.FirstOrDefaultAsync(m => m.PersonID == id);
 
-            if (Person == null)
-            {
-                return NotFound();
-            }
-            return Page();
-        }
+//            if (Person == null)
+//            {
+//                return NotFound();
+//            }
+//            return Page();
+//        }
 
-        public async Task<IActionResult> OnPostAsync(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
+//        public async Task<IActionResult> OnPostAsync(int? id)
+//        {
+//            if (id == null)
+//            {
+//                return NotFound();
+//            }
 
-            Person = await _context.Person.FindAsync(id);
+//            Person = await _context.Person.FindAsync(id);
 
-            if (Person != null)
-            {
-                _context.Person.Remove(Person);
-                await _context.SaveChangesAsync();
-            }
+//            if (Person != null)
+//            {
+//                _context.Person.Remove(Person);
+//                await _context.SaveChangesAsync();
+//            }
 
-            return RedirectToPage("./Index");
-        }
-    }
-}
+//            return RedirectToPage("./Index");
+//        }
+//    }
+//}

@@ -27,7 +27,7 @@ namespace EsecureWebApp.Pages.Exams.Examinations
         }
 
         public IList<Examination> ExaminationList { get;set; }
-        public Empresa MyEmpresa { get; set; }
+        // public Empresa MyEmpresa { get; set; }
         public async Task OnGetAsync(int? emid, int? plid, int? taid, int? exid)
         {
             ExaminationList = await _context.Examination

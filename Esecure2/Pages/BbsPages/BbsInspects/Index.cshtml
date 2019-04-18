@@ -1,5 +1,5 @@
 ﻿@page
-@model Bbs.Pages.BbsInspects.IndexModel
+@*@model Bbs.Pages.BbsInspects.IndexModel*@
 
 @{
     ViewData["Title"] = "Index";
@@ -7,7 +7,7 @@
 
 <h2>Index</h2>
 
-<p>
+@*<p>
     <a asp-page="Create">Create New</a>
 </p>
 <div class="card">
@@ -17,8 +17,8 @@
             Inspecciones realizadas:
         </h4>
         <hr />
-        @* *************************************************************************** *@
-        @* --------------------------------------------------------------------------- *@
+        @* *************************************************************************** *
+        @* --------------------------------------------------------------------------- *
         <div class="container-fluid card bg-light text-dark">
             <table class="table table-bordered table-striped table-hover text-dark table-responsive-md" id="datata">
                 <thead>
@@ -113,7 +113,7 @@
     </div>
 </div>
 
-@* ******************************************************************************** *@
+ ******************************************************************************** *@
 @section Scripts {
     <script type="text/javascript">
         $(function () {

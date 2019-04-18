@@ -571,6 +571,8 @@ namespace Esecure2.Data.Migrations
 
                     b.Property<int>("ApplicationUserID");
 
+                    b.Property<string>("Cargo");
+
                     b.Property<string>("City");
 
                     b.Property<string>("ConcurrencyStamp")

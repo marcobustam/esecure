@@ -16,7 +16,7 @@ namespace EsecureWebApp.Pages.Mantenedores.Personas
 {
     public class CreateModel : BaseCodeModel
     {
-        private readonly Esecure2.Data.ApplicationDbContext _context;
+        // private readonly Esecure2.Data.ApplicationDbContext _context;
 
         public CreateModel(IConfiguration configuration, ApplicationDbContext context, SignInManager<ApplicationUser> SignInManager, UserManager<ApplicationUser> UserManager, RoleManager<IdentityRole> RoleManager) : base(configuration, context, SignInManager, UserManager, RoleManager)
         {
@@ -25,7 +25,7 @@ namespace EsecureWebApp.Pages.Mantenedores.Personas
             _userManager = UserManager;
             _context = context;
         }
-        public Empresa MyEmpresa { get; set; }
+        // public Empresa MyEmpresa { get; set; }
         public async Task<IActionResult> OnGet(int? emid)
         {
             if (emid == null)

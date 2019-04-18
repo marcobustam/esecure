@@ -19,7 +19,7 @@ namespace EsecureWebApp.Pages.Planes.Prevencion.Planificaciones
     // TODO: Agregar histórico de modificaciones.
     public class IndexModel : BaseCodeModel
     {
-        private readonly Esecure2.Data.ApplicationDbContext _context;
+        // private readonly Esecure2.Data.ApplicationDbContext _context;
 
         public IndexModel(IConfiguration configuration, ApplicationDbContext context, SignInManager<ApplicationUser> SignInManager, UserManager<ApplicationUser> UserManager, RoleManager<IdentityRole> RoleManager) : base(configuration, context, SignInManager, UserManager, RoleManager)
         {
@@ -30,7 +30,7 @@ namespace EsecureWebApp.Pages.Planes.Prevencion.Planificaciones
         }
 
         public IList<Plan> PlanList { get;set; }
-        public Empresa MyEmpresa { get; set; }
+        // public Empresa MyEmpresa { get; set; }
         public IList<Persona> ListaResponsables { get; set; }
         public IList<Empresa> ListaEmpresas { get; set; }
         public async Task OnGetAsync(int? emid)

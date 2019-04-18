@@ -1,5 +1,5 @@
 ﻿@page
-@model Bbs.Pages.Bl.EditModel
+@*@model Bbs.Pages.Bl.EditModel*@
 
 @{
     ViewData["Title"] = "Edit";
@@ -7,7 +7,7 @@
 
 <h2>Edit</h2>
 
-<h4>Inspection</h4>
+@*<h4>Inspection</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -80,7 +80,7 @@
 
 <div>
     <a asp-page="./Index">Back to List</a>
-</div>
+</div>*@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

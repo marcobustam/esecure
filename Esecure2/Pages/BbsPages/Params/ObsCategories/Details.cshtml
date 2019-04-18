@@ -1,5 +1,5 @@
 ﻿@page
-@model Bbs.Pages.Params.ObsCategories.DetailsModel
+@*@model Bbs.Pages.Params.ObsCategories.DetailsModel*@
 
 @{
     ViewData["Title"] = "Details";
@@ -7,7 +7,7 @@
 
 <h2>Details</h2>
 
-<div>
+@*<div>
     <h4>ObsCategory</h4>
     <hr />
     <dl class="dl-horizontal">
@@ -18,8 +18,8 @@
             @Html.DisplayFor(model => model.ObsCategory.ObsCategoryDescription)
         </dd>
     </dl>
-</div>
-<div>
+</div>*@
+@*<div>
     <a asp-page="./Edit" asp-route-id="@Model.ObsCategory.ObsCategoryID">Edit</a> |
     <a asp-page="./Index">Back to List</a>
-</div>
+</div>*@

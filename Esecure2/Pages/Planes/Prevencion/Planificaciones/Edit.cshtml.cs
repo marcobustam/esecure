@@ -17,7 +17,7 @@ namespace EsecureWebApp.Pages.Planes.Prevencion.Planificaciones
 {
     public class EditModel : BaseCodeModel
     {
-        private readonly Esecure2.Data.ApplicationDbContext _context;
+        // private readonly Esecure2.Data.ApplicationDbContext _context;
 
         public EditModel(IConfiguration configuration, ApplicationDbContext context, SignInManager<ApplicationUser> SignInManager, UserManager<ApplicationUser> UserManager, RoleManager<IdentityRole> RoleManager) : base(configuration, context, SignInManager, UserManager, RoleManager)
         {
@@ -29,7 +29,7 @@ namespace EsecureWebApp.Pages.Planes.Prevencion.Planificaciones
 
         [BindProperty]
         public Plan EstePlan { get; set; }
-        public Empresa MyEmpresa { get; set; }
+        // public Empresa MyEmpresa { get; set; }
         public async Task<IActionResult> OnGetAsync(int? emid, int? plid)
         {
             if (plid == null || emid == null)

@@ -88,52 +88,52 @@ namespace EsecureWebApp.Pages.Users.Adimistrators.UserInfo
 
             return Page();
         }
-        public async Task<IActionResult> OnGetAsync(string otherUserId)
-        {
-            var otherUser = await _userManager.FindByIdAsync(otherUserId);
-            ApplicationUser user;
-            if(otherUser!= null)
-            {
-                user = otherUser;
-            }
-            else
-            {
-                user = await _userManager.GetUserAsync(User);
-            }
+        //public async Task<IActionResult> OnGetAsync(string otherUserId)
+        //{
+        //    var otherUser = await _userManager.FindByIdAsync(otherUserId);
+        //    ApplicationUser user;
+        //    if(otherUser!= null)
+        //    {
+        //        user = otherUser;
+        //    }
+        //    else
+        //    {
+        //        user = await _userManager.GetUserAsync(User);
+        //    }
             
-            if (user == null)
-            {
-                //return NotFound($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
-                return RedirectToPage("./Index");
-            }
+        //    if (user == null)
+        //    {
+        //        //return NotFound($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
+        //        return RedirectToPage("./Index");
+        //    }
 
-            var userName = await _userManager.GetUserNameAsync(user);
-            var email = await _userManager.GetEmailAsync(user);
-            var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
+        //    var userName = await _userManager.GetUserNameAsync(user);
+        //    var email = await _userManager.GetEmailAsync(user);
+        //    var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
 
-            Username = userName;
+        //    Username = userName;
 
-            Input = new InputModel
-            {
-                Email = email,
-                PhoneNumber = phoneNumber
-            };
+        //    Input = new InputModel
+        //    {
+        //        Email = email,
+        //        PhoneNumber = phoneNumber
+        //    };
 
-            IsEmailConfirmed = await _userManager.IsEmailConfirmedAsync(user);
-            /**********************************************************/
-            // var user = await _userManager.GetUserAsync(User);
-            // IList<string> x = (IList<string>) _userManager.GetRolesAsync(user);
-            // UserRoles = (IList<string>) _userManager.GetRolesAsync(user);
-            //UserRoless = _userManager.GetRolesAsync(user).ToAsyncEnumerable();
-            listaRoles = await _roleManager.Roles.ToListAsync();
-            //var ApplicationUserProfile = await _context.ApplicationUserProfile.ToListAsync();
-            //var IdentityRole = await _context.IdentityRole.ToListAsync();
-            //var ApplicationProfileRole = await _context.ApplicationProfileRole.ToListAsync();
-            //var ApplicationProfile = await _context.ApplicationProfile.ToListAsync();
-            /**********************************************************/
+        //    IsEmailConfirmed = await _userManager.IsEmailConfirmedAsync(user);
+        //    /**********************************************************/
+        //    // var user = await _userManager.GetUserAsync(User);
+        //    // IList<string> x = (IList<string>) _userManager.GetRolesAsync(user);
+        //    // UserRoles = (IList<string>) _userManager.GetRolesAsync(user);
+        //    //UserRoless = _userManager.GetRolesAsync(user).ToAsyncEnumerable();
+        //    listaRoles = await _roleManager.Roles.ToListAsync();
+        //    //var ApplicationUserProfile = await _context.ApplicationUserProfile.ToListAsync();
+        //    //var IdentityRole = await _context.IdentityRole.ToListAsync();
+        //    //var ApplicationProfileRole = await _context.ApplicationProfileRole.ToListAsync();
+        //    //var ApplicationProfile = await _context.ApplicationProfile.ToListAsync();
+        //    /**********************************************************/
 
-            return Page();
-        }
+        //    return Page();
+        //}
         public void OnPostOn()
         {
             var a = 0;

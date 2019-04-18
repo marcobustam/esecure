@@ -1,5 +1,5 @@
 ﻿@page
-@model Bbs.Pages.BbsInspects.CreateModel
+@*@model Bbs.Pages.BbsInspects.CreateModel*@
 
 @{
     ViewData["Title"] = "Create";
@@ -7,7 +7,7 @@
 
 <h2>Create</h2>
 
-<h4>Inspection</h4>
+@*<h4>Inspection</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -62,7 +62,7 @@
 
 <div>
     <a asp-page="Index">Back to List</a>
-</div>
+</div>*@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

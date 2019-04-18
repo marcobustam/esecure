@@ -693,11 +693,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\marco\\source\\repos\\esecure\\Esecure2\\EsecureModel\\EsecureModel.csproj",
+      "projectUniqueName": "C:\\Users\\marco\\source\\repos\\esecure\\esecure\\EsecureModel\\EsecureModel.csproj",
       "projectName": "EsecureModel",
-      "projectPath": "C:\\Users\\marco\\source\\repos\\esecure\\Esecure2\\EsecureModel\\EsecureModel.csproj",
+      "projectPath": "C:\\Users\\marco\\source\\repos\\esecure\\esecure\\EsecureModel\\EsecureModel.csproj",
       "packagesPath": "C:\\Users\\marco\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\marco\\source\\repos\\esecure\\Esecure2\\EsecureModel\\obj\\",
+      "outputPath": "C:\\Users\\marco\\source\\repos\\esecure\\esecure\\EsecureModel\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

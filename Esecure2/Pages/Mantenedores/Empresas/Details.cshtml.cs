@@ -33,7 +33,7 @@ namespace EsecureWebApp.Pages.Mantenedores.Empresas
         public Empresa Empresa { get; set; }
         public Persona Representante { get; set; }
         public IList<Plan> PlanList { get; set; }
-        public Empresa MyEmpresa { get; set; }
+        // public Empresa MyEmpresa { get; set; }
         public IList<Persona> ListaResponsables { get; set; }
         public IList<Persona> ListaPersona { get; set; }
         public IList<IssueList> IssueList { get; set; }

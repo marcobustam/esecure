@@ -16,7 +16,7 @@ namespace EsecureWebApp.Pages.Mantenedores.Personas
 {
     public class DeleteModel : BaseCodeModel
     {
-        private readonly Esecure2.Data.ApplicationDbContext _context;
+        // private readonly Esecure2.Data.ApplicationDbContext _context;
 
         public DeleteModel(IConfiguration configuration, ApplicationDbContext context, SignInManager<ApplicationUser> SignInManager, UserManager<ApplicationUser> UserManager, RoleManager<IdentityRole> RoleManager) : base(configuration, context, SignInManager, UserManager, RoleManager)
         {
@@ -28,7 +28,7 @@ namespace EsecureWebApp.Pages.Mantenedores.Personas
 
         [BindProperty]
         public Persona Persona { get; set; }
-        public Empresa MyEmpresa { get; set; }
+        // public Empresa MyEmpresa { get; set; }
         public async Task<IActionResult> OnGetAsync(int? emid, int? peid)
         {
             if (emid == null)

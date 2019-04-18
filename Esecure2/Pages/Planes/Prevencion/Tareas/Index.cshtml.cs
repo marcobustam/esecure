@@ -16,7 +16,7 @@ namespace EsecureWebApp.Pages.Planes.Prevencion.Tareas
 {
     public class IndexModel : BaseCodeModel
     {
-        private readonly Esecure2.Data.ApplicationDbContext _context;
+        // private readonly Esecure2.Data.ApplicationDbContext _context;
 
         public IndexModel(IConfiguration configuration, ApplicationDbContext context, SignInManager<ApplicationUser> SignInManager, UserManager<ApplicationUser> UserManager, RoleManager<IdentityRole> RoleManager) : base(configuration, context, SignInManager, UserManager, RoleManager)
         {
@@ -29,8 +29,8 @@ namespace EsecureWebApp.Pages.Planes.Prevencion.Tareas
         public IList<Tarea> ListaTarea { get;set; }
         [BindProperty]
         public Plan MyPlan { get; set; }
-        [BindProperty]
-        public Empresa MyEmpresa { get; set; }
+        // [BindProperty]
+        // public Empresa MyEmpresa { get; set; }
         public async Task OnGetAsync(int? emid, int? plid)
         {
             if(emid!=null)

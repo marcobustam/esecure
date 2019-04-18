@@ -19,7 +19,7 @@
             @*<img src="~/images/logoEsafy.png" alt="eSafy.cl" class="img-responsive" width="auto" height="auto">*@
         </div>
         <!-- /.col-lg-8 -->
-        <div class="col-4 col-md-4 ">
+        <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
             @if (SignInManager.IsSignedIn(User))
             {
                 @*<h2>Hola "" </h2>*@
@@ -29,7 +29,7 @@
 
                 <h1>Bienvenido @Model.AppUser.FirstName. </h1>
                 <p>Comienza con la revisión de tus indicadores. Un correcto seguimiento porporciona una base para alcanzar las metas.</p>
-                <a class="btn btn-primary btn-sm" href="#">Perfil</a>
+                <a class="btn btn-primary btn-sm" asp-page="/Users/UserProfiles/UserProfile">Perfil</a>
                 <div class="user-info">
                     @*<span class="user-name">
                         <strong>Hola</strong>

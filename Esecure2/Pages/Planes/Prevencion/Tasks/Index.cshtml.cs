@@ -8,18 +8,24 @@ using Microsoft.EntityFrameworkCore;
 using Esecure2.Data;
 using EsecureModel.Planificacion;
 using EsecureModel.Faena;
+using Microsoft.Extensions.Configuration;
+using Microsoft.AspNetCore.Identity;
+using EsecureModel.Usuario;
 
 namespace EsecureWebApp.Pages.Planes.Prevencion.Tasks
 {
-    public class IndexModel : PageModel
+    public class IndexModel : BaseCodeModel
     {
-        private readonly Esecure2.Data.ApplicationDbContext _context;
+        // private readonly Esecure2.Data.ApplicationDbContext _context;
 
-        public IndexModel(Esecure2.Data.ApplicationDbContext context)
+        public IndexModel(IConfiguration configuration, ApplicationDbContext context, SignInManager<ApplicationUser> SignInManager, UserManager<ApplicationUser> UserManager, RoleManager<IdentityRole> RoleManager) : base(configuration, context, SignInManager, UserManager, RoleManager)
         {
+            _configuration = configuration;
+            _signInManager = SignInManager;
+            _userManager = UserManager;
             _context = context;
         }
-        public Empresa MyEmpresa { get; set; }
+        // public Empresa MyEmpresa { get; set; }
         public IList<Tarea> Tarea { get;set; }
 
         public async Task OnGetAsync()

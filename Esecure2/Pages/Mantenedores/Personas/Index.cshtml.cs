@@ -16,7 +16,7 @@ namespace EsecureWebApp.Pages.Mantenedores.Personas
 {
     public class IndexModel : BaseCodeModel
     {
-        private readonly Esecure2.Data.ApplicationDbContext _context;
+        // private readonly Esecure2.Data.ApplicationDbContext _context;
 
         public IndexModel(IConfiguration configuration, ApplicationDbContext context, SignInManager<ApplicationUser> SignInManager, UserManager<ApplicationUser> UserManager, RoleManager<IdentityRole> RoleManager) : base(configuration, context, SignInManager, UserManager, RoleManager)
         {
@@ -27,7 +27,7 @@ namespace EsecureWebApp.Pages.Mantenedores.Personas
         }
 
         public IList<Persona> Persona { get;set; }
-        public Empresa MyEmpresa { get; set; }
+        // public Empresa MyEmpresa { get; set; }
         public async Task<ActionResult> OnGetAsync(int? emid)
         {
             if (emid == null)

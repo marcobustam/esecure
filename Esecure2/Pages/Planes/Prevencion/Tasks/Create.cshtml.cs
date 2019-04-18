@@ -17,7 +17,7 @@ namespace EsecureWebApp.Pages.Planes.Prevencion.Tasks
 {
     public class CreateModel : BaseCodeModel
     {
-        private readonly Esecure2.Data.ApplicationDbContext _context;
+        // private readonly Esecure2.Data.ApplicationDbContext _context;
 
         public CreateModel(IConfiguration configuration, ApplicationDbContext context, SignInManager<ApplicationUser> SignInManager, UserManager<ApplicationUser> UserManager, RoleManager<IdentityRole> RoleManager) : base(configuration, context, SignInManager, UserManager, RoleManager)
         {
@@ -27,7 +27,7 @@ namespace EsecureWebApp.Pages.Planes.Prevencion.Tasks
             _context = context;
         }
         public Plan MyPlan { get; set; }
-        public Empresa MyEmpresa { get; set; }
+        // public Empresa MyEmpresa { get; set; }
         public async Task<IActionResult> OnGetAsync(int? emid, int? plid)
         {
             if (plid == null)

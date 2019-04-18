@@ -15,8 +15,8 @@ namespace EsecureWebApp.Pages.Mantenedores.Faenas
 {
     public class DetailsModel : BaseCodeModel
     {
-        private readonly Esecure2.Data.ApplicationDbContext _context;
-        public Empresa MyEmpresa { get; set; }
+        // private readonly Esecure2.Data.ApplicationDbContext _context;
+        // public Empresa MyEmpresa { get; set; }
         public DetailsModel(IConfiguration configuration, ApplicationDbContext context, SignInManager<ApplicationUser> SignInManager, UserManager<ApplicationUser> UserManager, RoleManager<IdentityRole> RoleManager) : base(configuration, context, SignInManager, UserManager, RoleManager)
         {
             _configuration = configuration;

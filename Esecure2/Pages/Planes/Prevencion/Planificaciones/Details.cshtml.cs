@@ -27,7 +27,7 @@ namespace EsecureWebApp.Pages.Planes.Prevencion.Planificaciones
         // public _TaskListModel PlanTareas { get; set; }
         public List<Tarea> ListaTareas { get; set; }
         public Tarea NewTarea { get; set; }
-        public Empresa MyEmpresa { get; set; }
+        // public Empresa MyEmpresa { get; set; }
         [BindProperty]
         public Examination Exam { get; set; }
         public IList<Examination> ExamList { get; set; }

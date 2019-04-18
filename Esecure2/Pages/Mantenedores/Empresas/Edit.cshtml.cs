@@ -28,7 +28,7 @@ namespace EsecureWebApp.Pages.Mantenedores.Empresas
 
         [BindProperty]
         public Empresa Empresa { get; set; }
-        public Empresa MyEmpresa { get; set; }
+        // public Empresa MyEmpresa { get; set; }
         public async Task<IActionResult> OnGetAsync(int? emid)
         {
             if (emid == null)
