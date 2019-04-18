@@ -87,7 +87,7 @@ using Esecure2.Data;
             WriteLiteral("</h2>\r\n    <!-- Datos de empresa -->\r\n    ");
             EndContext();
             BeginContext(242, 33, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "c19389810bfe461f97af4920906ec4ab", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "de0068ff5b0b4a4f9d73633bc108ae1c", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();
@@ -175,7 +175,7 @@ using Esecure2.Data;
                 ");
             EndContext();
             BeginContext(2798, 30, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "b10f4d3f49f140b886dd4e6534f624c3", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "4d4631140fd94ba4a21e74f4ccb67d59", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();
@@ -194,7 +194,7 @@ using Esecure2.Data;
             WriteLiteral("\r\n            </div>\r\n\r\n            <div id=\"PlanMit\" class=\"tabcontent\">\r\n                <!-- Planes de mejora y mitigación -->\r\n                ");
             EndContext();
             BeginContext(2975, 34, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "cd2f3fd52ef34906ae9ec46225bdd929", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "26110a97249d4105818aafc8e7319ace", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();
@@ -213,7 +213,7 @@ using Esecure2.Data;
             WriteLiteral("\r\n            </div>\r\n\r\n            <div id=\"Faenas\" class=\"tabcontent\">\r\n                <!-- Faenas de la empresa -->\r\n\r\n                ");
             EndContext();
             BeginContext(3148, 29, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "4ec161a36e1d45f3861a1e07fccf6fd2", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "09b7734b9f3c4823b2473e4370f2fc34", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();
@@ -232,7 +232,7 @@ using Esecure2.Data;
             WriteLiteral("\r\n            </div>\r\n            <div id=\"Personas\" class=\"tabcontent\">\r\n                <!-- Personal de la empresa -->\r\n\r\n                ");
             EndContext();
             BeginContext(3318, 31, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "f95c7e63d3204a39be6e65bf74c42f34", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "95a3a07655e24aa4ac3db22d9ed16dfa", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();
@@ -329,7 +329,7 @@ using Esecure2.Data;
                 ");
             EndContext();
             BeginContext(6302, 30, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "02fe450dfe49431e91b6712c0f962d6f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "9f9c286cd951441aaaa9e8135c38b61b", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();
@@ -348,7 +348,7 @@ using Esecure2.Data;
             WriteLiteral("\r\n            </div>\r\n\r\n            <div id=\"Faena\" class=\"tab-content\">\r\n                ");
             EndContext();
             BeginContext(6422, 31, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "457fbc0d2ae9486c8e82a64b58c04e3b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "4f93c18df608480a92a1ff616edfd67a", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();
@@ -367,7 +367,7 @@ using Esecure2.Data;
             WriteLiteral("\r\n            </div>\r\n\r\n            <div id=\"Persona\" class=\"tab-content\">\r\n                ");
             EndContext();
             BeginContext(6545, 33, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "024f6e13c1fa4463a3b689bb370c6de7", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "839cc314b2a74938a4134a31ca341a73", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();
@@ -409,7 +409,7 @@ using Esecure2.Data;
         ");
             EndContext();
             BeginContext(7483, 29, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "25e1b8eb31de4b7487fe33e58bafba01", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "81222b6b6c8d492fb58e91198f1c45b8", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();
@@ -428,7 +428,7 @@ using Esecure2.Data;
             WriteLiteral("\r\n    </div>\r\n\r\n\r\n</div>\r\n<script type=\"text/javascript\">\r\n    $(document).ready(function () {\r\n        alert(\"Document Ready!\");\r\n        $(\'#modalMsg2\').modal(\'show\');\r\n    });\r\n</script>\r\n");
             EndContext();
             BeginContext(7703, 35, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "8e0549c40c6b4f25a1f072a60214ec9b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("partial", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "d4c5395d6cf048d18b0077a3b72cb1d2", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_PartialTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.PartialTagHelper>();

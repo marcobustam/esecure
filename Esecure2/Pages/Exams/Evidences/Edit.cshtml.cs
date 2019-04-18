@@ -16,7 +16,7 @@ namespace EsecureWebApp.Pages.Exams.Evidences
 {
     public class EditModel : BaseCodeModel
     {
-        private readonly Esecure2.Data.ApplicationDbContext _context;
+        // private readonly Esecure2.Data.ApplicationDbContext _context;
 
         public EditModel(IConfiguration configuration, ApplicationDbContext context, SignInManager<ApplicationUser> SignInManager, UserManager<ApplicationUser> UserManager, RoleManager<IdentityRole> RoleManager) : base(configuration, context, SignInManager, UserManager, RoleManager)
         {
@@ -29,15 +29,15 @@ namespace EsecureWebApp.Pages.Exams.Evidences
         [BindProperty]
         public Evidence Evidence { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync(int? evid)
         {
-            if (id == null)
+            if (evid == null)
             {
                 return NotFound();
             }
 
             Evidence = await _context.Evidence
-                .Include(e => e.FileUp).FirstOrDefaultAsync(m => m.EvidenceID == id);
+                .Include(e => e.FileUp).FirstOrDefaultAsync(m => m.EvidenceID == evid);
 
             if (Evidence == null)
             {
@@ -75,9 +75,9 @@ namespace EsecureWebApp.Pages.Exams.Evidences
             return RedirectToPage("./Index");
         }
 
-        private bool EvidenceExists(int id)
+        private bool EvidenceExists(int evid)
         {
-            return _context.Evidence.Any(e => e.EvidenceID == id);
+            return _context.Evidence.Any(e => e.EvidenceID == evid);
         }
     }
 }

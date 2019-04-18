@@ -15,7 +15,7 @@ namespace EsecureWebApp.Pages.Exams.Evidences
 {
     public class DeleteModel : BaseCodeModel
     {
-        private readonly Esecure2.Data.ApplicationDbContext _context;
+        // private readonly Esecure2.Data.ApplicationDbContext _context;
 
         public DeleteModel(IConfiguration configuration, ApplicationDbContext context, SignInManager<ApplicationUser> SignInManager, UserManager<ApplicationUser> UserManager, RoleManager<IdentityRole> RoleManager) : base(configuration, context, SignInManager, UserManager, RoleManager)
         {
@@ -28,15 +28,15 @@ namespace EsecureWebApp.Pages.Exams.Evidences
         [BindProperty]
         public Evidence Evidence { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync(int? evid)
         {
-            if (id == null)
+            if (evid == null)
             {
                 return NotFound();
             }
 
             Evidence = await _context.Evidence
-                .Include(e => e.FileUp).FirstOrDefaultAsync(m => m.EvidenceID == id);
+                .Include(e => e.FileUp).FirstOrDefaultAsync(m => m.EvidenceID == evid);
 
             if (Evidence == null)
             {
@@ -45,14 +45,14 @@ namespace EsecureWebApp.Pages.Exams.Evidences
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync(int? id)
+        public async Task<IActionResult> OnPostAsync(int? evid)
         {
-            if (id == null)
+            if (evid == null)
             {
                 return NotFound();
             }
 
-            Evidence = await _context.Evidence.FindAsync(id);
+            Evidence = await _context.Evidence.FindAsync(evid);
 
             if (Evidence != null)
             {

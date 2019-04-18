@@ -208,7 +208,7 @@ using Esecure2.Data;
             WriteLiteral("\r\n                    </td>\r\n                    <td>\r\n                        ");
             EndContext();
             BeginContext(2175, 158, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ad932a3d21d8490cb79afb3f0ad11ef0", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8c3f8f7cccb7425bb6393b4bfe6f3c6b", async() => {
                 BeginContext(2318, 11, true);
                 WriteLiteral("Actividades");
                 EndContext();
@@ -254,7 +254,7 @@ using Esecure2.Data;
             WriteLiteral("\r\n                        <span class=\"badge alert-success\">Nuevo!</span>\r\n                    </td>\r\n                    <td>\r\n                        ");
             EndContext();
             BeginContext(2485, 142, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "545d257cee574484a3c6ecba7b17f8b9", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "14d2d8116d20456590ac58e3dfb26d14", async() => {
                 BeginContext(2609, 14, true);
                 WriteLiteral("Plan de Acción");
                 EndContext();
@@ -298,7 +298,7 @@ using Esecure2.Data;
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(2653, 151, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a6074e3c3e654046b8cee994b434b0e0", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dedf53ad7dc541d1aa6ac7052dfccd0c", async() => {
                 BeginContext(2775, 25, true);
                 WriteLiteral("Ver CheckList Disponibles");
                 EndContext();

@@ -15,7 +15,7 @@ namespace EsecureWebApp.Pages.Exams.Evidences
 {
     public class DetailsModel : BaseCodeModel
     {
-        private readonly Esecure2.Data.ApplicationDbContext _context;
+        // private readonly Esecure2.Data.ApplicationDbContext _context;
 
         public DetailsModel(IConfiguration configuration, ApplicationDbContext context, SignInManager<ApplicationUser> SignInManager, UserManager<ApplicationUser> UserManager, RoleManager<IdentityRole> RoleManager) : base(configuration, context, SignInManager, UserManager, RoleManager)
         {
@@ -27,15 +27,15 @@ namespace EsecureWebApp.Pages.Exams.Evidences
 
         public Evidence Evidence { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync(int? evid)
         {
-            if (id == null)
+            if (evid == null)
             {
                 return NotFound();
             }
 
             Evidence = await _context.Evidence
-                .Include(e => e.FileUp).FirstOrDefaultAsync(m => m.EvidenceID == id);
+                .Include(e => e.FileUp).FirstOrDefaultAsync(m => m.EvidenceID == evid);
 
             if (Evidence == null)
             {

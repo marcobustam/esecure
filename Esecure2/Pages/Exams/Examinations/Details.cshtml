@@ -646,26 +646,24 @@
                 </tfoot>
             </table>
         </div>
-
-        @* --------------------------------------------------------------------------- *@
-
         @* *************************************************************************** *@
         <br />
         <p>
             <div>
-                <a asp-page="/Planes/Prevencion/Planificaciones/Details" asp-route-emid="@Model.MyPlan.EmpresaID" asp-route-plid="@Model.MyPlan.PlanID" class="btn btn-primary btn-sm" role="button">Volver</a>
+                
+                <a asp-page="/Planes/Prevencion/Planificaciones/Details" asp-route-emid="@Model.MyPlan.EmpresaID" asp-route-plid="@Model.MyPlan.PlanID" class="btn btn-primary btn-sm" role="button"><i class="fa fa-reply"></i></a>
 
                 <button onclick="$('#myModal').modal('show');" class="btn btn-success btn-sm">Nueva Tarea</button>
                 <br />
             </div>
         </p>
-        <a asp-page="./Edit" asp-route-id="@Model.Examination.ExaminationID">Editar</a> |
+        @*<a asp-page="./Edit" asp-route-id="@Model.Examination.ExaminationID">Editar</a> |
         <a asp-page="./Index" asp-route-emid="@Model.Examination.EmpresaID" asp-route-plid="@Model.Examination.PlanID">Lista de Inspecciones</a>
-        @*https://localhost:44371/api/Tareas/GetCambiaEstado2?emid=3&plid=16&taid=66&esid=4*@
+        *https://localhost:44371/api/Tareas/GetCambiaEstado2?emid=3&plid=16&taid=66&esid=4*
         <a asp-page="/api/Tareas/GetCambiaEstado2" asp-route-emid="@Model.Examination.EmpresaID " asp-route-plid="@Model.Examination.PlanID" asp-route-taid="@Model.Examination.TareaID" asp-route-esid="@EsecureModel.Planificacion.EstadoTarea.Realizada">
             <i class="fa fa-close">
             </i>
-        </a>
+        </a>*@
     </div>
 
     @* ********** *@

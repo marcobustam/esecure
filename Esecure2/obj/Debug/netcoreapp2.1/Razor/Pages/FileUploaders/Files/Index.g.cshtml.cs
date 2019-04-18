@@ -301,7 +301,7 @@ WriteAttributeValue("", 5576, item.FileName, 5576, 14, false);
             WriteLiteral(" class=\"btn btn-xs btn-success\"><i class=\"fa fa-file-download\"></i></a>\r\n                                            ");
             EndContext();
             BeginContext(5707, 133, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5c470181ae4d420cbff1e052c5028463", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ef596b13de0e4e20a5b44def5f50d9aa", async() => {
                 BeginContext(5810, 26, true);
                 WriteLiteral("<i class=\"fa fa-edit\"></i>");
                 EndContext();
@@ -357,7 +357,7 @@ WriteAttributeValue("", 5576, item.FileName, 5576, 14, false);
             WriteLiteral("            </div>\r\n            <br />\r\n            <p>\r\n                <div>\r\n                    ");
             EndContext();
             BeginContext(7492, 237, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e7e7a194a3134ca48c34eeaf6fadaae5", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "12db13335acf442c94adb7682c5fed30", async() => {
                 BeginContext(7679, 46, true);
                 WriteLiteral("Subir Archivo<i class=\"fa fa-plus-circle\"></i>");
                 EndContext();

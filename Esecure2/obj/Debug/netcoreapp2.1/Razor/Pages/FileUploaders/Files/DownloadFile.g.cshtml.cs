@@ -65,7 +65,7 @@ using Esecure2.Data;
             WriteLiteral("\r\n<!DOCTYPE html>\r\n\r\n<html>\r\n");
             EndContext();
             BeginContext(129, 107, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "32dc48534c9b4439a344c3baf8ffe0cf", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ef2a48ba31dd40598bfa948ab5c89b5e", async() => {
                 BeginContext(135, 94, true);
                 WriteLiteral("\r\n    <meta name=\"viewport\" content=\"width=device-width\" />\r\n    <title>DownloadFile</title>\r\n");
                 EndContext();
@@ -85,7 +85,7 @@ using Esecure2.Data;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(238, 15, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "eb80588044cb424faee87f7e8e98becd", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a42ff86b59b44595845a945c7b2b519c", async() => {
                 BeginContext(244, 2, true);
                 WriteLiteral("\r\n");
                 EndContext();

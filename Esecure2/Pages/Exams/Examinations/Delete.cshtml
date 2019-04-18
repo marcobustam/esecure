@@ -5,66 +5,113 @@
     ViewData["Title"] = "Delete";
 }
 
+<ol class="breadcrumb">
+    @* *************************************************************************** *@
+    <li class="breadcrumb-item">
+        <a asp-page="/Mantenedores/Empresas/Index" asp-route-emid="@Model.MyEmpresa.EmpresaID">Empresa</a>
+        @*<a href="#">Empresa</a>*@
+    </li>
+    <li class="breadcrumb-item">
+        <a href="#">Planificaciones</a>
+    </li>
+    <li class="breadcrumb-item active">
+        Planes de Prevención
+    </li>
+    @* *************************************************************************** *@
+</ol>
+<div id="content-wrapper">
+    <div class="container-fluid">
+        <!-- Breadcrumbs-->
+
+        <div class="card card-body bg-primary text-light">
+            @* *************************************************************************** *@
+            <h3>Eliminar Inspección</h3>
+            <h4>Empresa: @Model.MyEmpresa.EmpresaID </h4>
+            @* *************************************************************************** *@
+        </div>
+        <hr />
+
+        <div class="card">
+            <div class="col-md-12">
+                <br />
+                @* *************************************************************************** *@
+                <h4 class="card card-body bg-primary text-light">
+                    Inspección a eliminar:
+                </h4>
+                <hr />
+                @* --------------------------------------------------------------------------- *@
+                <div class="container-fluid card bg-light text-dark">
+                    <h6>¿Está seguro que quiere eliminar el registro?</h6>
+                    <br />
+
+                    <dl class="dl-horizontal">
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Examination.TimeStamp)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Examination.TimeStamp)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Examination.PersonaID1)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Examination.PersonaID1)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Examination.PersonaID2)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Examination.PersonaID2)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Examination.Prueba)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Examination.Prueba.TestID)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Examination.EmpresaID)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Examination.EmpresaID)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Examination.FaenaID)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Examination.FaenaID)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Examination.TotalRespuestas)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Examination.TotalRespuestas)
+                        </dd>
+                        <dt>
+                            @Html.DisplayNameFor(model => model.Examination.RespuestasCompletadas)
+                        </dt>
+                        <dd>
+                            @Html.DisplayFor(model => model.Examination.RespuestasCompletadas)
+                        </dd>
+                    </dl>
+                </div>
+                <p>
+                    <div>
+                        <a asp-page="./Create" asp-route-emid="" class="btn btn-primary btn-sm" role="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Nuevo Plan">Agregar Plan <span class="glyphicon glyphicon-plus-sign"></span>   </a>
+                        <br />
+                    </div>
+                </p>
+                <form method="post">
+                    <input type="hidden" asp-for="Examination.ExaminationID" />
+                    <input type="submit" value="Eliminar" class="btn btn-default" /> |
+                    <a asp-page="./Index">Volver</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@* *************************************************************************** *@
+<hr />
+@* ****************************************************** *@
 <h2>Eliminar registro</h2>
 
-<h3>¿Está seguro que quiere eliminar el registro?</h3>
-<div>
-    <h4>Examination</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Examination.TimeStamp)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Examination.TimeStamp)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Examination.PersonaID1)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Examination.PersonaID1)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Examination.PersonaID2)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Examination.PersonaID2)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Examination.Prueba)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Examination.Prueba.TestID)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Examination.EmpresaID)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Examination.EmpresaID)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Examination.FaenaID)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Examination.FaenaID)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Examination.TotalRespuestas)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Examination.TotalRespuestas)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.Examination.RespuestasCompletadas)
-        </dt>
-        <dd>
-            @Html.DisplayFor(model => model.Examination.RespuestasCompletadas)
-        </dd>
-    </dl>
-    
-    <form method="post">
-        <input type="hidden" asp-for="Examination.ExaminationID" />
-        <input type="submit" value="Eliminar" class="btn btn-default" /> |
-        <a asp-page="./Index">Volver</a>
-    </form>
-</div>

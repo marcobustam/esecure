@@ -15,7 +15,7 @@ namespace EsecureWebApp.Pages.Exams.Examinations
 {
     public class DeleteModel : BaseCodeModel
     {
-        private readonly Esecure2.Data.ApplicationDbContext _context;
+        // private readonly Esecure2.Data.ApplicationDbContext _context;
 
         public DeleteModel(IConfiguration configuration, ApplicationDbContext context, SignInManager<ApplicationUser> SignInManager, UserManager<ApplicationUser> UserManager, RoleManager<IdentityRole> RoleManager) : base(configuration, context, SignInManager, UserManager, RoleManager)
         {
@@ -28,15 +28,15 @@ namespace EsecureWebApp.Pages.Exams.Examinations
         [BindProperty]
         public Examination Examination { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync(int? exid)
         {
-            if (id == null)
+            if (exid == null)
             {
                 return NotFound();
             }
 
             Examination = await _context.Examination
-                .Include(e => e.Prueba).FirstOrDefaultAsync(m => m.ExaminationID == id);
+                .Include(e => e.Prueba).FirstOrDefaultAsync(m => m.ExaminationID == exid);
 
             if (Examination == null)
             {
@@ -45,14 +45,14 @@ namespace EsecureWebApp.Pages.Exams.Examinations
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync(int? id)
+        public async Task<IActionResult> OnPostAsync(int? exid)
         {
-            if (id == null)
+            if (exid == null)
             {
                 return NotFound();
             }
 
-            Examination = await _context.Examination.FindAsync(id);
+            Examination = await _context.Examination.FindAsync(exid);
 
             if (Examination != null)
             {
@@ -60,7 +60,7 @@ namespace EsecureWebApp.Pages.Exams.Examinations
                 await _context.SaveChangesAsync();
             }
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("./Index", new { emid = Examination.EmpresaID });
         }
     }
 }

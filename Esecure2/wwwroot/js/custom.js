@@ -53,13 +53,17 @@ jQuery(function ($) {
     $("#close-sidebar").click();
     // inicializa las tablas //
     $('#datata').DataTable({
+        dom: 'Bfrtip',
         "paging": true,
         "ordering": true,
         "info": true,
+        buttons: [
+            'pdf'
+        ],
         "language": {
-            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+            //"url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"
+            "url": "/lib/datatables/json/Spanish.json"
         }
-        
     });
     //$('[id^=datata]').each(function () {
     //    $(this).DataTable({
