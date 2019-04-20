@@ -289,7 +289,7 @@ using Esecure2.Data;
             WriteLiteral("\r\n        </dd>\r\n    </dl>\r\n</div>\r\n<div>\r\n    ");
             EndContext();
             BeginContext(2378, 67, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2698322b597e42ea94ab4c66206b0759", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fafccd8ea591409b840e76bac2263550", async() => {
                 BeginContext(2435, 6, true);
                 WriteLiteral("Editar");
                 EndContext();
@@ -324,7 +324,7 @@ using Esecure2.Data;
             WriteLiteral(" |\r\n    ");
             EndContext();
             BeginContext(2453, 32, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "62779ed11fd143e6abbeea3ea7dbbcb7", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "08390e036e04442ba8321db5d0635b56", async() => {
                 BeginContext(2475, 6, true);
                 WriteLiteral("Volver");
                 EndContext();

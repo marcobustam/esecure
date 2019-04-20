@@ -51,12 +51,15 @@ jQuery(function ($) {
     }
     /* Cerrado desde el inicio */
     $("#close-sidebar").click();
+
+    // setTimeout(function () { alert("Hello"); }, 3000);
     // inicializa las tablas //
     $('#datata').DataTable({
         dom: 'Bfrtip',
         "paging": true,
         "ordering": true,
         "info": true,
+        "responsive": true,
         buttons: [
             'pdf'
         ],
@@ -75,7 +78,7 @@ jQuery(function ($) {
     //        }
     //    });
     //});
-
+    // swal("Hello world!");
     /****************Inicializa Tooltips ***********************/
     $(function () {
         $('[data-toggle="tooltip"]').tooltip()
@@ -116,7 +119,7 @@ function ajaxCreateTicket() {
 
         },
         success: function (response) {
-            //alert("success!");
+            //swal("success!");
             if (callingType == "p") {
                 var dvItems = $("#Planes");
             }
@@ -134,7 +137,7 @@ function ajaxCreateTicket() {
         },
         failure: function (response) {
 
-            alert(response);
+            swal(response);
         }
     });
 }
@@ -142,11 +145,11 @@ function ajaxCreateTicket() {
 function levantaMessageError() {
     var elem = document.getElementsByName("modelMessage");
     if (elem.InnerHtml() != '') {
-        alert($('#modelMessage').val);
+        swal($('#modelMessage').val);
         $('#hdnbtn2').click();
     }
     else {
-        alert(elem.InnerHtml());
+        swal(elem.InnerHtml());
         $('#hdnbtn2').click();
     }
 }
@@ -169,7 +172,7 @@ function CambiaEstado(empresaId, planId, tareaId, nuevoEstado) {
         type: 'GET',
         url: txturl,
         beforeSend: function (xhr) {
-            alert("before");
+            swal("before");
             xhr.setRequestHeader('XSRF-TOKEN',
                 $('input:hidden[name="__RequestVerificationToken"]').val());
             //alert(url);
@@ -180,12 +183,12 @@ function CambiaEstado(empresaId, planId, tareaId, nuevoEstado) {
             //alert("Complete!" + response);
         },
         success: function (response) {
-            alert("success!" + response);
+            swal("success!" + response);
             $('#Inicia').submit();
             location.reload();
         },
         failure: function (response) {
-            alert("Error en la comunicación!!\n Detalle:" + response);
+            swal("Error en la comunicación!!\n Detalle:" + response);
         }
     });
     location.reload();

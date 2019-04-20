@@ -85,7 +85,7 @@ using Esecure2.Data;
             WriteLiteral("    <li class=\"breadcrumb-item\">\r\n        ");
             EndContext();
             BeginContext(266, 98, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "572b1d6004d647feb5dafc03333adc5f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0459ee80042f48f2b8db6204720c21fb", async() => {
                 BeginContext(353, 7, true);
                 WriteLiteral("Empresa");
                 EndContext();
@@ -314,7 +314,7 @@ using Esecure2.Data;
             WriteLiteral("\r\n                        </dd>\r\n                    </dl>\r\n                </div>\r\n                <p>\r\n                    <div>\r\n                        ");
             EndContext();
             BeginContext(4337, 242, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3923e668dda846ad9028d1d2efd56ede", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c24d56736f6a4a889aa4f5a7f07dd8ef", async() => {
                 BeginContext(4508, 67, true);
                 WriteLiteral("Agregar Plan <span class=\"glyphicon glyphicon-plus-sign\"></span>   ");
                 EndContext();
@@ -348,12 +348,12 @@ using Esecure2.Data;
             WriteLiteral("\r\n                        <br />\r\n                    </div>\r\n                </p>\r\n                ");
             EndContext();
             BeginContext(4679, 268, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c31a8666e41f4134b9eed712bd56f3a6", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7f1aa1a6752a451da54bfcf012f80e5b", async() => {
                 BeginContext(4699, 22, true);
                 WriteLiteral("\r\n                    ");
                 EndContext();
                 BeginContext(4721, 59, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "b8a1818599644b4093959fb540a7d6bf", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "b209eefd89894305b2677d1d5ae1c17f", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -378,7 +378,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 WriteLiteral("\r\n                    <input type=\"submit\" value=\"Eliminar\" class=\"btn btn-default\" /> |\r\n                    ");
                 EndContext();
                 BeginContext(4890, 32, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7ea89ef504864bc49e76f634da8eb7ed", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c3d75b7f9e8a4ceeab50b7d5afb63530", async() => {
                     BeginContext(4912, 6, true);
                     WriteLiteral("Volver");
                     EndContext();

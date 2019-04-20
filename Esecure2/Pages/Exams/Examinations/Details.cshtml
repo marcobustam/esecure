@@ -423,7 +423,7 @@
                                                     <span asp-validation-for="ResponseItem.ResponseTypeID" class="text-danger"></span>
                                                 </div>
                                                 <div class="form-group">
-                                                    <input type="submit" value="Responder" class="btn btn-default" />
+                                                    <input type="submit" value="Responder" class="btn btn-info" />
                                                 </div>
                                             </form>
                                         </div>
@@ -650,10 +650,19 @@
         <br />
         <p>
             <div>
-                
-                <a asp-page="/Planes/Prevencion/Planificaciones/Details" asp-route-emid="@Model.MyPlan.EmpresaID" asp-route-plid="@Model.MyPlan.PlanID" class="btn btn-primary btn-sm" role="button"><i class="fa fa-reply"></i></a>
 
-                <button onclick="$('#myModal').modal('show');" class="btn btn-success btn-sm">Nueva Tarea</button>
+                <a asp-page="/Planes/Prevencion/Planificaciones/Details" asp-route-emid="@Model.MyPlan.EmpresaID" asp-route-plid="@Model.MyPlan.PlanID" class="btn btn-primary btn-sm" role="button"
+                   data-toggle="tooltip" data-placement="top" title="" data-original-title="Volver"><i class="fa fa-reply"></i></a>
+
+                @if (perk < 100)
+                {
+                    <a asp-page="" asp-route-emid="@Model.MyPlan.EmpresaID" asp-route-plid="@Model.MyPlan.PlanID" class="btn btn-warning btn-sm " role="button"
+                       data-toggle="tooltip" data-placement="top" title="" data-original-title="Finalizar"><i class="fa fa-flag-checkered"></i></a>
+                }
+
+
+
+                @*<button onclick="$('#myModal').modal('show');" class="btn btn-success btn-sm">Nueva Tarea</button>*@
                 <br />
             </div>
         </p>

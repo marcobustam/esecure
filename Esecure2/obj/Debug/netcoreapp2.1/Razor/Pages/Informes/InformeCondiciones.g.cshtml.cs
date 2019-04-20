@@ -99,7 +99,7 @@ using EsecureModel.ChartData;
                             ");
             EndContext();
             BeginContext(897, 80, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "60588008764642a9955fc678c9a0b892", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "f0240b8f236c486ab7375809d9c343e8", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -127,7 +127,7 @@ using EsecureModel.ChartData;
             WriteLiteral("                                        ");
             EndContext();
             BeginContext(1303, 51, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "44a3982976e8426aa5687d9e24373b1f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e166b43bc2264de38b2339cef3f37a56", async() => {
                 BeginContext(1335, 9, false);
 #line 33 "C:\Users\marco\source\repos\esecure\esecure\Esecure2\Pages\Informes\InformeCondiciones.cshtml"
                                                                   Write(item.Text);
@@ -172,7 +172,7 @@ using EsecureModel.ChartData;
             WriteLiteral("                                        ");
             EndContext();
             BeginContext(1710, 58, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ddba80941654faa8a865a30647c4e0d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ab84630a58a74b70accad2acd816e206", async() => {
                 BeginContext(1749, 9, false);
 #line 39 "C:\Users\marco\source\repos\esecure\esecure\Esecure2\Pages\Informes\InformeCondiciones.cshtml"
                                                                          Write(item.Text);
@@ -217,7 +217,7 @@ using EsecureModel.ChartData;
             WriteLiteral("                                        ");
             EndContext();
             BeginContext(2120, 49, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c61562e45c2843ff9f30416fc597e4d2", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5a2754c35d8741f6a5ae9592fe9c37cb", async() => {
                 BeginContext(2150, 9, false);
 #line 46 "C:\Users\marco\source\repos\esecure\esecure\Esecure2\Pages\Informes\InformeCondiciones.cshtml"
                                                                 Write(item.Text);
@@ -294,7 +294,7 @@ using EsecureModel.ChartData;
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(3496, 70, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e28be0286f1046b59ea1bd6e9eca442d", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ba90629aeb86494ab1d21640d4f417e1", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -313,7 +313,7 @@ using EsecureModel.ChartData;
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(3572, 69, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9e203e5310004475ae2a5eb30e108461", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "480b5bc3d05f4f239edc1f434b65e4c8", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

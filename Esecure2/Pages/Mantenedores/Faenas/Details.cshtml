@@ -4,11 +4,84 @@
 @{
     ViewData["Title"] = "Details";
 }
+
+@* **************************************************************** *@
+<ol class="breadcrumb">
+    @* *************************************************************************** *@
+    <li class="breadcrumb-item">
+        <a asp-page="/Mantenedores/Empresas/Index" asp-route-emid="@Model.MyEmpresa.EmpresaID">Empresa</a>
+        @*<a href="#">Empresa</a>*@
+    </li>
+    <li class="breadcrumb-item">
+        <a href="#">Mantenedores</a>
+    </li>
+    <li class="breadcrumb-item active">
+        Faenas
+    </li>
+    @* *************************************************************************** *@
+</ol>
+<div id="content-wrapper">
+    <div class="container-fluid">
+        <!-- Breadcrumbs-->
+
+        <div class="card card-body bg-primary text-light">
+            @* *************************************************************************** *@
+            <h2>Detalles Faena # @Model.Faena.FaenaID</h2>
+            <h4>Empresa: @Model.MyEmpresa.NombreFantasia </h4>
+            @* *************************************************************************** *@
+        </div>
+        <hr />
+
+        <div class="card">
+            <div class="col-md-12">
+                <br />
+                @* *************************************************************************** *@
+                <h4 class="card card-body bg-primary text-light">
+                    Detalle de Faena:
+                </h4>
+                <hr />
+                @* --------------------------------------------------------------------------- *@
+                <div class="container-fluid card bg-light text-dark">
+                    <br />
+                    @* *************************************************************************** *@
+                    <div>
+                        <dl class="dl-horizontal">
+                            <dt>
+                                @Html.DisplayNameFor(model => model.Faena.NombreFaena)
+                            </dt>
+                            <dd>
+                                @Html.DisplayFor(model => model.Faena.NombreFaena)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div>
+                        <a asp-page="./Index" asp-route-emid="@Model.MyEmpresa.EmpresaID" class="btn btn-primary btn-sm" role="button"
+                           data-toggle="tooltip" data-placement="top" title="" data-original-title="Volver"><i class="fa fa-reply"></i></a>
+                        <a asp-page="./Edit" asp-route-id="@Model.Faena.FaenaID" class="btn btn-primary btn-sm" role="button"
+                           data-toggle="tooltip" data-placement="top" title="" data-original-title="Editar"><i class="fa fa-edit"></i></a>
+                    </div>
+                    @* *************************************************************************** *@
+                    <br />
+                </div>
+                <p>
+                    <div>
+                        <a asp-page="./Create" asp-route-emid="@Model.MyEmpresa.EmpresaID" class="btn btn-primary btn-sm" role="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Nueva faena"><i class="fa fa-plus"></i>   </a>
+                        <br />
+                    </div>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+@* *************************************************************************** *@
+<hr />
+@* **************************************************************** *@
+
+@*
 <div id="content-wrapper">
     <div class="container-fluid">
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
-            @* *************************************************************************** *@
             <li class="breadcrumb-item">
                 <a href="#">Empresa</a>
             </li>
@@ -19,41 +92,18 @@
                 <a href="#">Faenas</a>
             </li>
             <li class="breadcrumb-item active">Editar</li>
-            @* *************************************************************************** *@
         </ol>
         <div class="card-footer">
-            @* *************************************************************************** *@
-            <h2>Detalles Faena # @Model.Faena.FaenaID</h2>
-            <h4>Empresa: @Model.MyEmpresa.NombreFantasia </h4>
-            @* *************************************************************************** *@
+
         </div>
         <hr />
 
         <div class="card">
             <div class="col-md-4">
-                <br />
-                @* *************************************************************************** *@
-                <div>
-                    <h4>Faena</h4>
-                    <hr />
-                    <dl class="dl-horizontal">
-                        <dt>
-                            @Html.DisplayNameFor(model => model.Faena.NombreFaena)
-                        </dt>
-                        <dd>
-                            @Html.DisplayFor(model => model.Faena.NombreFaena)
-                        </dd>
-                    </dl>
-                </div>
-                <div>
-                    <a asp-page="./Edit" asp-route-id="@Model.Faena.FaenaID">Editar</a> |
-                    <a asp-page="./Index">Volver</a>
-                </div>
-                @* *************************************************************************** *@
-                <br />
+
             </div>
         </div>
     </div>
 </div>
-
+    *@
 

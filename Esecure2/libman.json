@@ -77,6 +77,10 @@
     {
       "library": "tempusdominus-bootstrap-4@5.1.2",
       "destination": "wwwroot/lib/tempusdominus-bootstrap-4/"
+    },
+    {
+      "library": "bootstrap-sweetalert@1.0.1",
+      "destination": "wwwroot/lib/bootstrap-sweetalert/"
     }
   ]
 }

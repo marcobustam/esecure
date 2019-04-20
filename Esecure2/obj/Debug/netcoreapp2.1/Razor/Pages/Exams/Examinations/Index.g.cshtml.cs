@@ -78,7 +78,7 @@ using Esecure2.Data;
             WriteLiteral("    <li class=\"breadcrumb-item\">\r\n        ");
             EndContext();
             BeginContext(262, 98, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3074c0cf13b245b3a9afdf1d2ae3fa3f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "aa1e804ec7ed4e9b81631b49dca112c1", async() => {
                 BeginContext(349, 7, true);
                 WriteLiteral("Empresa");
                 EndContext();
@@ -394,7 +394,7 @@ using Esecure2.Data;
             WriteLiteral("\r\n                            </td>\r\n                            <td>\r\n                                <div class=\"btn-group\">\r\n                                    ");
             EndContext();
             BeginContext(5714, 131, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "aac191fa6f1043b2ba8052405db5d0c3", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bbacaf96165c46cf9bd57433a036be3a", async() => {
                 BeginContext(5815, 26, true);
                 WriteLiteral("<i class=\"fa fa-edit\"></i>");
                 EndContext();
@@ -431,7 +431,7 @@ using Esecure2.Data;
             WriteLiteral("\r\n                                    ");
             EndContext();
             BeginContext(5883, 237, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "20d952c63e88428b8bbb6e0db0fbe10a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ac07ea1c41f542be97cfe1c4735ac1ed", async() => {
                 BeginContext(6083, 33, true);
                 WriteLiteral("<i class=\"fa fa-info-circle\"></i>");
                 EndContext();
@@ -495,7 +495,7 @@ using Esecure2.Data;
             WriteLiteral("\r\n                                    ");
             EndContext();
             BeginContext(6158, 134, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "332de31a9a1849a084e3f8a07665db75", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1aed45f4eab444e485d96dc719ad697e", async() => {
                 BeginContext(6260, 28, true);
                 WriteLiteral("<i class=\"fa fa-eraser\"></i>");
                 EndContext();

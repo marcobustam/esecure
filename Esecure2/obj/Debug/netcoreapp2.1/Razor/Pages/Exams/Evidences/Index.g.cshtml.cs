@@ -77,7 +77,7 @@ using Esecure2.Data;
             WriteLiteral("    <li class=\"breadcrumb-item\">\r\n        ");
             EndContext();
             BeginContext(363, 98, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "877d7f1fae8e458aa6f3abfef85a1efb", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0fc121d04feb4b9890ae58adbf65c167", async() => {
                 BeginContext(450, 7, true);
                 WriteLiteral("Empresa");
                 EndContext();
@@ -283,7 +283,7 @@ using Esecure2.Data;
             WriteLiteral("\r\n                            </td>\r\n                            <td>\r\n                                ");
             EndContext();
             BeginContext(3836, 166, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c559e66b824748f1ac22c65f7c868a66", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4369389008e84c6fbebbf13b8e1b5cad", async() => {
                 BeginContext(3972, 26, true);
                 WriteLiteral("<i class=\"fa fa-edit\"></i>");
                 EndContext();
@@ -325,7 +325,7 @@ using Esecure2.Data;
             WriteLiteral("                                ");
             EndContext();
             BeginContext(4227, 69, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9926ef1409ab4b5baf25c6f993ce2abd", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c95ed2d321ba48a0a908d3a7cd7f714e", async() => {
                 BeginContext(4284, 8, true);
                 WriteLiteral("Eliminar");
                 EndContext();

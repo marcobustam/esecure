@@ -87,7 +87,7 @@ using Esecure2.Data;
             WriteLiteral("        ");
             EndContext();
             BeginContext(302, 98, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5d033da7d6bf43b997d9f70cef47ba37", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ead333c97b74479b85d8551562d3b87e", async() => {
                 BeginContext(389, 7, true);
                 WriteLiteral("Empresa");
                 EndContext();
@@ -214,7 +214,7 @@ using Esecure2.Data;
             WriteLiteral("\r\n                                </td>\r\n                                <td>\r\n                                    ");
             EndContext();
             BeginContext(3123, 146, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ba5507509a04a5989f5d2d0b301ae30", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7c6219e322c64bad82a441653ec3fef6", async() => {
                 BeginContext(3239, 26, true);
                 WriteLiteral("<i class=\"fa fa-edit\"></i>");
                 EndContext();
@@ -259,7 +259,7 @@ using Esecure2.Data;
             WriteLiteral("\r\n                                    ");
             EndContext();
             BeginContext(3307, 145, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bda819386d81428794767100dcd433fc", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4b74758d8e2141869e8b45d7d9186366", async() => {
                 BeginContext(3423, 25, true);
                 WriteLiteral("<i class=\"fa fa-eye\"></i>");
                 EndContext();
@@ -304,7 +304,7 @@ using Esecure2.Data;
             WriteLiteral("\r\n                                    ");
             EndContext();
             BeginContext(3490, 148, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "06c72c1b23b744948b7fce19bc4a9248", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b98864a8268f41979c07f8b71b37d120", async() => {
                 BeginContext(3607, 27, true);
                 WriteLiteral("<i class=\"fa fa-times\"></i>");
                 EndContext();
@@ -391,7 +391,7 @@ using Esecure2.Data;
             WriteLiteral("                        ");
             EndContext();
             BeginContext(5273, 244, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3571fd7452a04494a880b1ac42306239", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "80c9b8ab11a241b5a702f44ed10c9231", async() => {
                 BeginContext(5502, 11, true);
                 WriteLiteral("Crear Faena");
                 EndContext();

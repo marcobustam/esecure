@@ -77,7 +77,7 @@ using bbs;
             WriteLiteral("\r\n<div>\r\n    ");
             EndContext();
             BeginContext(3353, 38, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4b35d2d0f5e64a629d7e41c1ecfc386b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1797f0dedc914d09995334dc9ce360fa", async() => {
                 BeginContext(3375, 12, true);
                 WriteLiteral("Back to List");
                 EndContext();

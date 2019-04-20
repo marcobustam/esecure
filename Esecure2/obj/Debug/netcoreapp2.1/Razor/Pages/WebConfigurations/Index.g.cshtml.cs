@@ -73,7 +73,7 @@ using Esecure2.Data;
             WriteLiteral("\r\n<h2>Listado</h2>\r\n\r\n<p>\r\n    ");
             EndContext();
             BeginContext(138, 30, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f371b05384fd4d15aa7fba19b1e1d707", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d412718558c744d98f8d912be8a126e9", async() => {
                 BeginContext(159, 5, true);
                 WriteLiteral("Nuevo");
                 EndContext();
@@ -184,7 +184,7 @@ using Esecure2.Data;
             WriteLiteral("\r\n                    </td>\r\n                    <td>\r\n                        ");
             EndContext();
             BeginContext(1721, 113, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c9682b79a7bf401791df3ce63b5e5b16", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4486d0056fd14322bf2d030a8b882c90", async() => {
                 BeginContext(1824, 6, true);
                 WriteLiteral("Editar");
                 EndContext();
@@ -221,7 +221,7 @@ using Esecure2.Data;
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(1860, 118, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c706a90c54f84c6a97e00a9d9d1519e0", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "114351b7720c408d915798e05444ac58", async() => {
                 BeginContext(1966, 8, true);
                 WriteLiteral("Detalles");
                 EndContext();
@@ -258,7 +258,7 @@ using Esecure2.Data;
             WriteLiteral("\r\n                        ");
             EndContext();
             BeginContext(2004, 117, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f25a62a8e9ef45f3970759b89649944a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c2f1bb9c7051445eaa1ceb7d8b9d2a6f", async() => {
                 BeginContext(2109, 8, true);
                 WriteLiteral("Eliminar");
                 EndContext();

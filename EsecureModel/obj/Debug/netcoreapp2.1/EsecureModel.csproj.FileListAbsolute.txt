@@ -45,3 +45,4 @@ C:\Users\marco\source\repos\esecure\esecure\EsecureModel\obj\Debug\netcoreapp2.1
 C:\Users\marco\source\repos\esecure\esecure\EsecureModel\obj\Debug\netcoreapp2.1\EsecureModel.csproj.CopyComplete
 C:\Users\marco\source\repos\esecure\esecure\EsecureModel\obj\Debug\netcoreapp2.1\EsecureModel.dll
 C:\Users\marco\source\repos\esecure\esecure\EsecureModel\obj\Debug\netcoreapp2.1\EsecureModel.pdb
+C:\Users\marco\source\repos\esecure\esecure\EsecureModel\obj\Debug\netcoreapp2.1\EsecureModel.csprojAssemblyReference.cache

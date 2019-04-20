@@ -88,7 +88,7 @@ using Esecure2.Data;
             WriteLiteral("    <li class=\"breadcrumb-item\">\r\n        ");
             EndContext();
             BeginContext(374, 98, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a6e5b697129c4c0fb6fc2430812e862a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8fb5eb34f66041488f49a186582d3cab", async() => {
                 BeginContext(461, 7, true);
                 WriteLiteral("Empresa");
                 EndContext();
@@ -258,7 +258,7 @@ using Esecure2.Data;
             WriteLiteral("\r\n                                    </td>\r\n                                    <td>\r\n                                        <div class=\"btn-group\">\r\n                                            ");
             EndContext();
             BeginContext(4027, 292, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "656ecf085956494083575fde33353561", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7a0232725c904393a3e2490dccb67133", async() => {
                 BeginContext(4288, 27, true);
                 WriteLiteral("<i class=\"fa fa-tasks\"></i>");
                 EndContext();
@@ -311,7 +311,7 @@ using Esecure2.Data;
             WriteLiteral("                                            ");
             EndContext();
             BeginContext(4628, 285, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f148a853118f4cf7a306db85dead30be", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9af4c40f58c34a34aa91090a1e23cdfd", async() => {
                 BeginContext(4883, 26, true);
                 WriteLiteral("<i class=\"fa fa-edit\"></i>");
                 EndContext();
@@ -369,7 +369,7 @@ using Esecure2.Data;
                                             ");
             EndContext();
             BeginContext(5459, 306, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f34535c1401446e9a53bf3dd2af34434", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5aa5bd91dd5c4b3ba47e00fe816c0ee8", async() => {
                 BeginContext(5719, 42, true);
                 WriteLiteral("<i class=\"fa fa-exclamation-triangle\"></i>");
                 EndContext();
@@ -419,7 +419,7 @@ using Esecure2.Data;
             WriteLiteral("\r\n                                            ");
             EndContext();
             BeginContext(5811, 284, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "101316e13caf4b73814a20b413f8e12d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "74aed0a2fe1a47edac7a1c44ee4e6127", async() => {
                 BeginContext(6064, 27, true);
                 WriteLiteral("<i class=\"fa fa-check\"></i>");
                 EndContext();
@@ -498,7 +498,7 @@ using Esecure2.Data;
                         ");
             EndContext();
             BeginContext(7058, 268, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d3aea1debd78487396c64b3ee3167b5c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "36a09ec9c8ab414b83c5037b3ee0f5f8", async() => {
                 BeginContext(7255, 67, true);
                 WriteLiteral("Agregar Plan <span class=\"glyphicon glyphicon-plus-sign\"></span>   ");
                 EndContext();

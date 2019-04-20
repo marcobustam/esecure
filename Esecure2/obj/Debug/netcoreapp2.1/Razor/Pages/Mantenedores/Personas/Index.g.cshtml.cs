@@ -237,7 +237,7 @@ using Esecure2.Data;
             WriteLiteral("\r\n                    </td>\r\n                    <td>\r\n                        <div class=\" btn-group-justified\">\r\n                            ");
             EndContext();
             BeginContext(2537, 162, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "992229c053fb41c79260f65abc2bf1fc", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d51c01b8a6b24a719568dde53b0c6997", async() => {
                 BeginContext(2669, 26, true);
                 WriteLiteral("<i class=\"fa fa-edit\"></i>");
                 EndContext();
@@ -283,7 +283,7 @@ using Esecure2.Data;
             WriteLiteral("\r\n                            ");
             EndContext();
             BeginContext(2729, 163, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c7967ad625a94a0ca756b61eaace8c49", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "29253d7ac866444ea3e488b6af1983f5", async() => {
                 BeginContext(2862, 26, true);
                 WriteLiteral("<i class=\"fa fa-info\"></i>");
                 EndContext();
@@ -329,7 +329,7 @@ using Esecure2.Data;
             WriteLiteral("\r\n                            ");
             EndContext();
             BeginContext(2922, 163, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a9c456035bc44e28b11b2c7b60bacc5a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7bd5ca42fff743fd864e4f530cd457f5", async() => {
                 BeginContext(3054, 27, true);
                 WriteLiteral("<i class=\"fa fa-times\"></i>");
                 EndContext();
@@ -375,7 +375,7 @@ using Esecure2.Data;
             WriteLiteral("\r\n                        </div>\r\n                    </td>\r\n                    <td>\r\n                        ");
             EndContext();
             BeginContext(3196, 80, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ac761a3c24144f24b93094cfc01b82ef", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8e751e9eec6d4a7d812ed54dfd9e15e1", async() => {
                 BeginContext(3257, 15, true);
                 WriteLiteral("Asignar usuario");
                 EndContext();
@@ -435,7 +435,7 @@ using Esecure2.Data;
             ");
             EndContext();
             BeginContext(3959, 103, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a28d643f3f014aa79ed8557992699e41", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ead9db7589c84f3ead0649603987409b", async() => {
                 BeginContext(4045, 13, true);
                 WriteLiteral("Nueva Persona");
                 EndContext();
@@ -471,7 +471,7 @@ using Esecure2.Data;
             WriteLiteral("\r\n            ");
             EndContext();
             BeginContext(4076, 118, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "94776a6afe5e4c51a9abe79fb82a0ce3", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "37e902b22a4d46119bfae83cecfe13fa", async() => {
                 BeginContext(4184, 6, true);
                 WriteLiteral("Volver");
                 EndContext();

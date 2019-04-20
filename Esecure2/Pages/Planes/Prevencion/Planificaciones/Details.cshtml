@@ -62,9 +62,10 @@
                     <label asp-for="MyPlan.Persona" type="text" class="control-label"></label>
                     <input asp-for="MyPlan.Persona" type="text" value="@Model.MyPlan.Persona.FullName()" class="form-control" readonly />
                 </div>
-                <div class="col-xs-12 col-sm-12 col-md-3 col-lg-2 col-xl-1">
-                    <a class="btn btn-warning btn-sm" asp-page="/Planes/Prevencion/Planificaciones/Edit" asp-route-emid="@Model.MyPlan.EmpresaID" asp-route-plid="@Model.MyPlan.PlanID"><i class="fa fa-edit"></i></a>
-                </div>
+                @*<div class="col-xs-12 col-sm-12 col-md-3 col-lg-2 col-xl-1">
+                    <a class="btn btn-warning btn-sm" asp-page="/Planes/Prevencion/Planificaciones/Edit" asp-route-emid="@Model.MyPlan.EmpresaID" asp-route-plid="@Model.MyPlan.PlanID"
+                    data-toggle="tooltip" data-placement="top" title="" data-original-title="Editar"><i class="fa fa-edit"></i></a>
+                </div>*@
             </div>
         </div>
         <hr />
@@ -76,15 +77,15 @@
             @* *************************************************************************** *@
             <div class="row">
                 @foreach (var est in new List<EsecureModel.Planificacion.EstadoTarea>
-                                                                                {
-                                                                                EsecureModel.Planificacion.EstadoTarea.Nueva,
-                                                                                EsecureModel.Planificacion.EstadoTarea.Iniciada,
-                                                                                EsecureModel.Planificacion.EstadoTarea.Cancelada,
-                                                                                EsecureModel.Planificacion.EstadoTarea.Pendiente,
-                                                                                EsecureModel.Planificacion.EstadoTarea.Planificada,
-                                                                                EsecureModel.Planificacion.EstadoTarea.Realizada,
-                                                                                EsecureModel.Planificacion.EstadoTarea.Suspendida
-                                                                                })
+                                                                                    {
+                                                                                    EsecureModel.Planificacion.EstadoTarea.Nueva,
+                                                                                    EsecureModel.Planificacion.EstadoTarea.Iniciada,
+                                                                                    EsecureModel.Planificacion.EstadoTarea.Cancelada,
+                                                                                    EsecureModel.Planificacion.EstadoTarea.Pendiente,
+                                                                                    EsecureModel.Planificacion.EstadoTarea.Planificada,
+                                                                                    EsecureModel.Planificacion.EstadoTarea.Realizada,
+                                                                                    EsecureModel.Planificacion.EstadoTarea.Suspendida
+                                                                                    })
                 {
                     <div class="card mb-3" style="max-width: 20rem;">
                         <div class="card-header">@est.ToString()</div>
@@ -137,7 +138,9 @@
         @*<hr />*@
         @* *************************************************************************** *@
         <div class=" card card-body text-center">
-            <div class="container-fluid card bg-light text-dark">
+            <div class="container container-fluid card bg-light text-dark">
+                <br />
+
                 <table class="table table-bordered table-striped table-hover text-dark table-responsive-md" style="width:100%" id="datata">
                     <thead>
                         <tr>
@@ -205,51 +208,104 @@
                                     {
                                         case EstadoTarea.Nueva:
                                             {
-                                                <button id="planificada" class="btn btn-outline-warning btn-sm" onclick="CambiaEstadx( '@item.EmpresaID','@item.PlanID','@item.TareaID', '@((int) EstadoTarea.Planificada)' )" data-toggle="tooltip" data-placement="top" title="" data-original-title="Planificar">
-                                                    <i class="fa fa-fast-forward"></i>
-                                                </button>
+                                                <div class="btn-group">
+                                                    <button id="planificada" class="btn btn-outline-success btn-sm"
+                                                            onclick="CambiaEstadx( '@item.EmpresaID','@item.PlanID','@item.TareaID', '@((int) EstadoTarea.Planificada)' )"
+                                                            data-toggle="tooltip" data-placement="top" title="" data-original-title="Planificar">
+                                                        <i class="fa fa-play"></i>
+                                                    </button>
+                                                    <button id="iniciaPendiente" class="btn btn-outline-primary btn-sm"
+                                                            onclick="CambiaEstadx( '@item.EmpresaID','@item.PlanID','@item.TareaID', '@((int) EstadoTarea.Suspendida)' )"
+                                                            data-toggle="tooltip" data-placement="top" title="" data-original-title="Suspender">
+                                                        <i class="fa fa-pause"></i>
+                                                    </button>
+                                                    <button id="iniciaRealizada" class="btn btn-outline-danger btn-sm"
+                                                            onclick="CambiaEstadx( '@item.EmpresaID','@item.PlanID','@item.TareaID', '@((int) EstadoTarea.Cancelada)' )"
+                                                            data-toggle="tooltip" data-placement="top" title="" data-original-title="Cancelar">
+                                                        <i class="fa fa-stop"></i>
+                                                    </button>
+                                                </div>
+
                                                 break;
                                             }
                                         case EstadoTarea.Planificada:
                                             {
-                                                <button id="iniciada" class="btn btn-outline-warning btn-sm" onclick="CambiaEstadx( '@item.EmpresaID','@item.PlanID','@item.TareaID', '@((int) EstadoTarea.Iniciada)' )" data-toggle="tooltip" data-placement="top" title="" data-original-title="Iniciar">
-                                                    <i class="fa fa-fast-forward"></i>
-                                                </button>
+                                                <div class="btn-group">
+                                                    <button id="iniciada" class="btn btn-outline-success btn-sm"
+                                                            onclick="CambiaEstadx( '@item.EmpresaID','@item.PlanID','@item.TareaID', '@((int) EstadoTarea.Iniciada)' )"
+                                                            data-toggle="tooltip" data-placement="top" title="" data-original-title="Iniciar">
+                                                        <i class="fa fa-play"></i>
+                                                    </button>
+                                                    <button id="iniciaPendiente" class="btn btn-outline-primary btn-sm"
+                                                            onclick="CambiaEstadx( '@item.EmpresaID','@item.PlanID','@item.TareaID', '@((int) EstadoTarea.Suspendida)' )"
+                                                            data-toggle="tooltip" data-placement="top" title="" data-original-title="Suspender">
+                                                        <i class="fa fa-pause"></i>
+                                                    </button>
+                                                    <button id="iniciaRealizada" class="btn btn-outline-danger btn-sm"
+                                                            onclick="CambiaEstadx( '@item.EmpresaID','@item.PlanID','@item.TareaID', '@((int) EstadoTarea.Cancelada)' )"
+                                                            data-toggle="tooltip" data-placement="top" title="" data-original-title="Cancelar">
+                                                        <i class="fa fa-stop"></i>
+                                                    </button>
+                                                </div>
+
                                                 break;
                                             }
 
                                         case EstadoTarea.Iniciada:
                                             {
-                                                <button id="realizada" class="btn btn-outline-warning btn-sm" onclick="CambiaEstadx( '@item.EmpresaID','@item.PlanID','@item.TareaID', '@((int) EstadoTarea.Realizada)' )" data-toggle="tooltip" data-placement="top" title="" data-original-title="Realizada">
-                                                    <i class="fa fa-fast-forward"></i>
-                                                </button>
+                                                <div class="btn-group">
+                                                    <button id="realizada" class="btn btn-outline-warning btn-sm"
+                                                            onclick="CambiaEstadx( '@item.EmpresaID','@item.PlanID','@item.TareaID', '@((int) EstadoTarea.Realizada)' )"
+                                                            data-toggle="tooltip" data-placement="top" title="" data-original-title="Realizada">
+                                                        <i class="fa fa-check"></i>
+                                                    </button>
+                                                    <button id="iniciaPendiente" class="btn btn-outline-primary btn-sm"
+                                                            onclick="CambiaEstadx( '@item.EmpresaID','@item.PlanID','@item.TareaID', '@((int) EstadoTarea.Suspendida)' )"
+                                                            data-toggle="tooltip" data-placement="top" title="" data-original-title="Suspender">
+                                                        <i class="fa fa-pause"></i>
+                                                    </button>
+                                                    <button id="iniciaRealizada" class="btn btn-outline-danger btn-sm"
+                                                            onclick="CambiaEstadx( '@item.EmpresaID','@item.PlanID','@item.TareaID', '@((int) EstadoTarea.Cancelada)' )"
+                                                            data-toggle="tooltip" data-placement="top" title="" data-original-title="Cancelar">
+                                                        <i class="fa fa-stop"></i>
+                                                    </button>
+                                                </div>
+                                                
                                                 break;
                                             }
                                         case EstadoTarea.Pendiente:
                                             {
-                                                <button id="iniciaPendiente" class="btn btn-outline-warning btn-sm" onclick="CambiaEstadx( '@item.EmpresaID','@item.PlanID','@item.TareaID', '@((int) EstadoTarea.Iniciada)' )" data-toggle="tooltip" data-placement="top" title="" data-original-title="Retomar">
-                                                    <i class="fa fa-fast-forward"></i>
+                                                <button id="iniciaPendiente" class="btn btn-outline-warning btn-sm"
+                                                        onclick="CambiaEstadx( '@item.EmpresaID','@item.PlanID','@item.TareaID', '@((int) EstadoTarea.Iniciada)' )"
+                                                        data-toggle="tooltip" data-placement="top" title="" data-original-title="Retomar">
+                                                    <i class="fa fa-refresh></i>
                                                 </button>
                                                 break;
                                             }
                                         case EstadoTarea.Realizada:
                                             {
-                                                <button id="iniciaRealizada" class="btn btn-outline-warning btn-sm" onclick="CambiaEstadx( '@item.EmpresaID','@item.PlanID','@item.TareaID', '@((int) EstadoTarea.Iniciada)' )" data-toggle="tooltip" data-placement="top" title="" data-original-title="Re abrir">
-                                                    <i class="fa fa-fast-forward"></i>
+                                                <button id="iniciaRealizada" class="btn btn-outline-warning btn-sm"
+                                                        onclick="CambiaEstadx( '@item.EmpresaID','@item.PlanID','@item.TareaID', '@((int) EstadoTarea.Iniciada)' )"
+                                                        data-toggle="tooltip" data-placement="top" title="" data-original-title="Re abrir">
+                                                    <i class="fa fa-refresh"></i>
                                                 </button>
                                                 break;
                                             }
                                         case EstadoTarea.Cancelada:
                                             {
-                                                <button id="iniciaCancelada" class="btn btn-outline-warning btn-sm" onclick="CambiaEstadx( '@item.EmpresaID','@item.PlanID','@item.TareaID', '@((int) EstadoTarea.Iniciada)' )" data-toggle="tooltip" data-placement="top" title="" data-original-title="Re abrir">
+                                                <button id="iniciaCancelada" class="btn btn-outline-warning btn-sm"
+                                                        onclick="CambiaEstadx( '@item.EmpresaID','@item.PlanID','@item.TareaID', '@((int) EstadoTarea.Iniciada)' )"
+                                                        data-toggle="tooltip" data-placement="top" title="" data-original-title="Re abrir">
                                                     Sin Acciones disponibles
                                                 </button>
                                                 break;
                                             }
                                         case EstadoTarea.Suspendida:
                                             {
-                                                <button id="iniciaSuspendida" class="btn btn-outline-warning btn-sm" onclick="CambiaEstadx( '@item.EmpresaID','@item.PlanID','@item.TareaID', '@((int) EstadoTarea.Iniciada)' )" data-toggle="tooltip" data-placement="top" title="" data-original-title="Retomar">
-                                                    <i class="fa fa-fast-forward"></i>
+                                                <button id="iniciaSuspendida" class="btn btn-outline-warning btn-sm"
+                                                        onclick="CambiaEstadx( '@item.EmpresaID','@item.PlanID','@item.TareaID', '@((int) EstadoTarea.Iniciada)' )"
+                                                        data-toggle="tooltip" data-placement="top" title="" data-original-title="Retomar">
+                                                    <i class="fa fa-refresh"></i>
                                                 </button>
                                                 break;
                                             }
@@ -257,22 +313,27 @@
                                             break;
 
                                     }
-                                </td>
+                                            </td>
                                 <td>
                                     @switch (item.EstadoID)
                                     {
                                         case EstadoTarea.Nueva:
                                             {
-                                                <button id="planificada" class="btn btn-outline-warning btn-sm" onclick="CambiaEstadx( '@item.EmpresaID','@item.PlanID','@item.TareaID', '@((int) EstadoTarea.Planificada)' )" data-toggle="tooltip" data-placement="top" title="" data-original-title="Planificar">
+                                                @*<button id="planificada" class="btn btn-outline-warning btn-sm"
+                                                        onclick="CambiaEstadx( '@item.EmpresaID','@item.PlanID','@item.TareaID', '@((int) EstadoTarea.Planificada)' )"
+                                                        data-toggle="tooltip" data-placement="top" title="" data-original-title="Planificar">
                                                     <i class="fa fa-fast-forward"></i>
-                                                </button>
+                                                </button>*@
                                                 break;
                                             }
                                         case EstadoTarea.Planificada:
                                             {
                                                 if (Model.ExamList.Where(wx => wx.TareaID == item.TareaID).FirstOrDefault() != null)
                                                 {
-                                                    <a asp-page="/Exams/Examinations/Details" asp-route-emid="@item.EmpresaID" asp-route-plid="@item.PlanID" asp-route-taid="@item.TareaID" asp-route-exid="@Model.ExamList.Where(wx => wx.TareaID == item.TareaID).FirstOrDefault().ExaminationID" class="btn btn-sm btn-info"><i class="fa fa-search-plus"></i></a>
+                                                    <a asp-page="/Exams/Examinations/Details" asp-route-emid="@item.EmpresaID" asp-route-plid="@item.PlanID"
+                                                       asp-route-taid="@item.TareaID" asp-route-exid="@Model.ExamList.Where(wx => wx.TareaID == item.TareaID).FirstOrDefault().ExaminationID"
+                                                       class="btn btn-sm btn-info"
+                                                       data-toggle="tooltip" data-placement="top" title="" data-original-title="Inspección"><i class="fa fa-tasks"></i></a>
                                                 }
                                                 else
                                                 {
@@ -325,7 +386,9 @@
                                                                 <span asp-validation-for="Exam.RespuestasCompletadas" class="text-danger"></span>
                                                             </div>
                                                         </div>
-                                                        <input type="submit" value="Inspeccionar (submit)" class="btn btn-info btn-sm" />
+                                                        <button type="submit" class="btn btn-info btn-sm"
+                                                                data-toggle="tooltip" data-placement="top" title="" data-original-title="Inspección">
+                                                        <i class="fa fa-tasks"></i></button>
                                                     </form>
                                                 }
                                                 break;
@@ -385,15 +448,13 @@
         </div>
         <p>
             <div>
-                <a asp-page="./Index" asp-route-emid="@Model.MyPlan.EmpresaID" class="btn btn-primary btn-sm" role="button"><i class="fa fa-reply"></i></a>
-
-                <button onclick="$('#myModal').modal('show');" class="btn btn-success btn-sm">Nueva Tarea</button>
+                <a asp-page="./Index" asp-route-emid="@Model.MyPlan.EmpresaID" class="btn btn-primary btn-sm" role="button"
+                data-toggle="tooltip" data-placement="top" title="" data-original-title="Volver"><i class="fa fa-reply"></i></a>
+                <button onclick="$('#myModal').modal('show');" class="btn btn-success btn-sm" 
+                data-toggle="tooltip" data-placement="top" title="" data-original-title="Nueva Tarea"><i class="fa fa-plus"></i></button>
                 <br />
             </div>
         </p>
-        @*FORM OR DETAILS OR CONFIRM DELETION*@
-        @* --------------------------------------------------------------------------- *@
-        @* *************************************************************************** *@
         <br />
     </div>
 </div>
@@ -435,7 +496,8 @@
 
                             <label asp-for="NewTarea.FechaPlanificada" class="control-label"></label>
                             <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
-                                <input type="text" class="form-control datetimepicker-input" value="@DateTime.Now" data-target="#datetimepicker1" data-date-format="dd/mm/yyyy" asp-for="NewTarea.FechaPlanificada" />
+                                <input type="text" class="form-control datetimepicker-input" value="@DateTime.Now"
+                                       data-target="#datetimepicker1" data-date-format="dd/mm/yyyy" asp-for="NewTarea.FechaPlanificada" />
                                 <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
                                     <div class="input-group-text"><i class="fa fa-calendar"></i></div>
                                 </div>
@@ -482,56 +544,56 @@
 
         /******************************************************/
         function CambiaEstadx(empresaId, planId, tareaId, nuevoEstado) {
-                                            //var empresaID = 1;
-                                            // alert("Vals: " + empresaId + " " + planId + " " + tareaId + " " + nuevoEstado);
-                                            /*
-                                             * $.ajax({
-                                                            type: "GET",
-                                                            url: "/Mantenedores/Empresas/DetailsAjax?handler=List&emid=" + empresaID + "&tipo=" + callingType,
-                                                            beforeSend: function (xhr) {
-                                                                xhr.setRequestHeader("XSRF-TOKEN",
-                                                                    $('input:hidden[name="__RequestVerificationToken"]').val());
-                                                            },
+            //var empresaID = 1;
+            // alert("Vals: " + empresaId + " " + planId + " " + tareaId + " " + nuevoEstado);
+            /*
+             * $.ajax({
+                            type: "GET",
+                            url: "/Mantenedores/Empresas/DetailsAjax?handler=List&emid=" + empresaID + "&tipo=" + callingType,
+                            beforeSend: function (xhr) {
+                                xhr.setRequestHeader("XSRF-TOKEN",
+                                    $('input:hidden[name="__RequestVerificationToken"]').val());
+                            },
 
-                                             */
-                                            var txturl = "/api/Tareas/emid=" + empresaId + "&plid=" + planId + "&taid=" + tareaId + "&esid=" + nuevoEstado;
-                                            alert(txturl);
+             */
+            var txturl = "/api/Tareas/emid=" + empresaId + "&plid=" + planId + "&taid=" + tareaId + "&esid=" + nuevoEstado;
+            swal(txturl);
             $.ajax({
-                                                type: 'GET',
+                type: 'GET',
                 url: txturl,
                 beforeSend: function (xhr) {
-                                                    alert("before");
-                                                    xhr.setRequestHeader('XSRF-TOKEN',
-                                                        $('input:hidden[name="__RequestVerificationToken"]').val());
-                                                    //alert(url);
-                                                },
+                    swal("before");
+                    xhr.setRequestHeader('XSRF-TOKEN',
+                        $('input:hidden[name="__RequestVerificationToken"]').val());
+                    //alert(url);
+                },
                 contentType: "application/json",
                 dataType: "html",
                 complete: function (response) {
-                                                    alert("Complete!" + response);
-                                                },
+                    swal("Complete!" + response);
+                },
                 success: function (response) {
-                                                    alert("success!" + response);
+                    swal("success!" + response);
                     $('#Inicia').submit();
-                                                    location.reload();
-                                                },
+                    location.reload();
+                },
                 failure: function (response) {
-                                                    alert("Error en la comunicación!!\n Detalle:" + response);
-                                                }
-                                            });
+                    swal("Error en la comunicación!!\n Detalle:" + response);
+                }
+            });
             location.reload();
         }
 
 
         /******************************************************/
-        function planifClick(empresaId, planId, tareaId, examinationId) {
-            var urlBase = '/API/Tareas/';
-            var urlCall = urlBase + empresaId + ' ' + planId + ' ' + tareaId + ' ' + examinationId;
-            alert(urlCall);
-        }
+        //function planifClick(empresaId, planId, tareaId, examinationId) {
+        //    var urlBase = '/API/Tareas/';
+        //    var urlCall = urlBase + empresaId + ' ' + planId + ' ' + tareaId + ' ' + examinationId;
+        //    swal(urlCall);
+        //}
         function ajaxcall(url, emid, plid, taid, esid) {
             /// siteId) {
-            alert(url);
+            swal(url);
             $.ajax({
                 type: "GET",
                 url: url,
@@ -544,10 +606,10 @@
                 }, //End of AJAX Success function
 
                 failure: function (data) {
-                    alert(data.responseText);
+                    swal(data.responseText);
                 }, //End of AJAX failure function
                 error: function (data) {
-                    alert(data.responseText);
+                    swal(data.responseText);
                 } //End of AJAX error function
 
             });
@@ -557,7 +619,7 @@
         $('#planif').click(function () {
             var urlCall = ''
 
-            alert("click! Ajax");
+            swal("click! Ajax");
         });
         /******************************************************/
 
@@ -572,7 +634,7 @@
         $(document).ready(function () {
 
         });
-        /***************************************************/
+            /***************************************************/
 
     </script>
 }

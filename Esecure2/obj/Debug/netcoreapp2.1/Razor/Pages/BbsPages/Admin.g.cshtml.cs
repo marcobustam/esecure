@@ -86,7 +86,7 @@ using bbs;
                 <h2 class=""card-title text-center text-info"">");
             EndContext();
             BeginContext(353, 73, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4d18aae09aba40e6a32927243833f729", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f3ea177dc096441b9f0675f6826a5626", async() => {
                 BeginContext(387, 35, true);
                 WriteLiteral("<i class=\"fa fa-sitemap fa-4x\"></i>");
                 EndContext();
@@ -109,7 +109,7 @@ using bbs;
             WriteLiteral("</h2>\r\n                <h2 class=\"card-title\">Categorías</h2>\r\n                <p class=\"card-text\">Permite modificar los parámetros del sistema.</p>\r\n\r\n            </div>\r\n            <div class=\"card-footer text-center\">\r\n                ");
             EndContext();
             BeginContext(666, 87, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "31102a7f33d545a1a411b8fa50622a79", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a61d22d03d224f1785a08249df251a23", async() => {
                 BeginContext(739, 10, true);
                 WriteLiteral("Categorías");
                 EndContext();
@@ -132,7 +132,7 @@ using bbs;
             WriteLiteral("\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <!-- /.col-md-4 -->\r\n    <div class=\"col-md-4 mb-4\">\r\n        <div class=\"card h-100\">\r\n            <div class=\"card-body\">\r\n                <h2 class=\"card-title text-center text-primary\">");
             EndContext();
             BeginContext(996, 104, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bea6c5759ff447348db9ab97fb234f3f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3008b024ddaf4ca38c726076e7b073ed", async() => {
                 BeginContext(1042, 54, true);
                 WriteLiteral("<i class=\"fa fa-check-square fa-4x\" role=\"button\"></i>");
                 EndContext();
@@ -164,7 +164,7 @@ using bbs;
                 ");
             EndContext();
             BeginContext(1358, 77, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f2ab02ced74440ffb7cb6ad0eb555e13", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4867bbb19820435384737a695407c378", async() => {
                 BeginContext(1426, 5, true);
                 WriteLiteral("Items");
                 EndContext();
@@ -200,7 +200,7 @@ using bbs;
                 ");
             EndContext();
             BeginContext(1953, 82, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ef55337d80234d4caa1798b028fa376c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3339fe848aca44b2aa4d8d1ffa5b7894", async() => {
                 BeginContext(2022, 9, true);
                 WriteLiteral("Gerencias");
                 EndContext();
@@ -234,7 +234,7 @@ using bbs;
                 <h2 class=""card-title text-center text-info"">");
             EndContext();
             BeginContext(2318, 83, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "35462c5466854ff7841014e2adeb9e8a", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "70aff038143f4a2095516a213bfe7b92", async() => {
                 BeginContext(2361, 36, true);
                 WriteLiteral("<i class=\"fa fa-industry fa-4x\"></i>");
                 EndContext();
@@ -257,7 +257,7 @@ using bbs;
             WriteLiteral("</h2>\r\n                <h2 class=\"card-title\">Instalaciones</h2>\r\n                <p class=\"card-text\">Permite modificar los parámetros del sistema.</p>\r\n\r\n            </div>\r\n            <div class=\"card-footer text-center\">\r\n                ");
             EndContext();
             BeginContext(2644, 82, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6aad0d2d5a2a48f8933d0aaf334acae5", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e7f0b1354fdb4015886dccbc7d8e8b95", async() => {
                 BeginContext(2709, 13, true);
                 WriteLiteral("Instalaciones");
                 EndContext();
@@ -280,7 +280,7 @@ using bbs;
             WriteLiteral("\r\n            </div>\r\n        </div>\r\n    </div>\r\n    <!-- /.col-md-4 -->\r\n    <div class=\"col-md-4 mb-4\">\r\n        <div class=\"card h-100\">\r\n            <div class=\"card-body\">\r\n                <h2 class=\"card-title text-center text-primary\">");
             EndContext();
             BeginContext(2969, 103, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e4b2af1c9d374a93accaf994bfe1ba58", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "34abe384634a426980bd57b795b76a0e", async() => {
                 BeginContext(3016, 52, true);
                 WriteLiteral("<i class=\"fa fa-map-marker fa-4x\" role=\"button\"></i>");
                 EndContext();
@@ -303,7 +303,7 @@ using bbs;
             WriteLiteral("</h2>\r\n                <h2 class=\"card-title\">Zonas de trabajo</h2>\r\n                <p class=\"card-text\">Permite modificar los parámetros del sistema.</p>\r\n\r\n            </div>\r\n\r\n\r\n\r\n            <div class=\"card-footer text-center\">\r\n                ");
             EndContext();
             BeginContext(3324, 89, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "68c7d22068014fd8b09cec92524de1b1", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "33b8aa89df9543928f538691125b85da", async() => {
                 BeginContext(3393, 16, true);
                 WriteLiteral("Zonas de trabajo");
                 EndContext();
@@ -339,7 +339,7 @@ using bbs;
                 ");
             EndContext();
             BeginContext(3927, 79, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2d57343d4ba941c6b8337fa0367a9160", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cf439c6da5f94531af40085107ad6fde", async() => {
                 BeginContext(3994, 8, true);
                 WriteLiteral("Personas");
                 EndContext();
